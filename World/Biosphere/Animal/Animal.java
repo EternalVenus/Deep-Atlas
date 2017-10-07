@@ -1,5 +1,31 @@
-public abstract Animal{
-    // private int eye;
+public abstract class Animal{
+    public void attack(){
+        System.out.println("Animal Attack");
+    }
+    
+    public void run(){
+        System.out.println("Animal run");
+    }
+    
+    public void defend(){
+        System.out.println("Animal Defend");
+    }
+    
+    public void move(){
+        System.out.println("Animal Moves");
+    }
+    
+    public void eat(){
+        System.out.println("Animal Eat")
+    }
+    
+    public void dump(){
+        System.out.print("Animal taking a dump");
+    }
+}
+
+
+ // private int eye;
     // private int leg;
     // private int horn;
     // private int claws;
@@ -38,29 +64,4 @@ public abstract Animal{
     //     return this.name;
     // }
     
-    private string foo
     
-    public void attack(){
-        System.out.println("Animal Attack");
-    }
-    
-    public void run(){
-        System.out.println("Animal run");
-    }
-    
-    public void defend(){
-        System.out.println("Animal Defend");
-    }
-    
-    public void move(){
-        System.out.println("Animal Moves");
-    }
-    
-    public void eat(){
-        System.out.println("Animal Eat")
-    }
-    
-    public void dump(){
-        System.out.print("Animal taking a dump");
-    }
-}
