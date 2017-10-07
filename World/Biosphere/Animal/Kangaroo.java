@@ -21,7 +21,7 @@ public class Kangaroo extends Animal{
 
     public void mate(){
         String mate;
-        if (joey == 0){
+        if (joey == 0 && isFemale){
             if(isFemale){
                 mate = "Bucks";
             }else{
@@ -31,7 +31,7 @@ public class Kangaroo extends Animal{
             ++joey;
             System.out.println("Joey is here.");
         }else{
-            System.out.println("Joey is already here. ");
+            System.out.println("Time to look for a does.");
         }
     }
 
@@ -83,7 +83,11 @@ public class Kangaroo extends Animal{
 
     @Override
     public void eat() {
-        System.out.println("Kangaroo --> Feeds Joey");
+        if(isFemale){
+            System.out.println("Kangaroo --> Feeds Joey");
+        }else{
+            System.out.println("Kangaroo eats by itself. No Joey :(");
+        }
     }
 
     /******* Override ********/
