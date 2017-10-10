@@ -2,6 +2,7 @@ public class Printer {
     private int tonerLevel;
     private int pagesPrinted;
     private boolean duplex;
+    private String description = "A printer that is able to print in duplex mode.";
 
     public Printer(int tonerLevel, boolean duplex) {
         if(tonerLevel > -1 && tonerLevel <=100){
@@ -39,5 +40,9 @@ public class Printer {
 
     public int getPagesPrinted() {
         return pagesPrinted;
+    }
+
+    public String toString(){
+        return this.description;
     }
 }
