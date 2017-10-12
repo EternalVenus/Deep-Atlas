@@ -1,6 +1,6 @@
 public class LightBulb{
     private String color;
-    private int lightScale;
+    private int lightScale; 
     private int size;
     
     public LightBulb(String color, int lightScale, int size){
