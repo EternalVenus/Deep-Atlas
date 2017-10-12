@@ -20,7 +20,7 @@ public class GroceryList {
             modifyGroceryItem(position, newItem);
         }
     }
-    private void modifyGroceryItem(int position, String newItem){
+    public void modifyGroceryItem(int position, String newItem){
         groceryList.set(position, newItem);
         System.out.println("Grocery item " + (position + 1) + " has been modified");
     }
@@ -32,7 +32,7 @@ public class GroceryList {
         }
     }
 
-    private void removeGroceryItem(int position){
+    public void removeGroceryItem(int position){
         String theItem = groceryList.get(position);
         groceryList.remove(position);
     }
