@@ -1,11 +1,14 @@
 import java.util.ArrayList;
 
-
 public class GroceryList {
     private ArrayList<String> groceryList= new ArrayList<String>();
 
     public void addGroceryItem(String item){
         groceryList.add(item);
+    }
+
+    public ArrayList<String> getGroceryList(){
+        return this.groceryList;
     }
 
     public void printGroceryList(){
@@ -41,5 +44,12 @@ public class GroceryList {
             return groceryList.indexOf(searchItem);
     }
 
+    public boolean onFile(String searchItem){
+        int position = findItem(searchItem);
+        if (position >= 0){
+            return true;
+        }
+        return false;
+    }
 
 }
