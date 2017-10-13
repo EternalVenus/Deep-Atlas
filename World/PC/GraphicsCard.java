@@ -27,11 +27,11 @@ public class GraphicsCard {
     }
 
     public String getClock() {
-        return nativeResolution;
+        return clock;
     }
 
     public String getCores() {
-        return nativeResolution;
+        return cores;
     }
 
     public int getSize() {
