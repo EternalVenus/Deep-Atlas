@@ -1,4 +1,8 @@
-public class Walrus extends Animal{
+package Biosphere.Animal;
+
+import Biosphere.Animal.Abstracts.Fighter;
+
+public class Walrus extends Fighter {
 
     private final static int EYE = 2;
     private final static int TAIL = 1;
@@ -29,6 +33,8 @@ public class Walrus extends Animal{
             System.out.println(this.herdSize + " walruses all slams onto its target.");
         }
     }
+
+
 
     public void swim(){
         dive();
@@ -96,6 +102,16 @@ public class Walrus extends Animal{
         seekingFood();
     }
 
+
+    @Override
+    protected void Charge() {
+        bodySlam();
+    }
+
+    @Override
+    protected void Thrash() {
+        bodySlam();
+    }
     /************************/
 
 
