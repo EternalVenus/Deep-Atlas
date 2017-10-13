@@ -9,6 +9,6 @@ Composition, Encapsulation, Abstraction, Polymorphism and also Interfaces.
 Unfortunatly the master branch and the interface-abstract method branch cannot be merged
 together due to their origin does not lay on the same branch. Now trying to manually merge
 these two branches.
-
+<br>
 Created packages and src folder to increase organization.
 
