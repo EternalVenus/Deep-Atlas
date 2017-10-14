@@ -1,13 +1,14 @@
+
 public class Main {
     public static void main(String[] args){
 
-        Pokemon pikachu = new Pokemon("Male",100,200,100, "Pikachu");
-        Pokemon charmander = new Pokemon("Male",100,200,100, "Charmander");
-        Pokemon squirtle = new Pokemon("Male",100,200,100, "Squirtle");
-        Pokemon piplup = new Pokemon("Male",100,200,100, "Piplup");
-        Pokemon bulbasaur = new Pokemon("Male",100,200,100, "Bulbasaur");
-        Pokemon mew = new Pokemon("Male",100,200,100, "Mew");
-        Pokemon mewtwo = new Pokemon("Male",100,200,100, "MewTwo");
+        Pokemon pikachu = new Pokemon("Pikachu");
+        Pokemon charmander = new Pokemon("Charmander");
+        Pokemon squirtle = new Pokemon("Squirtle");
+        Pokemon piplup = new Pokemon("Piplup");
+        Pokemon bulbasaur = new Pokemon("Bulbasaur");
+        Pokemon mew = new Pokemon("Mew");
+        Pokemon mewtwo = new Pokemon("MewTwo");
 
         PokemonPC pc = new PokemonPC();
         PokemonBag bag = new PokemonBag(pc);
