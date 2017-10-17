@@ -1,6 +1,6 @@
 package World.VIP;
 
-public class VipCustomerMain {
+public class Main {
     public static void main(String[] args){
         VipCustomer person1 = new VipCustomer();
         VipCustomer person2 = new VipCustomer("Jake", 123123123, "money@gmail.com");

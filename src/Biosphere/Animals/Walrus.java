@@ -1,6 +1,6 @@
 package Biosphere.Animals;
 
-import Biosphere.Animals.Abstracts.Fighter;
+import Biosphere.Animals.Interfaces.Fighter;
 
 public class Walrus extends Fighter {
 

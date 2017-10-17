@@ -1,7 +1,6 @@
 package Biosphere.Animals;
 
-import Biosphere.Animals.Abstracts.Prey;
-import Biosphere.Animals.Interfaces.*;
+import Biosphere.Animals.Interfaces.Prey;
 
 public class Rabbit extends Prey implements HasPaw, Viviparous {
 

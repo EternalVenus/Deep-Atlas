@@ -1,9 +1,8 @@
 package Biosphere.Animals;
 
-import Animals.Abstracts.Fighter;
-import Animals.Interfaces.*;
+import Biosphere.Animals.Interfaces.Fighter;
 
-public class Dog extends Fighter implements HasPaw, Viviparous, SharpTeeth{
+public class Dog extends Animal implements Fighter{
     /******** Static Fields ********/
     private final static int EYE = 2;
     private final static int LEG = 4;
@@ -12,14 +11,14 @@ public class Dog extends Fighter implements HasPaw, Viviparous, SharpTeeth{
     private final static int LITTERSIZE = 4;
 
     /******** Private Fields ********/
-    private int offsprings = 0;
+    //private int offsprings = 0;
     private String name;
     private int size;
     private String description = "Dog";
 
     /******** Constructor ********/
     public Dog(String name) {
-        this.name = name;
+        super(name);
         this.size = (int)Math.floor((Math.random() * 15) + SIZE);
     }
 
@@ -28,18 +27,20 @@ public class Dog extends Fighter implements HasPaw, Viviparous, SharpTeeth{
 
     /******* Implements Fighter *******/
     @Override
-    protected void Charge() {
+    public void Charge() {
         System.out.println("Dog --> Charges at its target");
     }
 
     @Override
-    protected void Thrash() {
+    public void Thrash() {
         System.out.println("Dog --> Desparatly thrashes around");
     }
 
     /******* Implements Viviparous *******/
-    public void giveBirth(){
-        offsprings += (int)Math.floor((Math.random() * LITTERSIZE) + 1);
+    @Override
+    public void reproduce() {
+        reproduce();
+        reproduction.setOffspring((int)Math.floor((Math.random() * LITTERSIZE) + 1));
     }
 
 
@@ -54,7 +55,7 @@ public class Dog extends Fighter implements HasPaw, Viviparous, SharpTeeth{
     /******* Override *******/
     @Override
     public void attack() {
-        bite();
+        mouthPiece.bite(this, new Animal("Victim"));
     }
 
     @Override
@@ -64,7 +65,6 @@ public class Dog extends Fighter implements HasPaw, Viviparous, SharpTeeth{
 
     @Override
     public void eat() {
-        System.out.println("Dog --> Eat with its mouth.");
     }
 
     @Override
@@ -94,9 +94,7 @@ public class Dog extends Fighter implements HasPaw, Viviparous, SharpTeeth{
         return LITTERSIZE;
     }
 
-    public int getOffsprings() {
-        return offsprings;
-    }
+    public int getOffsprings() { return reproduction.getOffspring(); }
 
     public String getName() {
         return name;

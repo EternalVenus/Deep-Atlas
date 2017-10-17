@@ -1,19 +1,21 @@
 package Biosphere.Animals;
 
-import Animals.Abstracts.Animal;
-import Animals.Interfaces.*;
+import Biosphere.Animals.Interfaces.Prey;
 
 /*
     This is an example class to model an animal.
-    This class will extend Animals.Abstracts.Animals class but other classes should
+    This class will extend Animals.Interfaces.Animals class but other classes should
         extend other super class accordingly.
-    This class should implement appropiate interface(s) for capabilities
-        eg HasClaw, Flyer, Venomous etc
+    This class should implement appropriate interface(s) for Behaviors and special moves??
+        eg Hunter, Fighter, Prey etc
     The class should contain Static variables such as numbers of eyes,limb etc,
         the basic trait of the animal that is same across all animal of this class.
+    The class will have a sets of encapsulated traits such as Claws, hoofs, wings etc
+        each of these trait will be a class of its own, and implements a general interface
+
 */
 
-public class Pig extends Animal implements Viviparous{
+public class Pig extends Animal implements Prey{
     /******** Static Fields ********/
     private final static int EYE = 2;
     private final static int LEG = 4;
@@ -22,45 +24,66 @@ public class Pig extends Animal implements Viviparous{
     private final static int LITTERSIZE = 10;
 
     /******** Private Fields ********/
-    private int offsprings = 0;
-    private String name;
+    //private int offsprings = 0;
+    //private String name;
     private int size;
     private String description = "Pig";
 
+
     /******** Constructor ********/
     public Pig(String name){
-        this.name = name;
+        super(name);
         this.size = (int)Math.floor((Math.random() * 10) + SIZE);
+
+        this.flyType = new CantFly();
+        this.mouthPiece = new HerbivoreTeeth();
+        this.reproduction = new Viviparous();
+        this.limbType = new Hoof();
     }
 
     /******** capabilities ********/
     /******************************/
 
-    /******* Implements Viviparous *******/
-    public void giveBirth(){
-        offsprings += (int)Math.floor((Math.random() * LITTERSIZE) + 1);
+    /******* Implements Prey *******/
+    @Override
+    public void scurry() {
+        System.out.println(name + "Ran away in panic.");
+    }
+
+    @Override
+    public void hide() {
+        System.out.println(name + " tries to hide, but can't cover it self");
     }
 
     /******* Override ********/
     @Override
-    public void attack() {
-        System.out.println("Pig --> Charging at target.");
-    }
+    public void move() { System.out.println(name + " Moves slowly"); }
+
+    @Override
+    public void attack() { mouthPiece.bite(this, new Animal("Victim")); }
 
     @Override
     public void defend() {
-        System.out.println("Pig --> Curling up.");
+        System.out.println(name + " --> Curling up.");
     }
 
     @Override
     public void eat() {
-        System.out.println("Pig --> Eat with its mouth.");
+        System.out.println(name + " --> Eat with its mouth.");
     }
 
     @Override
     public void makeSound() {
-        System.out.println("Pig --> Says Oink.");
+        System.out.println(name + " --> Says Oink.");
     }
+
+    @Override
+    public void reproduce(){
+        super.reproduce();
+        reproduction.setOffspring(reproduction.getOffspring() +
+                (int)Math.floor((Math.random() * LITTERSIZE) + 1));
+    }
+
     /******* Override ********/
 
 
@@ -90,9 +113,7 @@ public class Pig extends Animal implements Viviparous{
         return LITTERSIZE;
     }
 
-    public int getOffsprings() {
-        return offsprings;
-    }
+    public int getOffsprings() { return reproduction.getOffspring(); }
 
     public int getSize() {
         return size;

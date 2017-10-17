@@ -1,6 +1,6 @@
 package Biosphere.Animals;
 
-import Biosphere.Animals.Abstracts.Prey;
+import Biosphere.Animals.Interfaces.Prey;
 
 public class Squirrel extends Prey {
     private final static int EYE = 2;

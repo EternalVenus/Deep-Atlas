@@ -1,4 +1,4 @@
-package Biosphere.Animals.Interfaces;
+package Biosphere.Animals;
 
 /******* HasPaw Interface *******/
 /**

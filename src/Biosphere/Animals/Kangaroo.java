@@ -1,7 +1,5 @@
 package Biosphere.Animals;
 
-import Biosphere.Animals.Abstracts.Animal;
-
 public class Kangaroo extends Animal {
     private final static int EYE = 2;
     private final static int LEG = 2;

@@ -1,6 +1,6 @@
 package Biosphere.Animals;
 
-import Biosphere.Animals.Abstracts.Hunter;
+import Biosphere.Animals.Interfaces.Hunter;
 
 public class Tiger extends Hunter {
     private final static int EYE = 2;

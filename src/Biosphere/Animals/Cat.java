@@ -1,9 +1,8 @@
 package Biosphere.Animals;
 
-import Animals.Abstracts.Hunters;
-import Animals.Interfaces.*;
+import Biosphere.Animals.Interfaces.Hunter;
 
-public class Cat extends Hunters implements SharpClaw, HasPaw, Viviparous, SharpTeeth{
+public class Cat extends Animal implements Hunter{
     /******** Static Fields ********/
     private final static int EYE = 2;
     private final static int LEG = 4;
@@ -13,7 +12,6 @@ public class Cat extends Hunters implements SharpClaw, HasPaw, Viviparous, Sharp
 
     /******** Private Fields ********/
     private int offsprings = 0;
-    private String name;
     private int size;
     private String description = "Cat";
 
@@ -21,33 +19,38 @@ public class Cat extends Hunters implements SharpClaw, HasPaw, Viviparous, Sharp
     public Cat(String name) {
         this.name = name;
         this.size = (int)Math.floor((Math.random() * 10) + SIZE);
+
+        this.flyType = new CantFly();           //Cat cant fly
+        this.limbType = new SharpClaws();       //Cat have paw with sharpClaw
+        this.mouthPiece = new CarnivoreTeeth(); //Cat have teeth for carnivores
+        this.reproduction = new Viviparous();   //Cat are viviparous
     }
 
     /******** capabilities ********/
     /******************************/
 
-    /******* Implements Hunters *******/
-    protected void Stalk(){
-        System.out.println("Cat --> Stalks the pray");
+    /******* Implements Hunter *******/
+    public void Stalk(){
+        System.out.println(name + " --> Stalks the pray");
     }
 
-    protected void Strike(){
-        System.out.println("Cat --> Strikes the pray");
+    public void Strike(){
+        System.out.println(name + " --> Strikes the pray");
     }
 
     /******* Implements Viviparous *******/
-    public void giveBirth(){
-        offsprings += (int)Math.floor((Math.random() * LITTERSIZE) + 1);
+    public void reproduce(){
+        reproduction.reproduce();
+        reproduction.setOffspring((int)Math.floor((Math.random() * LITTERSIZE) + 1));
     }
 
-    /******* Implements HasPaw *******/
-    public void dig(){     System.out.println("Cat --> Digging hole on the soft ground");  }
-    public void slap(){    System.out.println("Cat --> Slapping with its paw");            }
-
     /******* Implements SharpClaw *******/
-    public void scratch(){ System.out.println("Cat --> Scratching the enemy");             }
-    public void slash(){   System.out.println("Cat --> Slashing the enemy");               }
-    public void climb(){   System.out.println("Cat --> climbing with its claws");          }
+
+    public void dig(){ ((SharpClaws)limbType).dig(); }
+    public void slap(){ ((SharpClaws)limbType).slap(); }
+    public void scratch(){ ((SharpClaws)limbType).scratch(); }
+    public void slash(){ ((SharpClaws)limbType).slash(); }
+    public void climb(){ ((SharpClaws)limbType).climb(); }
 
     /******* Implements SharpTeeth *******/
     public void bite(){ System.out.println("Cat --> Bites the target"); }
@@ -56,7 +59,7 @@ public class Cat extends Hunters implements SharpClaw, HasPaw, Viviparous, Sharp
     /******* Override *******/
     @Override
     public void attack() {
-        scratch();
+        ((SharpClaws)limbType).scratch();
     }
 
     @Override
@@ -66,12 +69,12 @@ public class Cat extends Hunters implements SharpClaw, HasPaw, Viviparous, Sharp
 
     @Override
     public void eat() {
-        System.out.println("Cat --> Eat with its mouth.");
+        mouthPiece.bite(this,new Bird("Victm"));
     }
 
     @Override
     public void makeSound() {
-        System.out.println("Cat --> Says Meow.");
+        System.out.println(name + " --> Says Meow.");
     }
     /******* Override *******/
 
@@ -96,9 +99,7 @@ public class Cat extends Hunters implements SharpClaw, HasPaw, Viviparous, Sharp
         return LITTERSIZE;
     }
 
-    public int getOffsprings() {
-        return offsprings;
-    }
+    public int getOffsprings() { return reproduction.getOffspring(); }
 
     public String getName() {
         return name;
