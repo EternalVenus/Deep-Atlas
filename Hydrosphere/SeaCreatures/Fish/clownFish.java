@@ -1,20 +1,17 @@
-public class clownFish extends Fish {  // extend means it inherits from Fish class
-    private final static int EYE = 2;    
+public class ClownFish extends Fish {  // extend means it inherits from Fish class
+    private final static int EYE = 2;     
+    private final static int SIZE = 2;    
     private String name;
-    private int size;
-    private boolean blend; // can it camoflauge? 
     private int fry; // baby fish
 
+    public ClownFish(String name){
+        this.name = name;
+        this.size = SIZE + (Math.floor((Math.random() * 4)));
 
     public void reproduce(){
         fry += 400 + (Math.floor((Math.random() * 600))); // at least 400 but at most 1000
         System.out.println(fry + "baby puffer fish have been born!");
     }    
-    
-    public void growth(){
-        size += 2 + (Math.floor((Math.random() * 4)));
-        System.out.println("This puffer is " + size + "inches long");
-    }
 
 
     public void Hungry(boolean prey, boolean eggs){
