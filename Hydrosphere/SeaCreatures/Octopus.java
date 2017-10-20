@@ -1,13 +1,18 @@
 public class Octopus extends SeaCreatures {  // extend means it inherits from SeaCreatures class
     private final static int EYE = 2;
-    private final static int ARM = 2; 
+    private final static int ARM = 2;     
+    private final static int WEIGHT = 2; 
     private final static int LEG = 6; // final static so it cannot be changed
     private String name;
     private int length;
-    private int weight;
     private boolean camoflauge; // can it camoflauge? 
     private int larvae; // baby octopus
 
+    public Octopus(String name, boolean camoflauge)
+        this.name = name;
+        this.length = 2 + Math.floor((Math.random() * 20));
+        this.weight = length * WEIGHT;
+        this.camoflauge = camoflauge;
 
     public void reproduce(){
         larvae += 1000 + (Math.floor((Math.random() * 1000)));
