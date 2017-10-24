@@ -2,7 +2,7 @@ package Biosphere.Animals;
 
 import Biosphere.Animals.Interfaces.Scavenger;
 
-public class Skunk extends Animal implements scavenger{
+public class Skunk extends Animal implements Scavenger{
     private final static int EYE = 2;
     private final static int LEG = 2;
     private final static int TAIL = 1;
@@ -92,12 +92,6 @@ public class Skunk extends Animal implements scavenger{
         gasAttack();
         scurry();
     }
-
-    @Override
-    public void flee() {
-        scurry();
-    }
-
     @Override
     public void defend() {
         gasAttack();

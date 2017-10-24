@@ -71,7 +71,7 @@ public class Squirrel extends Animal implements Prey {
     public void scurry(){
         System.out.println(name + " Quickly run to another position");
     }
-    
+
     public void hide(){ System.out.println(name + " Hides into a hole"); }
 
     private void climb(){
