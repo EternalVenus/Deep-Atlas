@@ -2,7 +2,7 @@ package Biosphere.Animals;
 
 import Biosphere.Animals.Interfaces.Prey;
 
-public class Rabbit extends Prey implements HasPaw, Viviparous {
+public class Rabbit extends Animal implements Prey{
 
     /******** Static Fields ********/
     private final static int EYE = 2;
@@ -19,44 +19,46 @@ public class Rabbit extends Prey implements HasPaw, Viviparous {
 
     /******** Constructor ********/
     public Rabbit(String name) {
-        this.name = name;
+        super(name);
         this.size = (int) Math.floor((Math.random() * 10) + SIZE);
+
+        this.flyType = new CantFly();
+        this.limbType = new Paw();
+        this.mouthPiece = new RodentTeeth();
+        this.reproduction = new Viviparous();
     }
 
     /******** capabilities ********/
     /******************************/
 
-    /******* Implements Viviparous *******/
-    public void giveBirth() {
-        offsprings += (int) Math.floor((Math.random() * LITTERSIZE) + 1);
-    }
-
     /******* Implements Prey *******/
     @Override
-    protected void scurry() {
+    public void scurry() {
         System.out.println("Rabbit --> Scurried away with all its strength");
     }
 
     @Override
-    protected void hide() {
+    public void hide() {
         System.out.println("Rabbit --> Hides in a hole, and is hard to find");
     }
 
-    /******* Implements HasPaw *******/
-    @Override
-    public void dig() {
-        System.out.println("Rabbit --> Digs holes in the ground");
-    }
+    /******* Implements paw *******/
+    public void dig() { ((Paw)limbType).dig(); }
+    public void slap(){ ((Paw)limbType).slap(); }
 
-    @Override
-    public void slap() {
-        System.out.println("Rabbit --> slaps target with its paw");
-    }
-
+    /******* override super class *******/
     @Override
     public void flee() {
         scurry();
     }
+
+    @Override
+    public void reproduce(){
+        reproduction.reproduce();
+        reproduction.setOffspring((int)Math.floor((Math.random() * LITTERSIZE) + 1));
+    }
+
+
 
     /******* Getters *******/
     public static int getEYE() {

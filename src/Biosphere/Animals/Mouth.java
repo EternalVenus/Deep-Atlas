@@ -68,3 +68,15 @@ class Fang implements Mouth {
         System.out.println("It strikes quickly with its fangs");
     }
 }
+
+class RodentTeeth implements Mouth {
+    @Override
+    public void description() {
+        System.out.println("It's got two pair of incisor at front it can chew through many materials");
+    }
+
+    @Override
+    public void bite(Animal self, Animal target) {
+        System.out.println("It nibbles on the target with its teeth.");
+    }
+}

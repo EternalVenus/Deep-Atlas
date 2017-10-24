@@ -1,6 +1,8 @@
 package Biosphere.Animals;
 
-public class Skunk extends Animal {
+import Biosphere.Animals.Interfaces.Scavenger;
+
+public class Skunk extends Animal implements scavenger{
     private final static int EYE = 2;
     private final static int LEG = 2;
     private final static int TAIL = 1;
@@ -15,12 +17,17 @@ public class Skunk extends Animal {
 
 
     public Skunk(String name){
-        this.name = name;
+        super(name);
         this.size = (int)Math.floor((Math.random() * 10) + SIZE);
 
+        this.flyType = new CantFly();
+        this.limbType = new Paw();
+        this.mouthPiece = new HerbivoreTeeth();
+        this.reproduction = new Viviparous();
     }
 
     public void reproduce(){
+
         this.kits += (4 + (int)(Math.random() * (4)));
         System.out.println("There are " + this.kits + " kits.");
         System.out.println("The mother will stay inside for 6 weeks and teach them how to hunt.");
@@ -30,13 +37,6 @@ public class Skunk extends Animal {
         System.out.println(name + " sprays a foul smelling odor.");
     }
 
-    public void gasComboAttack() {
-        if (kits > 0) {
-            System.out.println("The mother and kits releases a combo gas attack.");
-        } else {
-            System.out.println("There are no kits for the combo attack.");
-        }
-    }
 
     public void scratchComboAttack() {
         if (kits > 0) {
@@ -80,7 +80,6 @@ public class Skunk extends Animal {
     @Override
     public void attack() {
         if(this.kits > 0){
-            gasComboAttack();
             scratchComboAttack();
         }else{
             scratch();
@@ -95,7 +94,7 @@ public class Skunk extends Animal {
     }
 
     @Override
-    public void run() {
+    public void flee() {
         scurry();
     }
 

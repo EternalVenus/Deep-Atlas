@@ -17,7 +17,7 @@ public class Cat extends Animal implements Hunter{
 
     /******** Constructor ********/
     public Cat(String name) {
-        this.name = name;
+        super(name);
         this.size = (int)Math.floor((Math.random() * 10) + SIZE);
 
         this.flyType = new CantFly();           //Cat cant fly
@@ -45,7 +45,6 @@ public class Cat extends Animal implements Hunter{
     }
 
     /******* Implements SharpClaw *******/
-
     public void dig(){ ((SharpClaws)limbType).dig(); }
     public void slap(){ ((SharpClaws)limbType).slap(); }
     public void scratch(){ ((SharpClaws)limbType).scratch(); }

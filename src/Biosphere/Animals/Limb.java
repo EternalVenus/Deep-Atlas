@@ -25,6 +25,8 @@ class Paw implements Limb {
         System.out.println("It slaps with its paw");
     }
 
+    public void kick() { System.out.println("It kicks with its back leg's paw"); }
+
     public void walk(){
         System.out.println("It walks on its paws");
     }
@@ -99,7 +101,18 @@ class Wing implements Limb {
     }
 }
 
-class Hand implements Limb {
+class FreeForeLimb implements Limb {
+    @Override
+    public void description() {
+        System.out.println("A pair of free moving forelimb");
+    }
+
+    public void punch () {
+        System.out.println("It punches with its fist");
+    }
+}
+
+class Hand extends FreeForeLimb {
     @Override
     public void description() {
         System.out.println("It have oppositable thumbs");
@@ -107,10 +120,6 @@ class Hand implements Limb {
 
     public void grab () {
         System.out.println("It grabs the target with its fingers");
-    }
-
-    public void punch () {
-        System.out.println("It punches with its fist");
     }
 
     public void slap() {

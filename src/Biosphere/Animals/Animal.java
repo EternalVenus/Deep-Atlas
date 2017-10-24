@@ -25,9 +25,7 @@ public class Animal {
     public void dump(){
         System.out.println("Animal taking a dump");
     }
-    public void flee(){
-        System.out.println("Animal fleeing away");
-    }
+    public void flee(){System.out.println("Animal fleeing away"); }
 
     /******** Use composition to describe animal traits ********/
     protected Limb limbType;

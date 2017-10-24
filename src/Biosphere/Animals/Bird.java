@@ -16,6 +16,7 @@ public class Bird extends Animal implements Prey{
     private int size;
     private String description = "Bird";
 
+    /********* Constructor *********/
     public Bird(String name){
         super(name);
         this.size = (int)Math.floor((Math.random() * 10) + SIZE);
