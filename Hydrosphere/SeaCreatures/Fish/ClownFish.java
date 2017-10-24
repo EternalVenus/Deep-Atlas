@@ -14,7 +14,7 @@ public class ClownFish extends Fish {  // extend means it inherits from Fish cla
     }    
 
 
-    public void Hungry(boolean prey, boolean eggs){
+    public void hungry(boolean prey, boolean eggs){
         if(prey){
           eat();
           System.out.println("eats the leftovers left by the sea anemones");

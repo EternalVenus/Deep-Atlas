@@ -16,7 +16,7 @@ public class Shark extends SeaCreatures {  // extend means it inherits from SeaC
     }
 
 
-    public void Hungry(boolean prey){
+    public void hungry(boolean prey){
         if(prey){
           bite();
           dash();

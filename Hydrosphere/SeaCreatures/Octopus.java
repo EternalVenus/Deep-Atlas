@@ -20,7 +20,7 @@ public class Octopus extends SeaCreatures {  // extend means it inherits from Se
     }
 
 
-    public void Hungry(boolean prey){
+    public void hungry(boolean prey){
         if(prey){
           suction();
           aquaJet();
@@ -43,7 +43,7 @@ public class Octopus extends SeaCreatures {  // extend means it inherits from Se
         System.out.println("using its tentacles and suction cups it traps its prey");
     }
 
-    public void smokescreen(){
+    public void smokeScreen(){
         System.out.println("fills its surrounding area with pitch black ink");
     }
 
