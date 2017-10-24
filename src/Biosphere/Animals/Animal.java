@@ -7,9 +7,6 @@ public class Animal {
     public void attack(){
         System.out.println("Animals.Interfaces.Animals Attack");
     }
-//    public void run(){
-//        System.out.println("Animals.Interfaces.Animals run");
-//    }
     public void defend(){
         System.out.println("Animal Defend");
     }

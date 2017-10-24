@@ -2,7 +2,7 @@ package Biosphere.Animals;
 
 import Biosphere.Animals.Interfaces.Prey;
 
-public class Squirrel extends Prey {
+public class Squirrel extends Animal implements Prey {
     private final static int EYE = 2;
     private final static int LEG = 2;
     private final static int ARM = 2;
@@ -17,7 +17,7 @@ public class Squirrel extends Prey {
     private int acorn = 0;
 
     public Squirrel(String name){
-        this.name = name;
+        super(name);
         this.size = (int)Math.floor((Math.random() * 10) + SIZE);
         this.isAsleep = false;
     }
@@ -67,10 +67,11 @@ public class Squirrel extends Prey {
         System.out.println(name + " Rolls into a ball.");
     }
 
-    //implements Prey class
+    /********** implements Prey class **********/
     public void scurry(){
         System.out.println(name + " Quickly run to another position");
     }
+    
     public void hide(){ System.out.println(name + " Hides into a hole"); }
 
     private void climb(){

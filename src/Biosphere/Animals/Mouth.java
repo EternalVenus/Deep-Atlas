@@ -1,5 +1,8 @@
 package Biosphere.Animals;
-
+/**********
+ * This might need to be changed to a more general type for example carnivore/herbivore
+ * The name are pretty cringe too
+ ***********/
 public interface Mouth {
     void description();
     void bite(Animal self, Animal target);
