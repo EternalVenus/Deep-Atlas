@@ -9,6 +9,8 @@ public class Pikachu extends Pokemon {
     private Skill skill3 = new FusionBolt();
     private Skill skill4 = new TailWhip();
     private Type type;
+    private String description = "Whenever Pikachu comes across something new, it blasts it with a jolt of electricity.\n" + 
+                                    "If you come across a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge."
 
 
     public Pikachu(String nickName) {
