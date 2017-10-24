@@ -1,4 +1,4 @@
-public class pufferFish extends Fish {  // extend means it inherits from SeaCreatures class
+public class PufferFish extends Fish {  // extend means it inherits from SeaCreatures class
     private final static int EYE = 2;    
     private final static int Teeth = 4;
     private String name;
