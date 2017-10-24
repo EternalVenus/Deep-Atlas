@@ -5,7 +5,7 @@ public class Psychic extends Skill{
 
         private static final String name = "Psychic";
         private static final Type type = new Type("Psychic");
-        private static final String ID = "29";
+        private static final String ID = "TM29";
         private static final int baseDamage = 90;
         private static final String description = "Psychic deals damage and has a 10% chance of lowering the target's Special Defense by one stage.\n" +
                 "Stats can be lowered to a minimum of -6 stages each.";
