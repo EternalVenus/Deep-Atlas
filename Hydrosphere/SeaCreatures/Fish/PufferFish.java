@@ -1,4 +1,4 @@
-public class pufferFish extends Fish {  // extend means it inherits from SeaCreatures class
+public class PufferFish extends Fish {  // extend means it inherits from SeaCreatures class
     private final static int EYE = 2;    
     private final static int Teeth = 4;
     private String name;
@@ -18,7 +18,7 @@ public class pufferFish extends Fish {  // extend means it inherits from SeaCrea
     }
 
 
-    public void Hungry(boolean prey){
+    public void hungry(boolean prey){
         if(prey){
           beak();
           System.out.println("Puffer fish only have four teeth. Two on top and two on the bottom. They prefer crunchy food such as clams to keep their teeth trimmed.");
