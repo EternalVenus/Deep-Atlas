@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 public class ElectricEel extends Fish 
     private final static int EYE = 2;
     private final static int LENGTH = 6
