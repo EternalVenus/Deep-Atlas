@@ -19,8 +19,12 @@ public abstract class Fish{ // abstract - cannot be instantiated. Only purpose i
         System.out.println("They cannot regulate their body temperature and are dependent on the external environment");
     }
     
-       public void eat(){
+    public void eat(){
         System.out.println("meal-time!");
+    }
+    
+    public void swim(){
+        System.out.println("Swims around")
     }
      
 
