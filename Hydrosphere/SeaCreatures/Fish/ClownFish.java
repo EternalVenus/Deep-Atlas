@@ -2,6 +2,7 @@ public class ClownFish extends Fish {  // extend means it inherits from Fish cla
     private final static int EYE = 2;     
     private final static int SIZE = 2;    
     private String name;
+    private int size;
     private int fry; // baby fish
 
     public ClownFish(String name){
