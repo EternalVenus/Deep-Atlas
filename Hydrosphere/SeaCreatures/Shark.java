@@ -1,4 +1,4 @@
-public class Shark extends SeaCreatures {  // extend means it inherits from SeaCreatures class
+public class Shark extends SeaCreature {  // extend means it inherits from SeaCreature class
     private final static int EYE = 2; // final static so it cannot be changed
     private int gills;
     private int teeth = 4;
