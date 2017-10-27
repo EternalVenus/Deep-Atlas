@@ -1,6 +1,10 @@
-package Pokemon.Pokemon;
+package Pokemons;
 
 import Skill.*;
+import Skill.F.FusionBolt;
+import Skill.T.TailWhip;
+import Skill.T.Thunder;
+import Skill.V.VoltTackle;
 
 public class Pichu extends Pokemon {
     private String nickName;
@@ -9,8 +13,6 @@ public class Pichu extends Pokemon {
     private Skill skill3 = new FusionBolt();
     private Skill skill4 = new TailWhip();
     private Type type;
-    private String description = "Pichu charges itself with electricity more easily on days with thunderclouds or when the air is very dry.\n" +
-                                    "You can hear the crackling of static electricity coming off this Pokémon."
 
 
     public Pichu(String nickName) {

@@ -1,6 +1,4 @@
-package Pokemon.Pokemon;
-
-import Skill.Skill;
+package Pokemons;
 
 public class Type {
     private String[] allTypes = {"Normal", "Fire", "Fighting", "Water", "Flying", "Grass", "Poison", "Electric",

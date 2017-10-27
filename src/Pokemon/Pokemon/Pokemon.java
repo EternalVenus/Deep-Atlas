@@ -1,4 +1,4 @@
-package Pokemon.Pokemon;
+package Pokemons;
 
 
 public class Pokemon {
@@ -21,7 +21,7 @@ public class Pokemon {
         this.exp = 0;
         this.name = name;
         this.level = (int) (Math.random() * (100 - 5)) + 5;
-        this.hp = ((int) (Math.random() * (20 - 5)) + 5) * this.getLevel();
+        this.hp = ((int) (Math.random() * (40 - 5)) + 5) * this.getLevel();
         this.spAtk = ((int) (Math.random() * (10 - 5)) + 5) * this.getLevel();
         this.atk = ((int) (Math.random() * (10 - 5)) + 5) * this.getLevel();
         this.defense = ((int) (Math.random() * (10 - 5)) + 5) * this.getLevel();
@@ -29,7 +29,10 @@ public class Pokemon {
 
     }
 
-
+    public int damageTaken(int damage){
+        this.hp = this.getHp() - damage;
+        return this.hp;
+    }
     public String getGender() {
         return gender;
     }
