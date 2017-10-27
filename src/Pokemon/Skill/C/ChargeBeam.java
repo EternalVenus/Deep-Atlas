@@ -1,6 +1,7 @@
-package Pokemon.Skill;
+package Skill.C;
 
-import Pokemon.Pokemon.Type;
+import Pokemons.Type;
+import Skill.*;
 
 public class ChargeBeam extends Skill {
     private static final String name = "Charge Beam";
