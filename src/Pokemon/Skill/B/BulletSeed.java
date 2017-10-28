@@ -3,16 +3,16 @@ package Skill.B;
 import Pokemons.Type;
 import Skill.*;
 
-public class BeakBlast extends Skill{
-    private static final String name = "Beak Blast";
-    private static final Type type = new Type("Flying");
-    private static final String ID = "none";
-    private static final int baseDamage = 100;
-    private static final String description = "The user first heats up its beak, and then it attacks the target.\n"+
-                        "Making direct contact with the Pokémon while it’s heating up its beak results in a burn.";
+public class BulletSeed extends Skill{
+    private static final String name = "Bullet Seed";
+    private static final Type type = new Type("Grass");
+    private static final String ID = "TM09";
+    private static final int baseDamage = 25;
+    private static final String description = "Bullet Seed hits 2-5 times per turn used.\n" +
+            "The probability of each interval is shown to the right, with the total power after each hit.";
 
-    public BeakBlast() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+    public BulletSeed() {
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 30);
     }
 
     @Override

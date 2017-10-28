@@ -3,16 +3,16 @@ package Skill.B;
 import Pokemons.Type;
 import Skill.*;
 
-public class BeakBlast extends Skill{
-    private static final String name = "Beak Blast";
-    private static final Type type = new Type("Flying");
+public class BulletPunch extends Skill{
+    private static final String name = "Bullet Punch";
+    private static final Type type = new Type("Steel");
     private static final String ID = "none";
-    private static final int baseDamage = 100;
-    private static final String description = "The user first heats up its beak, and then it attacks the target.\n"+
-                        "Making direct contact with the Pokémon while it’s heating up its beak results in a burn.";
+    private static final int baseDamage = 40;
+    private static final String description = "Bullet Punch deals damage and has a priority of +1.\n" +
+            "Moves with a higher priority always go first, regardless of a Pokémon's speed. If two moves with the same priority are used, the faster Pokémon goes first as usual.";
 
-    public BeakBlast() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+    public BulletPunch() {
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 30);
     }
 
     @Override

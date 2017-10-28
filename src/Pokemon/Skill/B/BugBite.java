@@ -3,16 +3,17 @@ package Skill.B;
 import Pokemons.Type;
 import Skill.*;
 
-public class BeakBlast extends Skill{
-    private static final String name = "Beak Blast";
-    private static final Type type = new Type("Flying");
+public class BugBite extends Skill{
+    private static final String name = "Bug Bite";
+    private static final Type type = new Type("Bug");
     private static final String ID = "none";
-    private static final int baseDamage = 100;
-    private static final String description = "The user first heats up its beak, and then it attacks the target.\n"+
-                        "Making direct contact with the Pokémon while it’s heating up its beak results in a burn.";
+    private static final int baseDamage = 60;
+    private static final String description = "Bug Bite deals damage, and if the target is holding a Berry, the user eats it and gains its effect.\n" +
+            "For example, if the target is holding a Sitrus Berry the user will recover 1⁄4 of the its HP.\n" +
+            "Bug Bite cannot steal a berry from a Substitute.";
 
-    public BeakBlast() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+    public BugBite() {
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
     }
 
     @Override

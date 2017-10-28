@@ -3,16 +3,15 @@ package Skill.B;
 import Pokemons.Type;
 import Skill.*;
 
-public class BeakBlast extends Skill{
-    private static final String name = "Beak Blast";
-    private static final Type type = new Type("Flying");
+public class BoneRush extends Skill{
+    private static final String name = "Bone Rush";
+    private static final Type type = new Type("Ground");
     private static final String ID = "none";
-    private static final int baseDamage = 100;
-    private static final String description = "The user first heats up its beak, and then it attacks the target.\n"+
-                        "Making direct contact with the Pokémon while it’s heating up its beak results in a burn.";
+    private static final int baseDamage = 25;
+    private static final String description = "Bone Rush hits 2-5 times per turn used.\n" + "The probability of each interval is shown to the right, with the total power after each hit.";
 
-    public BeakBlast() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+    public BoneRush() {
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
     }
 
     @Override
