@@ -8,13 +8,15 @@ public abstract class Skill {
     private Type type;
     private int baseDamage;
     private String description;
+    private int PP;
 
-    public Skill(String ID, String name, Type type, int baseDamage, String description) {
+    public Skill(String ID, String name, Type type, int baseDamage, String description, int PP) {
         this.ID = ID;
         this.name = name;
         this.type = type;
         this.baseDamage = baseDamage;
         this.description = description;
+        this.PP = PP;
     }
 
     public int effect(Pokemon pokemon){
