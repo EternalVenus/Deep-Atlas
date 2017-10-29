@@ -4,16 +4,20 @@ import Pokemons.Type;
 import Skill.*;
 
 public class AquaTail  extends Skill{
-    private static final String name = "Aqua Tail";
-    private static final Type type = new Type("Water");
-    private static final String ID = "none";
-    private static final int baseDamage = 90;
-    private static final String description = "Aqua Tail deals damage with no additional effect.";
-
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
     private int PP;
 
+
     public AquaTail() {
-        super();
+        this.name = "Aqua Tail";
+        this.type = new Type("Water");
+        this.ID = "none";
+        this.baseDamage = 90;
+        this.description = "Aqua Tail deals damage with no additional effect.";
         this.PP = 10;
     }
 
@@ -32,26 +36,33 @@ public class AquaTail  extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

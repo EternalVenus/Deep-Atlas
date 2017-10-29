@@ -5,17 +5,22 @@ import Skill.*;
 
 
 public class AerialAce extends Skill{
-    private static final String name = "Aerial Ace";
-    private static final Type type = new Type("Flying");
-    private static final String ID = "TM40";
-    private static final int baseDamage = 60;
-    private static final String description = "Aerial Ace deals damage and ignores changes to the Accuracy and Evasion stats.\n"+
-                            "However, it will not hit Pokémon during the invulnerable stage of Bounce, Dig, Dive, Fly, Shadow Force or Sky Drop.";
+    private   String name ;
+    private   Type type;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
+    private   int PP;
 
-    private int PP;
+
 
     public AerialAce() {
-        super();
+        this.name = "Aerial Ace";
+        this.type = new Type("Flying");
+        this.ID = "TM40";
+        this.baseDamage = 60;
+        this.description = "Aerial Ace deals damage and ignores changes to the Accuracy and Evasion stats.\n"+
+                "However, it will not hit Pokémon during the invulnerable stage of Bounce, Dig, Dive, Fly, Shadow Force or Sky Drop.";
         this.PP = 20;
     }
 
@@ -34,26 +39,33 @@ public class AerialAce extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

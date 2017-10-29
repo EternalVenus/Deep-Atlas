@@ -4,17 +4,21 @@ import Pokemons.Type;
 import Skill.*;
 
 public class Accelerock extends Skill{
-    private static final String name = "Accelerock";
-    private static final Type type = new Type("Rock");
-    private static final String ID = "none";
-    private static final int baseDamage = 40;
-    private static final String description = "Accelerock deals damage and has high priority.\n" +
-            "Moves with a higher priority always go first, regardless of a Pokémon's speed. If two moves with the same priority are used, the faster Pokémon goes first as usual.";
-
+    private String name ;
+    private Type type ;
+    private String ID ;
+    private int baseDamage ;
+    private String description;
     private int PP;
 
     public Accelerock() {
-        super();
+        this.name = "Accelerock";
+        this.type = new Type("Rock");
+        this.ID = "none";
+        this.baseDamage = 40;
+        this.description  = "Accelerock deals damage and has high priority.\n" +
+                "Moves with a higher priority always go first, regardless of a Pokémon's speed.\n" +
+                "If two moves with the same priority are used, the faster Pokémon goes first as usual.";
         this.PP = 20;
     }
 
@@ -33,26 +37,33 @@ public class Accelerock extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

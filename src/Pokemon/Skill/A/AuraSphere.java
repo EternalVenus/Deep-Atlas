@@ -4,16 +4,21 @@ import Pokemons.Type;
 import Skill.*;
 
 public class AuraSphere extends Skill{
-    private static final String name = "Aura Sphere";
-    private static final Type type = new Type("Fighting");
-    private static final String ID = "none";
-    private static final int baseDamage = 80;
-    private static final String description = "Aura Sphere deals damage and ignores changes to the Accuracy and Evasion stats.\n" +
-            "However, it will not hit Pokémon during the invulnerable stage of Bounce, Dig, Dive, Fly, Shadow Force or Sky Drop.";
-
+    private  String name ;
+    private  Type type ;
+    private  String ID ;
+    private  int baseDamage ;
+    private  String description;
     private int PP;
+
+
     public AuraSphere() {
-        super();
+        this.name = "Aura Sphere";
+        this.type = new Type("Fighting");
+        this.ID = "none";
+        this.baseDamage = 80;
+        this.description  = "Aura Sphere deals damage and ignores changes to the Accuracy and Evasion stats.\n" +
+                "However, it will not hit Pokémon during the invulnerable stage of Bounce, Dig, Dive, Fly, Shadow Force or Sky Drop.";
         this.PP = 20;
     }
 
@@ -32,26 +37,33 @@ public class AuraSphere extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

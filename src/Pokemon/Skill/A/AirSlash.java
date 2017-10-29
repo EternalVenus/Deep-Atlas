@@ -4,16 +4,21 @@ import Pokemons.Type;
 import Skill.*;
 
 public class AirSlash extends Skill{
-    private static final String name = "Air Slash";
-    private static final Type type = new Type("Flying");
-    private static final String ID = "none";
-    private static final int baseDamage = 75;
-    private static final String description = "Air Slash deals damage and has a 30% chance of causing the target to flinch (if the target has not yet moved).\n" +
-            "Pokémon with the ability Inner Focus or those behind a Substitute cannot be made to flinch.";
-
+    private  String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
     private int PP;
+
+
     public AirSlash() {
-        super();
+        this.name = "Air Slash";
+        this.type = new Type("Flying");
+        this.ID = "none";
+        this.baseDamage = 75;
+        this.description = "Air Slash deals damage and has a 30% chance of causing the target to flinch (if the target has not yet moved).\n" +
+                "Pokémon with the ability Inner Focus or those behind a Substitute cannot be made to flinch.";
         this.PP = 20;
     }
 
@@ -32,26 +37,33 @@ public class AirSlash extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

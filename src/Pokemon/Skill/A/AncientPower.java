@@ -4,16 +4,22 @@ import Pokemons.Type;
 import Skill.*;
 
 public class AncientPower  extends Skill{
-    private static final String name = "Ancient Power ";
-    private static final Type type = new Type("Rock");
-    private static final String ID = "none";
-    private static final int baseDamage = 60;
-    private static final String description = "Ancient Power deals damage and has a 10% chance of raising all the user's stats at once - Attack, Defense, Special Attack, Special Defense and Speed - by one stage each.\n" +
-            "Stats can be raised to a maximum of +6 stages each.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
 
     private int PP;
+
+
     public AncientPower() {
-        super();
+        this.name = "Ancient Power";
+        this.type = new Type("Rock");
+        this.ID = "none";
+        this.baseDamage = 60;
+        this.description = "Ancient Power deals damage and has a 10% chance of raising all the user's stats at once - Attack, Defense, Special Attack, Special Defense and Speed - by one stage each.\n" +
+                "Stats can be raised to a maximum of +6 stages each.";
         this.PP = 5;
     }
 
@@ -32,26 +38,33 @@ public class AncientPower  extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

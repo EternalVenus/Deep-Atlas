@@ -4,17 +4,21 @@ import Pokemons.Type;
 import Skill.*;
 
 public class Astonish extends Skill{
-    private static final String name = "Astonish";
-    private static final Type type = new Type("Ghost");
-    private static final String ID = "none";
-    private static final int baseDamage = 30;
-    private static final String description = "Astonish deals damage and has a 30% chance of causing the target to flinch (if the target has not yet moved).\n" +
-            "Pokémon with the ability Inner Focus or those behind a Substitute cannot be made to flinch.";
-
-
+    private   String name ;
+    private   Type type;
+    private   String ID;
+    private   int baseDamage ;
+    private   String description ;
     private int PP;
+
+
     public Astonish() {
-        super();
+        this.name = "Astonish";
+        this.type  = new Type("Ghost");
+        this.ID  = "none";
+        this.baseDamage = 30;
+        this.description = "Astonish deals damage and has a 30% chance of causing the target to flinch (if the target has not yet moved).\n" +
+                "Pokémon with the ability Inner Focus or those behind a Substitute cannot be made to flinch.";
         this.PP = 15;
     }
 
@@ -33,26 +37,33 @@ public class Astonish extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

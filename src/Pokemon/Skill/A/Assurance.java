@@ -4,15 +4,20 @@ import Pokemons.Type;
 import Skill.*;
 
 public class Assurance extends Skill{
-    private static final String name = "Assurance";
-    private static final Type type = new Type("Dark");
-    private static final String ID = "TM62";
-    private static final int baseDamage = 60;
-    private static final String description = "Assurance deals damage, and if the target has already taken damage in this turn its power doubles to 120.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description;
 
     private int PP;
+
     public Assurance() {
-        super();
+        this.name = "Assurance";
+        this.type = new Type("Dark");
+        this.ID = "TM62";
+        this.baseDamage = 60;
+        this.description  = "Assurance deals damage, and if the target has already taken damage in this turn its power doubles to 120.";
         this.PP = 10;
     }
 
@@ -31,26 +36,33 @@ public class Assurance extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

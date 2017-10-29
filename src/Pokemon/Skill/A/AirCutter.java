@@ -5,15 +5,20 @@ import Skill.*;
 
 
 public class AirCutter extends Skill{
-    private static final String name = "Air Cutter";
-    private static final Type type = new Type("Flying");
-    private static final String ID = "none";
-    private static final int baseDamage = 60;
-    private static final String description = "Air Cutter deals damage and has an increased critical hit ratio (1⁄8 instead of 1⁄16).\n";
-
+    private   String name ;
+    private   Type type ;
+    private   String ID;
+    private   int baseDamage ;
+    private   String description ;
     private int PP;
+
+
     public AirCutter() {
-        super();
+        this.name = "Air Cutter";
+        this.type = new Type("Flying");
+        this.ID  = "none";
+        this.baseDamage = 60;
+        this.description = "Air Cutter deals damage and has an increased critical hit ratio (1⁄8 instead of 1⁄16).\n";
         this.PP = 25;
     }
 
@@ -32,26 +37,33 @@ public class AirCutter extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

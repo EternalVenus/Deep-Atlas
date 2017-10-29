@@ -4,16 +4,21 @@ import Pokemons.Type;
 import Skill.*;
 
 public class AuroraBeam extends Skill{
-    private static final String name = "Aurora Beam";
-    private static final Type type = new Type("Ice");
-    private static final String ID = "none";
-    private static final int baseDamage = 65;
-    private static final String description = "Aurora Beam deals damage and has a 10% chance of lowering the target's Attack by one stage.\n" +
-            "Stats can be lowered to a minimum of -6 stages each.";
-
+    private  String name ;
+    private  Type type ;
+    private  String ID ;
+    private  int baseDamage ;
+    private  String description ;
     private int PP;
+
+
     public AuroraBeam() {
-        super();
+        this.name = "Aurora Beam";
+        this.type = new Type("Ice");
+        this.ID = "none";
+        this.baseDamage = 65;
+        this.description = "Aurora Beam deals damage and has a 10% chance of lowering the target's Attack by one stage.\n" +
+                "Stats can be lowered to a minimum of -6 stages each.";
         this.PP = 20;
     }
 
@@ -32,26 +37,33 @@ public class AuroraBeam extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

@@ -5,17 +5,21 @@ import Skill.*;
 
 
 public class AcidSpray  extends Skill{
-    private static final String name = "Acid Spray";
-    private static final Type type = new Type("Poison");
-    private static final String ID = "none";
-    private static final int baseDamage = 40;
-    private static final String description = "Acid Spray inflicts damage and lowers the target's Special Defense by two stages.\n" +
-            "Stats can be lowered to a minimum of -6 stages each.";
-
+    private  String name ;
+    private  Type type ;
+    private  String ID ;
+    private  int baseDamage ;
+    private  String description ;
     private int PP;
 
+
     public AcidSpray() {
-        super();
+        this.name = "Acid Spray";
+        this.type = new Type("Poison");
+        this.ID = "none";
+        this.baseDamage = 40;
+        this.description = "Acid Spray inflicts damage and lowers the target's Special Defense by two stages.\n" +
+                "Stats can be lowered to a minimum of -6 stages each.";
         this.PP = 20;
     }
 
@@ -34,26 +38,33 @@ public class AcidSpray  extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

@@ -5,17 +5,22 @@ import Skill.*;
 
 
 public class Acrobatics  extends Skill{
-    private static final String name = "Acrobatics";
-    private static final Type type = new Type("Fighting");
-    private static final String ID = "TM62";
-    private static final int baseDamage = 55;
-    private static final String description = "Acrobatics deals damage, however, if the user is not holding an item, its power doubles to 110.\n" +
-            "If the user is holding a Flying Gem, it is consumed before the Pokemon attacks, so it receives both boosts and increases Acrobatics' power to 165.\n" +
-            "Once the Gem is consumed Acrobatics' power for the rest of the battle will be 110.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
 
     private int PP;
+
     public Acrobatics() {
-        super();
+        this.name = "Acrobatics";
+        this.type = new Type("Fighting");
+        this.ID = "TM62";
+        this.baseDamage = 55;
+        this.description = "Acrobatics deals damage, however, if the user is not holding an item, its power doubles to 110.\n" +
+                "If the user is holding a Flying Gem, it is consumed before the Pokemon attacks, so it receives both boosts and increases Acrobatics' power to 165.\n" +
+                "Once the Gem is consumed Acrobatics' power for the rest of the battle will be 110.";
         this.PP = 15;
     }
 
@@ -34,26 +39,33 @@ public class Acrobatics  extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

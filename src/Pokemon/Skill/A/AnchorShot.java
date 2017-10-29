@@ -4,16 +4,20 @@ import Pokemons.Type;
 import Skill.*;
 
 public class AnchorShot extends Skill{
-    private static final String name = "Anchor Shot";
-    private static final Type type = new Type("Steel");
-    private static final String ID = "none";
-    private static final int baseDamage = 80;
-    private static final String description = "The user entangles the target with its anchor chain while attacking. The target becomes unable to flee.";
-
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
     private int PP;
 
+
     public AnchorShot() {
-        super();
+        this.name = "Anchor Shot";
+        this.type = new Type("Steel");
+        this.ID = "none";
+        this.baseDamage = 80;
+        this.description = "The user entangles the target with its anchor chain while attacking. The target becomes unable to flee.";
         this.PP = 20;
     }
 
@@ -32,26 +36,33 @@ public class AnchorShot extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

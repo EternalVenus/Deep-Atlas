@@ -4,17 +4,21 @@ import Pokemons.Type;
 import Skill.*;
 
 public class ArmThrust extends Skill{
-    private static final String name = "Arm Thrust";
-    private static final Type type = new Type("Fighting");
-    private static final String ID = "none";
-    private static final int baseDamage = 15;
-    private static final String description = "Arm Thrust hits 2-5 times per turn used. The probability of each interval is shown to the right, with the total power after each hit.";
-
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description;
     private int PP;
 
 
     public ArmThrust() {
-        super();
+        this.name = "Arm Thrust";
+        this.type = new Type("Fighting");
+        this.ID = "none";
+        this.baseDamage = 15;
+        this.description  = "Arm Thrust hits 2-5 times per turn used.\n" +
+                "The probability of each interval is shown to the right, with the total power after each hit.";
         this.PP = 20;
     }
 
@@ -33,26 +37,33 @@ public class ArmThrust extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

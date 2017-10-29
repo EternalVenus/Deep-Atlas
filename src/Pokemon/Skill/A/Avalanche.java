@@ -4,15 +4,20 @@ import Pokemons.Type;
 import Skill.*;
 
 public class Avalanche extends Skill{
-    private static final String name = "Avalanche";
-    private static final Type type = new Type("Ice");
-    private static final String ID = "none";
-    private static final int baseDamage = 60;
-    private static final String description = "Power doubles if user took damage first.";
-
+    private  String name ;
+    private  Type type ;
+    private  String ID ;
+    private  int baseDamage ;
+    private  String description;
     private int PP;
+
+
     public Avalanche() {
-        super();
+        this.name = "Avalanche";
+        this.type = new Type("Ice");
+        this.ID = "none";
+        this.baseDamage = 60;
+        this.description  = "Power doubles if user took damage first.";
         this.PP = 10;
     }
 
@@ -31,26 +36,33 @@ public class Avalanche extends Skill{
         return super.speedEffect(pokemon);
     }
 
+    @Override
+    public String getID() {
+        return this.ID;
+    }
+
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }

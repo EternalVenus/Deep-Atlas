@@ -4,20 +4,23 @@ import Pokemons.Type;
 import Skill.*;
 
 public class Absorb  extends Skill{
-    private static final String name = "Absorb";
-    private static final Type type = new Type("Grass");
-    private static final String ID = "none";
-    private static final int baseDamage = 20;
-
-    private static final String description = "Absorb deals damage and the user will recover 50% of the HP drained.\n" +
-            "If the user is holding a Big Root, the move instead recovers 65% of the damage dealt (30% more than normal). \n" +
-            "If used on a Pokemon with the ability Liquid Ooze, the user instead loses the HP it would have otherwise gained.";
-
+    private String name;
+    private Type type;
+    private String ID;
+    private int baseDamage;
+    private String description;
     private int PP;
 
     public Absorb() {
-        super();
         this.PP = 25;
+        this.name = "Absorb";
+        this.type = new Type("Grass");
+        this.ID = "none";
+        this.baseDamage = 20;
+        this.description = "Absorb deals damage and the user will recover 50% of the HP drained.\n" +
+                "If the user is holding a Big Root, the move instead recovers 65% of the damage dealt (30% more than normal). \n" +
+                "If used on a Pokemon with the ability Liquid Ooze, the user instead loses the HP it would have otherwise gained.";
+
     }
 
     @Override
@@ -36,31 +39,33 @@ public class Absorb  extends Skill{
     }
 
 
-    public static String getID() {
-        return ID;
+    @Override
+    public String getID() {
+        return this.ID;
     }
 
-
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-
+    @Override
     public Type getType() {
-        return type;
+        return this.type;
     }
 
-
+    @Override
     public int getBaseDamage() {
-        return baseDamage;
+        return this.baseDamage;
     }
 
-
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
+    @Override
     public int getPP() {
-        return PP;
+        return this.PP;
     }
 }
