@@ -20,15 +20,17 @@ public class ElectricEel extends Fish
         System.out.println(elver + "baby eels fish have been born!");
     }  
     
-    public void dive(){
-        System.out.println("The eel has submerged back into the depths")  
-        timeSeconds = TimeUnit.MILLISECONDS.toSeconds(timeMillis);
-        while(dive){
-            if (timeSeconds > 3600){
+    public void dive() {
+        long timeDifference;
+        System.out.println("The eel has submerged back into the depths");
+        timeSeconds = System.currentTimeMillis();
+        timeSeconds = TimeUnit.MILLISECONDS.toSeconds(timeSeconds); // convert to seconds
+        while (dive) {
+            timeDifference = System.currentTimeMillis();
+            timeDifference = TimeUnit.MILLISECONDS.toSeconds(timeDifference); // convert to seconds
+            if ((timeDifference - timeSeconds) > 3600) { // if one minute has passed
                 breath();
                 dive = false;
-            } else{
-                System.out.println("The eel dies")
             }
         }
     }
@@ -53,13 +55,21 @@ public class ElectricEel extends Fish
         }
     }
     
-    public void discharge{
-        System.out.println("The eel discharges electricity to ward of predators")
-        timeSeconds = TimeUnit.MILLISECONDS.toSeconds(timeMillis);
-        if (timeSeconds > 10){
-            System.out.println("The eel curls up to make its discharge more powerful")
+    public void discharge() {
+        System.out.println("The eel discharges electricity to ward of predators");
+        timeSeconds = System.currentTimeMillis();
+        timeSeconds = TimeUnit.MILLISECONDS.toSeconds(timeSeconds);
+        while (true) {
+            timeDifference = System.currentTimeMillis(); // compares current time to what was recorded before
+            timeDifference = TimeUnit.MILLISECONDS.toSeconds(timeDifference);
+            if (timeDifference - timeSeconds > 10) {         // if more than 10 seconds has passed
+                System.out.println("The eel curls up to make its discharge more powerful");
+                break;
+            }
         }
     }
+
+
     
         /*------------------------- Getters ---------------------------*/
     public String getName(){
