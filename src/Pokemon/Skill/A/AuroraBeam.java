@@ -11,8 +11,10 @@ public class AuroraBeam extends Skill{
     private static final String description = "Aurora Beam deals damage and has a 10% chance of lowering the target's Attack by one stage.\n" +
             "Stats can be lowered to a minimum of -6 stages each.";
 
+    private int PP;
     public AuroraBeam() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
+        super();
+        this.PP = 20;
     }
 
     @Override
@@ -30,28 +32,26 @@ public class AuroraBeam extends Skill{
         return super.speedEffect(pokemon);
     }
 
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    @Override
+
     public Type getType() {
-        return this.type;
+        return type;
     }
 
-    @Override
+
     public int getBaseDamage() {
-        return this.baseDamage;
+        return baseDamage;
     }
 
-    @Override
+
     public String getDescription() {
-        return this.description;
+        return description;
+    }
+
+    public int getPP() {
+        return PP;
     }
 }

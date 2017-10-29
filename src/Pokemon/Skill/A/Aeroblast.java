@@ -11,8 +11,10 @@ public class Aeroblast extends Skill{
     private static final int baseDamage = 100;
     private static final String description = "Aeroblast deals damage and has an increased critical hit ratio (1⁄8 instead of 1⁄16).";
 
+    private int PP;
     public Aeroblast() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 5);
+        super();
+        this.PP = 5;
     }
 
     @Override
@@ -30,28 +32,26 @@ public class Aeroblast extends Skill{
         return super.speedEffect(pokemon);
     }
 
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    @Override
+
     public Type getType() {
-        return this.type;
+        return type;
     }
 
-    @Override
+
     public int getBaseDamage() {
-        return this.baseDamage;
+        return baseDamage;
     }
 
-    @Override
+
     public String getDescription() {
-        return this.description;
+        return description;
+    }
+
+    public int getPP() {
+        return PP;
     }
 }

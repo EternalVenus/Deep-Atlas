@@ -11,8 +11,11 @@ public class Accelerock extends Skill{
     private static final String description = "Accelerock deals damage and has high priority.\n" +
             "Moves with a higher priority always go first, regardless of a Pokémon's speed. If two moves with the same priority are used, the faster Pokémon goes first as usual.";
 
+    private int PP;
+
     public Accelerock() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
+        super();
+        this.PP = 20;
     }
 
     @Override
@@ -30,28 +33,26 @@ public class Accelerock extends Skill{
         return super.speedEffect(pokemon);
     }
 
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    @Override
+
     public Type getType() {
-        return this.type;
+        return type;
     }
 
-    @Override
+
     public int getBaseDamage() {
-        return this.baseDamage;
+        return baseDamage;
     }
 
-    @Override
+
     public String getDescription() {
-        return this.description;
+        return description;
+    }
+
+    public int getPP() {
+        return PP;
     }
 }

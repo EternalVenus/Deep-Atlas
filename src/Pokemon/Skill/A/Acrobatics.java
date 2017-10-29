@@ -13,8 +13,10 @@ public class Acrobatics  extends Skill{
             "If the user is holding a Flying Gem, it is consumed before the Pokemon attacks, so it receives both boosts and increases Acrobatics' power to 165.\n" +
             "Once the Gem is consumed Acrobatics' power for the rest of the battle will be 110.";
 
+    private int PP;
     public Acrobatics() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+        super();
+        this.PP = 15;
     }
 
     @Override
@@ -32,28 +34,26 @@ public class Acrobatics  extends Skill{
         return super.speedEffect(pokemon);
     }
 
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    @Override
+
     public Type getType() {
-        return this.type;
+        return type;
     }
 
-    @Override
+
     public int getBaseDamage() {
-        return this.baseDamage;
+        return baseDamage;
     }
 
-    @Override
+
     public String getDescription() {
-        return this.description;
+        return description;
+    }
+
+    public int getPP() {
+        return PP;
     }
 }

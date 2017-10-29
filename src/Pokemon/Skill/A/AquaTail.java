@@ -10,8 +10,11 @@ public class AquaTail  extends Skill{
     private static final int baseDamage = 90;
     private static final String description = "Aqua Tail deals damage with no additional effect.";
 
+    private int PP;
+
     public AquaTail() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
+        super();
+        this.PP = 10;
     }
 
     @Override
@@ -29,28 +32,26 @@ public class AquaTail  extends Skill{
         return super.speedEffect(pokemon);
     }
 
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    @Override
+
     public Type getType() {
-        return this.type;
+        return type;
     }
 
-    @Override
+
     public int getBaseDamage() {
-        return this.baseDamage;
+        return baseDamage;
     }
 
-    @Override
+
     public String getDescription() {
-        return this.description;
+        return description;
+    }
+
+    public int getPP() {
+        return PP;
     }
 }

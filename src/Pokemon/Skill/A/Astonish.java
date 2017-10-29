@@ -11,8 +11,11 @@ public class Astonish extends Skill{
     private static final String description = "Astonish deals damage and has a 30% chance of causing the target to flinch (if the target has not yet moved).\n" +
             "Pokémon with the ability Inner Focus or those behind a Substitute cannot be made to flinch.";
 
+
+    private int PP;
     public Astonish() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+        super();
+        this.PP = 15;
     }
 
     @Override
@@ -30,28 +33,26 @@ public class Astonish extends Skill{
         return super.speedEffect(pokemon);
     }
 
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    @Override
+
     public Type getType() {
-        return this.type;
+        return type;
     }
 
-    @Override
+
     public int getBaseDamage() {
-        return this.baseDamage;
+        return baseDamage;
     }
 
-    @Override
+
     public String getDescription() {
-        return this.description;
+        return description;
+    }
+
+    public int getPP() {
+        return PP;
     }
 }

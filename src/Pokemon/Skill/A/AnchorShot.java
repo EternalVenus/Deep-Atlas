@@ -10,8 +10,11 @@ public class AnchorShot extends Skill{
     private static final int baseDamage = 80;
     private static final String description = "The user entangles the target with its anchor chain while attacking. The target becomes unable to flee.";
 
+    private int PP;
+
     public AnchorShot() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
+        super();
+        this.PP = 20;
     }
 
     @Override
@@ -29,28 +32,26 @@ public class AnchorShot extends Skill{
         return super.speedEffect(pokemon);
     }
 
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    @Override
+
     public Type getType() {
-        return this.type;
+        return type;
     }
 
-    @Override
+
     public int getBaseDamage() {
-        return this.baseDamage;
+        return baseDamage;
     }
 
-    @Override
+
     public String getDescription() {
-        return this.description;
+        return description;
+    }
+
+    public int getPP() {
+        return PP;
     }
 }

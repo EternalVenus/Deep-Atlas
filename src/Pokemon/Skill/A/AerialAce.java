@@ -12,8 +12,11 @@ public class AerialAce extends Skill{
     private static final String description = "Aerial Ace deals damage and ignores changes to the Accuracy and Evasion stats.\n"+
                             "However, it will not hit Pokémon during the invulnerable stage of Bounce, Dig, Dive, Fly, Shadow Force or Sky Drop.";
 
+    private int PP;
+
     public AerialAce() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
+        super();
+        this.PP = 20;
     }
 
     @Override
@@ -31,28 +34,26 @@ public class AerialAce extends Skill{
         return super.speedEffect(pokemon);
     }
 
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    @Override
+
     public Type getType() {
-        return this.type;
+        return type;
     }
 
-    @Override
+
     public int getBaseDamage() {
-        return this.baseDamage;
+        return baseDamage;
     }
 
-    @Override
+
     public String getDescription() {
-        return this.description;
+        return description;
+    }
+
+    public int getPP() {
+        return PP;
     }
 }

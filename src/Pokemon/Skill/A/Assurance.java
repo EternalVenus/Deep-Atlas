@@ -10,8 +10,10 @@ public class Assurance extends Skill{
     private static final int baseDamage = 60;
     private static final String description = "Assurance deals damage, and if the target has already taken damage in this turn its power doubles to 120.";
 
+    private int PP;
     public Assurance() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
+        super();
+        this.PP = 10;
     }
 
     @Override
@@ -29,28 +31,26 @@ public class Assurance extends Skill{
         return super.speedEffect(pokemon);
     }
 
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    @Override
+
     public Type getType() {
-        return this.type;
+        return type;
     }
 
-    @Override
+
     public int getBaseDamage() {
-        return this.baseDamage;
+        return baseDamage;
     }
 
-    @Override
+
     public String getDescription() {
-        return this.description;
+        return description;
+    }
+
+    public int getPP() {
+        return PP;
     }
 }

@@ -11,8 +11,10 @@ public class AncientPower  extends Skill{
     private static final String description = "Ancient Power deals damage and has a 10% chance of raising all the user's stats at once - Attack, Defense, Special Attack, Special Defense and Speed - by one stage each.\n" +
             "Stats can be raised to a maximum of +6 stages each.";
 
+    private int PP;
     public AncientPower() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 5);
+        super();
+        this.PP = 5;
     }
 
     @Override
@@ -30,28 +32,26 @@ public class AncientPower  extends Skill{
         return super.speedEffect(pokemon);
     }
 
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    @Override
+
     public Type getType() {
-        return this.type;
+        return type;
     }
 
-    @Override
+
     public int getBaseDamage() {
-        return this.baseDamage;
+        return baseDamage;
     }
 
-    @Override
+
     public String getDescription() {
-        return this.description;
+        return description;
+    }
+
+    public int getPP() {
+        return PP;
     }
 }
