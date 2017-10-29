@@ -1,6 +1,7 @@
-package Pokemon.Skill;
+package Skill.D;
 
-import Pokemon.Pokemon.Type;
+import Pokemons.Type;
+import Skill.*;
 
 public class DoomDesire extends Skill{
     private static final String name = "Doom Desire";
@@ -11,7 +12,7 @@ public class DoomDesire extends Skill{
             "If the opponent switched Pokémon in the meantime, the damage dealt will depend on the Special Defense of the Pokémon the move hits, not the Pokémon it was originally targeted at.";
 
     public DoomDesire() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 5);
     }
 
     @Override
