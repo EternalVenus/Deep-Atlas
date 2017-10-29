@@ -12,7 +12,7 @@ public class Confusion extends Skill{
             "Pokémon with the ability Own Tempo or those behind a Substitute cannot be confused.";
 
     public Confusion() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 25);
     }
 
     @Override

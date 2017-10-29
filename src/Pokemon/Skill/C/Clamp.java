@@ -12,7 +12,7 @@ public class Clamp  extends Skill {
             "If the user holds a Grip Claw then it is always 5 turns.";
 
     public Clamp() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
     }
 
 

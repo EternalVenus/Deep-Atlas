@@ -11,7 +11,7 @@ public class Catastropika extends Skill {
     private static final String description = "Catastropika is a Z-Move exclusive to Pikachu. It can only be used with Volt Tackle.";
 
     public Catastropika() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 1);
     }
 
 

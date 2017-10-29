@@ -12,7 +12,7 @@ public class ChargeBeam extends Skill {
             "Stats can be raised to a maximum of +6 stages each.";
 
     public ChargeBeam() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description ,10);
     }
 
 

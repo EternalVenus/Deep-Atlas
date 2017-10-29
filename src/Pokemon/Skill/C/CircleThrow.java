@@ -11,7 +11,7 @@ public class CircleThrow  extends Skill {
     private static final String description = "In battles, the opponent switches. In the wild, the Pokémon runs.";
 
     public CircleThrow() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
     }
 
 

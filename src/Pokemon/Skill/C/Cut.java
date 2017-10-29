@@ -1,3 +1,5 @@
+package Skill.C;
+
 import Pokemons.Type;
 import Skill.*;
 
@@ -9,7 +11,7 @@ public class Cut extends Skill{
     private static final String description = "Cut deals damage with no additional effect in battle.\n";
 
     public Cut() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
     }
 
     @Override

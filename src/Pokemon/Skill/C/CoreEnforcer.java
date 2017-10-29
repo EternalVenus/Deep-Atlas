@@ -11,7 +11,7 @@ public class CoreEnforcer extends Skill{
     private static final String description = "Scorches a 'Z' pattern on the ground.";
 
     public CoreEnforcer() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
     }
 
     @Override

@@ -12,7 +12,7 @@ public class ChipAway extends Skill {
             "Note this does not include the effects of screens like Reflect as they are different to regular stat boosts.";
 
     public ChipAway() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
     }
 
 

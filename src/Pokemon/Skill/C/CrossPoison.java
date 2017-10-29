@@ -13,7 +13,7 @@ public class CrossPoison extends Skill{
             "Poison or Steel type Pokémon, those with the ability Immunity or those behind a Substitute cannot be poisoned.";
 
     public CrossPoison() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
     }
 
     @Override

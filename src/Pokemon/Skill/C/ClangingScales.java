@@ -12,7 +12,7 @@ public class ClangingScales  extends Skill {
             "Stats can be lowered to a minimum of -6 stages each.";
 
     public ClangingScales() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 5);
     }
 
 

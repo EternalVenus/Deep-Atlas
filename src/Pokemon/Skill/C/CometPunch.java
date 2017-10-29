@@ -12,7 +12,7 @@ public class CometPunch extends Skill{
             "The probability of each interval is shown to the right, with the total power after each hit.";
 
     public CometPunch() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
     }
 
     @Override

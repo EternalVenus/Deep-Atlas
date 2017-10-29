@@ -11,7 +11,7 @@ public class CrossChop extends Skill{
     private static final String description = "Cross Chop deals damage and has an increased critical hit ratio (1⁄8 instead of 1⁄16).";
 
     public CrossChop() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description,5);
     }
 
     @Override

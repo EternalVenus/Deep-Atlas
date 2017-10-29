@@ -11,7 +11,7 @@ public class ClearSmog  extends Skill{
     private static final String description = "Removes all of the target's stat changes.";
 
     public ClearSmog() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
     }
 
     @Override

@@ -14,7 +14,7 @@ public class Covet extends Skill{
             "All held items in wi-fi/linked battles (including Battle Tower/Subway/Maison) are returned to their respective owners at the end of a battle.";
 
     public Covet() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 25);
     }
 
     @Override

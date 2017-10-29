@@ -14,7 +14,7 @@ public class Chatter extends Skill {
             "Pokémon with the ability Own Tempo or those behind a Substitute cannot be confused.";
 
     public Chatter() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
     }
 
 
