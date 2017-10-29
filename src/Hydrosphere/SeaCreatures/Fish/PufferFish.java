@@ -1,4 +1,4 @@
-package Hydrosphere.SeaCreatures.Fish;
+import Hydrosphere.SeaCreatures.Fish.Fish;
 
 public class PufferFish extends Fish {  // extend means it inherits from SeaCreature class
     private final static int EYE = 2;    
