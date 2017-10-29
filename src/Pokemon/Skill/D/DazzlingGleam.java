@@ -1,6 +1,7 @@
-package Pokemon.Skill;
+package Skill.D;
 
-import Pokemon.Pokemon.Type;
+import Pokemons.Type;
+import Skill.*;
 
 public class DazzlingGleam extends Skill{
     private static final String name = "Dazzling Gleam ";
@@ -10,7 +11,7 @@ public class DazzlingGleam extends Skill{
     private static final String description = "Dazzling Gleam deals damage and hits all adjacent opponents in double/triple battles.\n";
 
     public DazzlingGleam() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
     }
 
     @Override
