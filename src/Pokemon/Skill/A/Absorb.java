@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package Skill.A;
 
 import Pokemons.Type;
@@ -6,6 +5,7 @@ import Skill.*;
 
 public class Absorb  extends Skill{
     private static final String name = "Absorb";
+    private int pp = 25;
     private static final Type type = new Type("Grass");
     private static final String ID = "none";
     private static final int baseDamage = 20;
@@ -14,7 +14,7 @@ public class Absorb  extends Skill{
             "If used on a Pokemon with the ability Liquid Ooze, the user instead loses the HP it would have otherwise gained.";
 
     public Absorb() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super(this.ID, this.name, this.type, this.baseDamage, this.description, pp);
     }
 
     @Override

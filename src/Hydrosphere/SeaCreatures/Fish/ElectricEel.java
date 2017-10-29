@@ -1,4 +1,4 @@
-package Hydrosphere.SeaCreatures.Fish;
+import Hydrosphere.SeaCreatures.Fish.Fish;
 
 public class ElectricEel extends Fish
     private final static int EYE = 2;
