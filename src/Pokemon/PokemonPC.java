@@ -1,15 +1,18 @@
 package Pokemon;
 
+import Pokemon.Pokemon;
+
 import java.util.ArrayList;
 
 public class PokemonPC {
-    private ArrayList<Box> box = new ArrayList<>(30);
-    static final int MAX_BOX = 30;
+    private ArrayList<Box> box = new ArrayList<>();
+    private static final int MAX_BOX = 30;
     private PokemonBag bag;
-    private Box boxes = new Box();
+
 
     public PokemonPC(){
         for (int i = 0; i < MAX_BOX; i++){
+            Box boxes = new Box();
             box.add(boxes);
         }
     }
@@ -47,10 +50,21 @@ public class PokemonPC {
         }
     }
 
+    public boolean releasePokemon(Pokemon pokemon, int boxNum){
+        if (foundPokemon(pokemon, boxNum)){
+            this.box.get(boxNum).remove(pokemon);
+            System.out.println(pokemon.getName() + " has been released");
+            System.out.println("Bye bye " + pokemon.getName());
+            return true;
+        }else{
+            System.out.println(pokemon.getName() + " not found.");
+            return false;
+        }
+    }
 
     public void showPokemon(int boxNum){
         System.out.println("--------------------------------------");
-        System.out.println("Listing Pokemon in box " + boxNum);
+        System.out.println("Listing IPokemon in box " + boxNum);
         if (boxNum >= 0 && boxNum < 31){
             this.box.get(boxNum).showPokemon();
         }else{

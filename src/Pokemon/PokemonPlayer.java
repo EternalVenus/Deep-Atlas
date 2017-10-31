@@ -28,7 +28,7 @@ public class PokemonPlayer {
     public void printInstruction(){
         System.out.println("What is your next move?");
         System.out.println("1 : Attack \n" +
-                            "2 : Switch Skill.Pokemons.Skill.Pokemons.Pokemon \n" +
+                            "2 : Switch Pokemons.Pokemons.IPokemon \n" +
                             "3 : Use item \n" +
                             "4 : Run");
 

@@ -1,4 +1,5 @@
 package Pokemon;
+import Pokemon.Pokemon;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -35,7 +36,7 @@ public class PokemonBag {
     public boolean removePokemon(Pokemon pokemon, PokemonPC pc, int boxNum){
         if (this.pokemon.contains(pokemon)){
             if (this.pokemon.size() == 1){
-                System.out.println("Only one Pokemon in the bag. Can not remove this pokemon from the bag. ");
+                System.out.println("Only one IPokemon in the bag. Can not remove this pokemon from the bag. ");
                 return false;
             }else{
                 this.pc.storePokemon(pokemon, boxNum);
