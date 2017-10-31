@@ -1,7 +1,8 @@
-package Skill.A;
+package Pokemon.Skill.A;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 
 public class Acid extends Skill{
@@ -11,6 +12,7 @@ public class Acid extends Skill{
     private  int baseDamage ;
     private  String description ;
     private int PP;
+    private String category;
 
 
     public Acid() {
@@ -21,6 +23,7 @@ public class Acid extends Skill{
         this.description = "Acid deals damage and has a 10% chance of lowering the target's Special Defense by one stage.\n" +
                 "Stats can be lowered to a minimum of -6 stages each.";
         this.PP = 30;
+        this.category = "Special";
     }
 
     @Override
@@ -66,5 +69,9 @@ public class Acid extends Skill{
     @Override
     public int getPP() {
         return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

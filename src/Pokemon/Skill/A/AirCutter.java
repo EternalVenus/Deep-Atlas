@@ -1,8 +1,8 @@
-package Skill.A;
+package Pokemon.Skill.A;
 
-import Pokemons.Type;
-import Skill.*;
-
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class AirCutter extends Skill{
     private   String name ;
@@ -11,6 +11,7 @@ public class AirCutter extends Skill{
     private   int baseDamage ;
     private   String description ;
     private int PP;
+    private String category;
 
 
     public AirCutter() {
@@ -20,6 +21,7 @@ public class AirCutter extends Skill{
         this.baseDamage = 60;
         this.description = "Air Cutter deals damage and has an increased critical hit ratio (1⁄8 instead of 1⁄16).\n";
         this.PP = 25;
+        this.category = "Special";
     }
 
     @Override
@@ -65,5 +67,9 @@ public class AirCutter extends Skill{
     @Override
     public int getPP() {
         return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

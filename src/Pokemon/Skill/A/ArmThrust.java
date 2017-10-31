@@ -1,7 +1,8 @@
-package Skill.A;
+package Pokemon.Skill.A;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class ArmThrust extends Skill{
     private   String name ;
@@ -10,7 +11,7 @@ public class ArmThrust extends Skill{
     private   int baseDamage ;
     private   String description;
     private int PP;
-
+    private String category;
 
     public ArmThrust() {
         this.name = "Arm Thrust";
@@ -20,6 +21,7 @@ public class ArmThrust extends Skill{
         this.description  = "Arm Thrust hits 2-5 times per turn used.\n" +
                 "The probability of each interval is shown to the right, with the total power after each hit.";
         this.PP = 20;
+        this.category = "Physical";
     }
 
     @Override
@@ -65,5 +67,9 @@ public class ArmThrust extends Skill{
     @Override
     public int getPP() {
         return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

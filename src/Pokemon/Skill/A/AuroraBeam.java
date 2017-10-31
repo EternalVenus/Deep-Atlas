@@ -1,7 +1,8 @@
-package Skill.A;
+package Pokemon.Skill.A;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class AuroraBeam extends Skill{
     private  String name ;
@@ -10,7 +11,7 @@ public class AuroraBeam extends Skill{
     private  int baseDamage ;
     private  String description ;
     private int PP;
-
+    private String category;
 
     public AuroraBeam() {
         this.name = "Aurora Beam";
@@ -20,6 +21,7 @@ public class AuroraBeam extends Skill{
         this.description = "Aurora Beam deals damage and has a 10% chance of lowering the target's Attack by one stage.\n" +
                 "Stats can be lowered to a minimum of -6 stages each.";
         this.PP = 20;
+        this.category = "Special";
     }
 
     @Override
@@ -65,5 +67,9 @@ public class AuroraBeam extends Skill{
     @Override
     public int getPP() {
         return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

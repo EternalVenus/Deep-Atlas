@@ -1,8 +1,8 @@
-package Skill.A;
+package Pokemon.Skill.A;
 
-import Pokemons.Type;
-import Skill.*;
-
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class AerialAce extends Skill{
     private   String name ;
@@ -11,6 +11,7 @@ public class AerialAce extends Skill{
     private   int baseDamage ;
     private   String description ;
     private   int PP;
+    private String category;
 
 
 
@@ -22,6 +23,7 @@ public class AerialAce extends Skill{
         this.description = "Aerial Ace deals damage and ignores changes to the Accuracy and Evasion stats.\n"+
                 "However, it will not hit Pokémon during the invulnerable stage of Bounce, Dig, Dive, Fly, Shadow Force or Sky Drop.";
         this.PP = 20;
+        this.category = "Physical";
     }
 
     @Override
@@ -67,5 +69,9 @@ public class AerialAce extends Skill{
     @Override
     public int getPP() {
         return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

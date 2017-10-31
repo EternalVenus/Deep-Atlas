@@ -1,7 +1,8 @@
-package Skill.A;
+package Pokemon.Skill.A;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 
 public class Aeroblast extends Skill{
@@ -11,6 +12,7 @@ public class Aeroblast extends Skill{
     private   int baseDamage ;
     private   String description ;
     private int PP;
+    private String category;
 
     public Aeroblast() {
         this.name  = "Aeroblast";
@@ -19,6 +21,7 @@ public class Aeroblast extends Skill{
         this.baseDamage = 100;
         this.description = "Aeroblast deals damage and has an increased critical hit ratio (1⁄8 instead of 1⁄16).";
         this.PP = 5;
+        this.category = "Special";
     }
 
     @Override
@@ -64,5 +67,9 @@ public class Aeroblast extends Skill{
     @Override
     public int getPP() {
         return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

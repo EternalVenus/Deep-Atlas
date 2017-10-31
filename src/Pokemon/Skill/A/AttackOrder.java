@@ -1,7 +1,8 @@
-package Skill.A;
+package Pokemon.Skill.A;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class AttackOrder  extends Skill{
     private  String name ;
@@ -10,6 +11,7 @@ public class AttackOrder  extends Skill{
     private  int baseDamage ;
     private  String description ;
     private int PP;
+    private String category;
 
     public AttackOrder() {
         this.name = "Attack Order";
@@ -18,6 +20,7 @@ public class AttackOrder  extends Skill{
         this.baseDamage = 90;
         this.description = "Attack Order deals damage and has an increased critical hit ratio (1⁄8 instead of 1⁄16).";
         this.PP = 15;
+        this.category = "Physical";
     }
 
     @Override
@@ -63,5 +66,9 @@ public class AttackOrder  extends Skill{
     @Override
     public int getPP() {
         return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

@@ -1,7 +1,8 @@
-package Skill.A;
+package Pokemon.Skill.A;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Astonish extends Skill{
     private   String name ;
@@ -10,7 +11,7 @@ public class Astonish extends Skill{
     private   int baseDamage ;
     private   String description ;
     private int PP;
-
+    private String category;
 
     public Astonish() {
         this.name = "Astonish";
@@ -20,6 +21,7 @@ public class Astonish extends Skill{
         this.description = "Astonish deals damage and has a 30% chance of causing the target to flinch (if the target has not yet moved).\n" +
                 "Pokémon with the ability Inner Focus or those behind a Substitute cannot be made to flinch.";
         this.PP = 15;
+        this.category = "Physical";
     }
 
     @Override
@@ -65,5 +67,9 @@ public class Astonish extends Skill{
     @Override
     public int getPP() {
         return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

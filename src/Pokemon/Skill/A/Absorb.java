@@ -1,7 +1,8 @@
-package Skill.A;
+package Pokemon.Skill.A;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Absorb  extends Skill{
     private String name;
@@ -10,8 +11,10 @@ public class Absorb  extends Skill{
     private int baseDamage;
     private String description;
     private int PP;
+    private String category;
 
     public Absorb() {
+        super();
         this.PP = 25;
         this.name = "Absorb";
         this.type = new Type("Grass");
@@ -19,9 +22,10 @@ public class Absorb  extends Skill{
         this.baseDamage = 20;
         this.description = "Absorb deals damage and the user will recover 50% of the HP drained.\n" +
                 "If the user is holding a Big Root, the move instead recovers 65% of the damage dealt (30% more than normal). \n" +
-                "If used on a Pokemon with the ability Liquid Ooze, the user instead loses the HP it would have otherwise gained.";
-
+                "If used on a IPokemon with the ability Liquid Ooze, the user instead loses the HP it would have otherwise gained.";
+        this.category = "Special";
     }
+
 
     @Override
     public int effect(Pokemon pokemon) {
@@ -67,5 +71,9 @@ public class Absorb  extends Skill{
     @Override
     public int getPP() {
         return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

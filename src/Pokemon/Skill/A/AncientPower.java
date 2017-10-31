@@ -1,7 +1,8 @@
-package Skill.A;
+package Pokemon.Skill.A;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class AncientPower  extends Skill{
     private   String name ;
@@ -9,9 +10,8 @@ public class AncientPower  extends Skill{
     private   String ID ;
     private   int baseDamage ;
     private   String description ;
-
     private int PP;
-
+    private String category;
 
     public AncientPower() {
         this.name = "Ancient Power";
@@ -21,6 +21,7 @@ public class AncientPower  extends Skill{
         this.description = "Ancient Power deals damage and has a 10% chance of raising all the user's stats at once - Attack, Defense, Special Attack, Special Defense and Speed - by one stage each.\n" +
                 "Stats can be raised to a maximum of +6 stages each.";
         this.PP = 5;
+        this.category = "Special";
     }
 
     @Override
@@ -66,5 +67,9 @@ public class AncientPower  extends Skill{
     @Override
     public int getPP() {
         return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

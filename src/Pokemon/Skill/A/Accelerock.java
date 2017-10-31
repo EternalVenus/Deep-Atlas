@@ -1,7 +1,8 @@
-package Skill.A;
+package Pokemon.Skill.A;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Accelerock extends Skill{
     private String name ;
@@ -10,6 +11,7 @@ public class Accelerock extends Skill{
     private int baseDamage ;
     private String description;
     private int PP;
+    private String category;
 
     public Accelerock() {
         this.name = "Accelerock";
@@ -20,6 +22,7 @@ public class Accelerock extends Skill{
                 "Moves with a higher priority always go first, regardless of a Pokémon's speed.\n" +
                 "If two moves with the same priority are used, the faster Pokémon goes first as usual.";
         this.PP = 20;
+        this.category = "Physical";
     }
 
     @Override
@@ -65,5 +68,9 @@ public class Accelerock extends Skill{
     @Override
     public int getPP() {
         return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

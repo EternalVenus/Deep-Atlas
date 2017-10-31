@@ -1,7 +1,8 @@
-package Skill.A;
+package Pokemon.Skill.A;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Assurance extends Skill{
     private   String name ;
@@ -9,8 +10,8 @@ public class Assurance extends Skill{
     private   String ID ;
     private   int baseDamage ;
     private   String description;
-
     private int PP;
+    private String category;
 
     public Assurance() {
         this.name = "Assurance";
@@ -19,6 +20,7 @@ public class Assurance extends Skill{
         this.baseDamage = 60;
         this.description  = "Assurance deals damage, and if the target has already taken damage in this turn its power doubles to 120.";
         this.PP = 10;
+        this.category = "Physical";
     }
 
     @Override
@@ -64,5 +66,9 @@ public class Assurance extends Skill{
     @Override
     public int getPP() {
         return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

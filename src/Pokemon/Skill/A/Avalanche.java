@@ -1,7 +1,8 @@
-package Skill.A;
+package Pokemon.Skill.A;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Avalanche extends Skill{
     private  String name ;
@@ -10,7 +11,7 @@ public class Avalanche extends Skill{
     private  int baseDamage ;
     private  String description;
     private int PP;
-
+    private String category;
 
     public Avalanche() {
         this.name = "Avalanche";
@@ -19,6 +20,7 @@ public class Avalanche extends Skill{
         this.baseDamage = 60;
         this.description  = "Power doubles if user took damage first.";
         this.PP = 10;
+        this.category = "Physical";
     }
 
     @Override
@@ -64,5 +66,9 @@ public class Avalanche extends Skill{
     @Override
     public int getPP() {
         return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
