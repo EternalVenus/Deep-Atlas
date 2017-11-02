@@ -1,18 +1,28 @@
-package Skill.C;
+package Pokemon.Skill.C;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Crunch extends Skill{
-    private static final String name = "Crunch";
-    private static final Type type = new Type("Dark");
-    private static final String ID = "none";
-    private static final int baseDamage = 80;
-    private static final String description = "Crunch deals damage and has a 20% chance of lowering the target's Defense by one stage.\n" +
-            "Stats can be lowered to a minimum of -6 stages each.";
+    private   String name;
+    private   Type type;
+    private   String ID ;
+    private   int baseDamage;
+    private   String description ;
+    private String category;
+    private int PP;
 
     public Crunch() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description ,15);
+        super();
+        this.name = "Crunch";
+        this.type = new Type("Dark");
+        this.ID = "none";
+        this.baseDamage   = 80;
+        this.description  = "Crunch deals damage and has a 20% chance of lowering the target's Defense by one stage.\n" +
+                "Stats can be lowered to a minimum of -6 stages each.\n";
+        this.PP = 15;
+        this.category = "Physical";
     }
 
     @Override
@@ -29,6 +39,7 @@ public class Crunch extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +64,14 @@ public class Crunch extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
