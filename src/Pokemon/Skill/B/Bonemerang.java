@@ -1,17 +1,26 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Bonemerang extends Skill{
-    private static final String name = "Bonemerang";
-    private static final Type type = new Type("Ground");
-    private static final String ID = "none";
-    private static final int baseDamage = 50;
-    private static final String description = "Bonemerang deals damage and will strike twice (with 50 base power each time). Each strike of Bonemerang is treated like a separate attack.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
+    private int PP;
+    private String category;
 
     public Bonemerang() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
+        this.name = "Bonemerang";
+        this.type = new Type("Ground");
+        this.ID = "none";
+        this.baseDamage = 50;
+        this.description = "Bonemerang deals damage and will strike twice (with 50 base power each time). Each strike of Bonemerang is treated like a separate attack.";
+        this.PP = 10;
+        this.category = "Physical";
     }
 
     @Override
@@ -28,6 +37,7 @@ public class Bonemerang extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -52,5 +62,14 @@ public class Bonemerang extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
