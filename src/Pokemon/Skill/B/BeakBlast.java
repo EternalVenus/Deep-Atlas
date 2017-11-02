@@ -1,18 +1,27 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class BeakBlast extends Skill{
-    private static final String name = "Beak Blast";
-    private static final Type type = new Type("Flying");
-    private static final String ID = "none";
-    private static final int baseDamage = 100;
-    private static final String description = "The user first heats up its beak, and then it attacks the target.\n"+
-                        "Making direct contact with the Pokémon while it’s heating up its beak results in a burn.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage;
+    private  String description ;
+    private int PP;
+    private String category;
 
     public BeakBlast() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+        this.name = "Beak Blast";
+        this.type = new Type("Flying");
+        this.ID = "none";
+        this.baseDamage  = 100;
+        this.description = "The user first heats up its beak, and then it attacks the target.\n"+
+                "Making direct contact with the Pokémon while it’s heating up its beak results in a burn.";
+        this.PP = 15;
+        this.category = "Physical";
     }
 
     @Override
@@ -29,6 +38,7 @@ public class BeakBlast extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +63,14 @@ public class BeakBlast extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

@@ -1,18 +1,27 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Barrage extends Skill{
-    private static final String name = "Barrage";
-    private static final Type type = new Type("Normal");
-    private static final String ID = "none";
-    private static final int baseDamage = 15;
-    private static final String description = "Barrage hits 2-5 times per turn used.\n" +
-            "The probability of each interval is shown to the right, with the total power after each hit.";
+    private  String name ;
+    private  Type type ;
+    private  String ID ;
+    private  int baseDamage ;
+    private  String description ;
+    private int PP;
+    private String category;
 
     public Barrage() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
+        this.name = "Barrage";
+        this.type = new Type("Normal");
+        this.ID = "none";
+        this.baseDamage = 15;
+        this.description = "Barrage hits 2-5 times per turn used.\n" +
+                "The probability of each interval is shown to the right, with the total power after each hit.";
+        this.PP = 20;
+        this.category = "Physical";
     }
 
     @Override
@@ -29,6 +38,7 @@ public class Barrage extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +63,14 @@ public class Barrage extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
