@@ -1,17 +1,26 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Bubble extends Skill{
-    private static final String name = "Bubble";
-    private static final Type type = new Type("Water");
-    private static final String ID = "none";
-    private static final int baseDamage = 40;
-    private static final String description = "Bubble deals damage and has a 10% chance of lowering the target's Speed by one stage.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description;
+    private int PP;
+    private String category;
 
     public Bubble() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 30);
+        this.name = "Bubble";
+        this.type = new Type("Water");
+        this.ID = "none";
+        this.baseDamage = 40;
+        this.description = "Bubble deals damage and has a 10% chance of lowering the target's Speed by one stage. \n";
+        this.PP = 30;
+        this.category = "Special";
     }
 
     @Override
@@ -28,6 +37,7 @@ public class Bubble extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -52,5 +62,14 @@ public class Bubble extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
