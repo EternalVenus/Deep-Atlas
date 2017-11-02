@@ -1,17 +1,27 @@
-package Skill.C;
+package Pokemon.Skill.C;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Crabhammer extends Skill{
-    private static final String name = "Crabhammer";
-    private static final Type type = new Type("Water");
-    private static final String ID = "none";
-    private static final int baseDamage = 100;
-    private static final String description = "Crabhammer deals damage and has an increased critical hit ratio (1⁄8 instead of 1⁄16).\n";
+    private  String name ;
+    private  Type type;
+    private  String ID;
+    private  int baseDamage ;
+    private  String description ;
+    private String category;
+    private int PP;
 
     public Crabhammer() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
+        super();
+        this.name = "Crabhammer";
+        this.type   = new Type("Water");
+        this.ID = "none";
+        this.baseDamage = 100;
+        this.description  = "Crabhammer deals damage and has an increased critical hit ratio (1⁄8 instead of 1⁄16).\n";
+        this.PP = 10;
+        this.category = "Physical";
     }
 
     @Override
@@ -28,6 +38,7 @@ public class Crabhammer extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -52,5 +63,14 @@ public class Crabhammer extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
