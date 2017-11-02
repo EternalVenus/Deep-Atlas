@@ -1,18 +1,27 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Belch extends Skill{
-    private static final String name = "Belch";
-    private static final Type type = new Type("Poison");
-    private static final String ID = "none";
-    private static final int baseDamage = 120;
-    private static final String description = "Belch deals damage, but only works if the user has previously consumed a Berry during the battle.\n" +
-            "Manually feeding a Berry from the bag does not count.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
+    private int PP;
+    private String category;
 
     public Belch() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
+        this.name = "Belch";
+        this.type = new Type("Poison");
+        this.ID = "none";
+        this.baseDamage = 120;
+        this.description = "Belch deals damage, but only works if the user has previously consumed a Berry during the battle.\n" +
+                "Manually feeding a Berry from the bag does not count.";
+        this.PP = 10;
+        this.category = "Special";
     }
 
     @Override
@@ -29,6 +38,7 @@ public class Belch extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +63,14 @@ public class Belch extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
