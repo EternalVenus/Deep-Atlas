@@ -8,7 +8,12 @@ public class PufferFish extends Fish {  // extend means it inherits from SeaCrea
     private boolean blend; // can it camoflauge? 
     private int fry; // baby fish
 
-
+    public PufferFish(String name){
+        this.name = name;
+        this.toxinType = new tetrodotoxin;
+        this.size = SIZE + (int) (Math.floor(Math.random()*12));
+    }
+    
     public void reproduce(){
         fry += 1 + (Math.floor((Math.random() * 3)));
         System.out.println(fry + "baby puffer fish have been born!");
@@ -38,6 +43,7 @@ public class PufferFish extends Fish {  // extend means it inherits from SeaCrea
     public void poisionSting() {
         System.out.println("Having the ability to produce tetrodotoxin, this last resort will kill any predator that atempts to eat it.");
     }
+
 
     public void camoflauge() {
         if (blend) {

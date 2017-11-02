@@ -9,6 +9,7 @@ public class ClownFish extends Fish {  // extend means it inherits from Fish cla
 
     public ClownFish(String name){
         this.name = name;
+        this.toxinType = new neurotoxin;
         this.size = SIZE + (Math.floor((Math.random() * 4)));
 
     public void reproduce(){
