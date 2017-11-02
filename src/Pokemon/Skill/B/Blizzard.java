@@ -1,20 +1,29 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Blizzard extends Skill{
-    private static final String name = "Blizzard";
-    private static final Type type = new Type("Ice");
-    private static final String ID = "TM14";
-    private static final int baseDamage = 110;
-    private static final String description = "Blizzard deals damage and has a 10% chance of freezing the target.\n" +
-            "It will hit both opponents in a double battle or adjacent opponents in a triple battle.\n" +
-            "Ice type Pokémon, those with the ability Magma Armor or those behind a Substitute cannot be frozen.\n" +
-            "During a hailstorm, Blizzard has 100% accuracy.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description;
+    private int PP;
+    private String category;
 
     public Blizzard() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 5);
+        this.name = "Blizzard";
+        this.type = new Type("Ice");
+        this.ID = "TM14";
+        this.baseDamage = 110;
+        this.description = "Blizzard deals damage and has a 10% chance of freezing the target.\n" +
+                "It will hit both opponents in a double battle or adjacent opponents in a triple battle.\n" +
+                "Ice type Pokémon, those with the ability Magma Armor or those behind a Substitute cannot be frozen.\n" +
+                "During a hailstorm, Blizzard has 100% accuracy.";
+        this.PP = 5;
+        this.category = "Special";
     }
 
     @Override
@@ -31,6 +40,7 @@ public class Blizzard extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -55,5 +65,14 @@ public class Blizzard extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

@@ -1,19 +1,28 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class BlazeKick extends Skill{
-    private static final String name = "Blaze Kick";
-    private static final Type type = new Type("Fire");
-    private static final String ID = "none";
-    private static final int baseDamage = 85;
-    private static final String description = "Blaze Kick deals damage and has a 10% chance of burning the target. It also has an increased critical hit ratio (1⁄8 instead of 1⁄16).\n" +
-            "Fire type Pokémon, those with the ability Water Veil or those behind a Substitute cannot be burned.\n" +
-            "Pokémon with the abilities Battle Armor or Shell Armor are protected against critical hits.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
+    private int PP;
+    private String category;
 
     public BlazeKick() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
+        this.name = "Blaze Kick";
+        this.type = new Type("Fire");
+        this.ID = "none";
+        this.baseDamage = 85;
+        this.description = "Blaze Kick deals damage and has a 10% chance of burning the target. It also has an increased critical hit ratio (1⁄8 instead of 1⁄16).\n" +
+                "Fire type Pokémon, those with the ability Water Veil or those behind a Substitute cannot be burned.\n" +
+                "Pokémon with the abilities Battle Armor or Shell Armor are protected against critical hits.";
+        this.PP = 10;
+        this.category = "Physical";
     }
 
     @Override
@@ -30,6 +39,7 @@ public class BlazeKick extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -54,5 +64,14 @@ public class BlazeKick extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
