@@ -1,18 +1,28 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class BulletPunch extends Skill{
-    private static final String name = "Bullet Punch";
-    private static final Type type = new Type("Steel");
-    private static final String ID = "none";
-    private static final int baseDamage = 40;
-    private static final String description = "Bullet Punch deals damage and has a priority of +1.\n" +
-            "Moves with a higher priority always go first, regardless of a Pokémon's speed. If two moves with the same priority are used, the faster Pokémon goes first as usual.";
+    private   String name ;
+    private  Type type ;
+    private  String ID ;
+    private  int baseDamage;
+    private  String description ;
+    private int PP;
+    private String category;
 
     public BulletPunch() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 30);
+        this.name = "Bullet Punch";
+        this.type = new Type("Steel");
+        this.ID = "none";
+        this.baseDamage  = 40;
+        this.description = "Bullet Punch deals damage and has a priority of +1.\n" +
+                "Moves with a higher priority always go first, regardless of a Pokémon's speed.\n"+
+                "If two moves with the same priority are used, the faster Pokémon goes first as usual.\n";
+        this.PP = 30;
+        this.category = "Physical";
     }
 
     @Override
@@ -53,5 +63,14 @@ public class BulletPunch extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

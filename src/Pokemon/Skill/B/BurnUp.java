@@ -1,17 +1,27 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class BurnUp extends Skill{
-    private static final String name = "Burn Up";
-    private static final Type type = new Type("Fire");
-    private static final String ID = "none";
-    private static final int baseDamage = 130;
-    private static final String description = "To inflict massive damage, the user burns itself out. After using this move, the user will no longer be Fire type.";
+    private   String name ;
+    private   Type type ;
+    private   String ID;
+    private   int baseDamage;
+    private   String description;
+    private int PP;
+    private String category;
 
     public BurnUp() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 5);
+        this.name= "Burn Up";
+        this.type = new Type("Fire");
+        this.ID = "none";
+        this.baseDamage = 130;
+        this.description = "To inflict massive damage, the user burns itself out.\n"+
+                "After using this move, the user will no longer be Fire type.\n";
+        this.PP = 5;
+        this.category = "Special";
     }
 
     @Override
@@ -28,6 +38,7 @@ public class BurnUp extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -52,5 +63,14 @@ public class BurnUp extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
