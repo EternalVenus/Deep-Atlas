@@ -1,18 +1,28 @@
-package Skill.C;
+package Pokemon.Skill.C;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Confusion extends Skill{
-    private static final String name = "Confusion";
-    private static final Type type = new Type("Psychic");
-    private static final String ID = "none";
-    private static final int baseDamage = 50;
-    private static final String description = "Confusion deals damage and has a 10% chance of confusing the target.\n" +
-            "Pokémon with the ability Own Tempo or those behind a Substitute cannot be confused.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
+    private String category;
+    private int PP;
 
     public Confusion() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 25);
+        super();
+        this.name = "Confusion";
+        this.type  = new Type("Psychic");
+        this.ID = "none";
+        this.baseDamage  = 50;
+        this.description  = "Confusion deals damage and has a 10% chance of confusing the target.\n" +
+                "Pokémon with the ability Own Tempo or those behind a Substitute cannot be confused.\n";
+        this.PP = 25;
+        this.category = "Special";
     }
 
     @Override
@@ -29,6 +39,7 @@ public class Confusion extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +64,14 @@ public class Confusion extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
