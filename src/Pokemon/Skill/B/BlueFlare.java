@@ -1,18 +1,27 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class BlueFlare extends Skill{
-    private static final String name = "Blue Flare";
-    private static final Type type = new Type("Fire");
-    private static final String ID = "none";
-    private static final int baseDamage = 130;
-    private static final String description = "Blue Flare deals damage and has a 20% chance of burning the target.\n" +
-            "Fire type Pokémon, those with the ability Water Veil or those behind a Substitute cannot be burned.";
+    private   String name;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
+    private int PP;
+    private String category;
 
     public BlueFlare() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 5);
+        this.name  = "Blue Flare";
+        this.type = new Type("Fire");
+        this.ID = "none";
+        this.baseDamage = 130;
+        this.description = "Blue Flare deals damage and has a 20% chance of burning the target.\n" +
+                "Fire type Pokémon, those with the ability Water Veil or those behind a Substitute cannot be burned.";
+        this.PP = 5;
+        this.category = "Special";
     }
 
     @Override
@@ -29,6 +38,7 @@ public class BlueFlare extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +63,14 @@ public class BlueFlare extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

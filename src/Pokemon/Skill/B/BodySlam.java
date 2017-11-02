@@ -1,18 +1,27 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class BodySlam extends Skill{
-    private static final String name = "Body Slam";
-    private static final Type type = new Type("Normal");
-    private static final String ID = "TM08";
-    private static final int baseDamage = 85;
-    private static final String description = "Body Slam deals damage and has a 30% chance of paralyzing the target.\n" +
-            "Electric type Pokémon, those with the ability Limber or those behind a Substitute cannot be paralyzed.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
+    private int PP;
+    private String category;
 
     public BodySlam() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+        this.name = "Body Slam";
+        this.type = new Type("Normal");
+        this.ID = "TM08";
+        this.baseDamage = 85;
+        this.description = "Body Slam deals damage and has a 30% chance of paralyzing the target.\n" +
+                "Electric type Pokémon, those with the ability Limber or those behind a Substitute cannot be paralyzed.";
+        this.PP = 15;
+        this.category = "Physical";
     }
 
     @Override
@@ -29,6 +38,7 @@ public class BodySlam extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +63,14 @@ public class BodySlam extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
