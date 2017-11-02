@@ -1,17 +1,27 @@
-package Skill.C;
+package Pokemon.Skill.C;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class ClearSmog  extends Skill{
-    private static final String name = "Clear Smog";
-    private static final Type type = new Type("Poison");
-    private static final String ID = "none";
-    private static final int baseDamage = 50;
-    private static final String description = "Removes all of the target's stat changes.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
+    private String category;
+    private int PP;
 
     public ClearSmog() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+        super();
+        this.name = "Clear Smog";
+        this.type  = new Type("Poison");
+        this.ID = "none";
+        this.baseDamage  = 50;
+        this.description = "Removes all of the target's stat changes.\n";
+        this.PP = 15;
+        this.category = "Special";
     }
 
     @Override
@@ -28,6 +38,7 @@ public class ClearSmog  extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -52,5 +63,14 @@ public class ClearSmog  extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
