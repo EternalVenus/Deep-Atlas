@@ -1,6 +1,6 @@
 package Hydrosphere.SeaCreatures.Fish;
 
-public abstract class Fish{ // abstract - cannot be instantiated. Only purpose is for other classes to extend
+public class Fish{                      // defn: abstract class cannot be instantiated. Only purpose is for other classes to extend
     public void gills(){
         System.out.println(" Gills are important organs for a fish, as they are responsible for respiration. ");
     }
@@ -26,7 +26,19 @@ public abstract class Fish{ // abstract - cannot be instantiated. Only purpose i
     }
     
     public void swim(){
-        System.out.println("Swims around")
+        System.out.println("Swims around");
+    }
+    
+    public void attack(){
+        System.out.println("The animal attacks");
+    }
+    
+    //composition 
+    protected Toxin toxinType;
+    
+    public void toxin(){
+        toxinType.toxin();
+        
     }
      
 
