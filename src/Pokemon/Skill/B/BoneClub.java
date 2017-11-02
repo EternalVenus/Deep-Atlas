@@ -1,18 +1,27 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class BoneClub extends Skill{
-    private static final String name = "Bone Club";
-    private static final Type type = new Type("Ground");
-    private static final String ID = "none";
-    private static final int baseDamage = 65;
-    private static final String description = "Bone Club deals damage and has a 10% chance of causing the target to flinch (if the target has not yet moved).\n" +
-            "Pokémon with the ability Inner Focus or those behind a Substitute cannot be made to flinch.";
+    private  String name ;
+    private  Type type ;
+    private  String ID ;
+    private  int baseDamage ;
+    private  String description ;
+    private int PP;
+    private String category;
 
     public BoneClub() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
+        this.name = "Bone Club";
+        this.type = new Type("Ground");
+        this.ID = "none";
+        this.baseDamage = 65;
+        this.description = "Bone Club deals damage and has a 10% chance of causing the target to flinch (if the target has not yet moved).\n" +
+                "Pokémon with the ability Inner Focus or those behind a Substitute cannot be made to flinch.";
+        this.PP = 20;
+        this.category = "Physical";
     }
 
     @Override
@@ -29,6 +38,7 @@ public class BoneClub extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +63,14 @@ public class BoneClub extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

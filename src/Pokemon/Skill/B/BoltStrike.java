@@ -1,18 +1,27 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class BoltStrike extends Skill{
-    private static final String name = "Bolt Strike";
-    private static final Type type = new Type("Electric");
-    private static final String ID = "none";
-    private static final int baseDamage = 130;
-    private static final String description = "Bolt Strike deals damage and has a 20% chance of paralyzing the target.\n" +
-            "Electric type Pokémon, those with the ability Limber or those behind a Substitute cannot be paralyzed.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
+    private int PP;
+    private String category;
 
     public BoltStrike() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 5);
+        this.name = "Bolt Strike";
+        this.type = new Type("Electric");
+        this.ID = "none";
+        this.baseDamage = 130;
+        this.description = "Bolt Strike deals damage and has a 20% chance of paralyzing the target.\n" +
+                "Electric type Pokémon, those with the ability Limber or those behind a Substitute cannot be paralyzed.";
+        this.PP = 5;
+        this.category = "Physical";
     }
 
     @Override
@@ -29,6 +38,7 @@ public class BoltStrike extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +63,14 @@ public class BoltStrike extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
