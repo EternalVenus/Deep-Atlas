@@ -1,19 +1,28 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class BugBite extends Skill{
-    private static final String name = "Bug Bite";
-    private static final Type type = new Type("Bug");
-    private static final String ID = "none";
-    private static final int baseDamage = 60;
-    private static final String description = "Bug Bite deals damage, and if the target is holding a Berry, the user eats it and gains its effect.\n" +
-            "For example, if the target is holding a Sitrus Berry the user will recover 1⁄4 of the its HP.\n" +
-            "Bug Bite cannot steal a berry from a Substitute.";
+    private   String name ;
+    private   Type type ;
+    private   String ID;
+    private   int baseDamage;
+    private   String description;
+    private int PP;
+    private String category;
 
     public BugBite() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
+        this.name = "Bug Bite";
+        this.type = new Type("Bug");
+        this.ID  = "none";
+        this.baseDamage  = 60;
+        this.description  = "Bug Bite deals damage, and if the target is holding a Berry, the user eats it and gains its effect.\n" +
+                "For example, if the target is holding a Sitrus Berry the user will recover 1⁄4 of the its HP.\n" +
+                "Bug Bite cannot steal a berry from a Substitute. \n";
+        this.PP = 20;
+        this.category = "Physical";
     }
 
     @Override
@@ -30,6 +39,7 @@ public class BugBite extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -54,5 +64,14 @@ public class BugBite extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
