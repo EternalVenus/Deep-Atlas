@@ -1,18 +1,27 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Bulldoze extends Skill{
-    private static final String name = "Bulldoze";
-    private static final Type type = new Type("Ground");
-    private static final String ID = "TM78";
-    private static final int baseDamage = 60;
-    private static final String description = "Bulldoze deals damage and lowers the target's Speed by one stage.\n" +
-            "Stats can be lowered to a minimum of -6 stages each.";
+    private  String name;
+    private  Type type;
+    private  String ID ;
+    private  int baseDamage ;
+    private  String description;
+    private int PP;
+    private String category;
 
     public Bulldoze() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
+        this.name  = "Bulldoze";
+        this.type  = new Type("Ground");
+        this.ID = "TM78";
+        this.baseDamage = 60;
+        this.description  = "Bulldoze deals damage and lowers the target's Speed by one stage.\n" +
+                "Stats can be lowered to a minimum of -6 stages each.";
+        this.PP = 20;
+        this.category = "Physical";
     }
 
     @Override
@@ -53,5 +62,14 @@ public class Bulldoze extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
