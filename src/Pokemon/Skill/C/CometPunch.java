@@ -1,18 +1,28 @@
-package Skill.C;
+package Pokemon.Skill.C;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class CometPunch extends Skill{
-    private static final String name = "Comet Punch";
-    private static final Type type = new Type("Normal");
-    private static final String ID = "none";
-    private static final int baseDamage = 18;
-    private static final String description = "Comet Punch hits 2-5 times per turn used.\n"+ "" +
-            "The probability of each interval is shown to the right, with the total power after each hit.";
+    private   String name;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
+    private String category;
+    private int PP;
 
     public CometPunch() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+        super();
+        this.name  = "Comet Punch";
+        this.type = new Type("Normal");
+        this.ID = "none";
+        this.baseDamage  = 18;
+        this.description  = "Comet Punch hits 2-5 times per turn used.\n"+ "" +
+                "The probability of each interval is shown to the right, with the total power after each hit.\n";
+        this.PP = 15;
+        this.category = "Physical";
     }
 
     @Override
@@ -29,6 +39,7 @@ public class CometPunch extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +64,14 @@ public class CometPunch extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
