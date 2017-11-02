@@ -1,18 +1,28 @@
-package Skill.C;
+package Pokemon.Skill.C;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class ChipAway extends Skill {
-    private static final String name = "Chip Away";
-    private static final Type type = new Type("Normal");
-    private static final String ID = "none";
-    private static final int baseDamage = 70;
-    private static final String description = "Chip Away deals damage, but ignores changes to the target's stats (i.e. Defense and Evasion in this case).\n" +
-            "Note this does not include the effects of screens like Reflect as they are different to regular stat boosts.";
+    private   String name ;
+    private   Type type;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
+    private String category;
+    private int PP;
 
     public ChipAway() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
+        super();
+        this.name= "Chip Away";
+        this.type   = new Type("Normal");
+        this.ID = "none";
+        this.baseDamage = 70;
+        this.description  = "Chip Away deals damage, but ignores changes to the target's stats (i.e. Defense and Evasion in this case).\n" +
+                "Note this does not include the effects of screens like Reflect as they are different to regular stat boosts.\n";
+        this.PP = 20;
+        this.category = "Physical";
     }
 
 
@@ -30,6 +40,7 @@ public class ChipAway extends Skill {
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -54,5 +65,14 @@ public class ChipAway extends Skill {
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

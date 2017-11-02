@@ -1,20 +1,30 @@
-package Skill.C;
+package Pokemon.Skill.C;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Chatter extends Skill {
-    private static final String name = "Chatter";
-    private static final Type type = new Type("Flying");
-    private static final String ID = "none";
-    private static final int baseDamage = 65;
-    private static final String description = "Chatter deals damage and causes the target to become confused.\n" +
-            "Confused Pokémon have a 50% chance of hurting themselves each turn, for 1-4 turns.\n"
-            +  "The damage received is as if the Pokémon attacks itself with a typeless 40 base power Physical attack.\n" +
-            "Pokémon with the ability Own Tempo or those behind a Substitute cannot be confused.";
+    private   String name ;
+    private   Type type ;
+    private   String ID;
+    private   int baseDamage ;
+    private   String description;
+    private String category;
+    private int PP;
 
     public Chatter() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
+        super();
+        this.name = "Chatter";
+        this.type  = new Type("Flying");
+        this.ID = "none";
+        this.baseDamage  = 65;
+        this.description  = "Chatter deals damage and causes the target to become confused.\n" +
+                "Confused Pokémon have a 50% chance of hurting themselves each turn, for 1-4 turns.\n"
+                +  "The damage received is as if the Pokémon attacks itself with a typeless 40 base power Physical attack.\n" +
+                "Pokémon with the ability Own Tempo or those behind a Substitute cannot be confused.\n";
+        this.PP = 20;
+        this.category = "Special";
     }
 
 
@@ -32,6 +42,7 @@ public class Chatter extends Skill {
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -56,5 +67,14 @@ public class Chatter extends Skill {
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
