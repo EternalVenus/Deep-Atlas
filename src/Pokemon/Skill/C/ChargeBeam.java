@@ -1,18 +1,28 @@
-package Skill.C;
+package Pokemon.Skill.C;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class ChargeBeam extends Skill {
-    private static final String name = "Charge Beam";
-    private static final Type type = new Type("Electric");
-    private static final String ID = "TM57";
-    private static final int baseDamage = 50;
-    private static final String description = "Charge Beam deals damage and has a 70% chance of raising the user's Special Attack by one stage.\n" +
-            "Stats can be raised to a maximum of +6 stages each.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage;
+    private   String description;
+    private int PP;
+    private String category;
 
     public ChargeBeam() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description ,10);
+        super();
+        this.name = "Charge Beam";
+        this.type  = new Type("Electric");
+        this.ID = "TM57";
+        this.baseDamage  = 50;
+        this.description  = "Charge Beam deals damage and has a 70% chance of raising the user's Special Attack by one stage.\n" +
+                "Stats can be raised to a maximum of +6 stages each.\n";
+        this.PP = 10;
+        this.category = "Special";
     }
 
 
@@ -30,6 +40,7 @@ public class ChargeBeam extends Skill {
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -54,5 +65,14 @@ public class ChargeBeam extends Skill {
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
