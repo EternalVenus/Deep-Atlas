@@ -1,17 +1,27 @@
-package Skill.C;
+package Pokemon.Skill.C;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Cut extends Skill{
-    private static final String name = "Cut";
-    private static final Type type = new Type("Normal");
-    private static final String ID = "HM01";
-    private static final int baseDamage = 50;
-    private static final String description = "Cut deals damage with no additional effect in battle.\n";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage;
+    private   String description ;
+    private String category;
+    private int PP;
 
     public Cut() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+        super();
+        this.name= "Cut";
+        this.type= new Type("Normal");
+        this.ID = "HM01";
+        this.baseDamage = 50;
+        this.description  = "Cut deals damage with no additional effect in battle.\n";
+        this.PP = 30;
+        this.category = "Physical";
     }
 
     @Override
@@ -28,6 +38,7 @@ public class Cut extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -52,5 +63,14 @@ public class Cut extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
