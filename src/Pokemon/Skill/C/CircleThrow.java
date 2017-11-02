@@ -1,17 +1,27 @@
-package Skill.C;
+package Pokemon.Skill.C;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class CircleThrow  extends Skill {
-    private static final String name = "Circle Throw";
-    private static final Type type = new Type("Fighting");
-    private static final String ID = "none";
-    private static final int baseDamage = 60;
-    private static final String description = "In battles, the opponent switches. In the wild, the Pokémon runs.";
+    private   String name;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
+    private String category;
+    private int PP;
 
     public CircleThrow() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
+        super();
+        this.name  = "Circle Throw";
+        this.type  = new Type("Fighting");
+        this.ID = "none";
+        this.baseDamage  = 60;
+        this.description = "In battles, the opponent switches. In the wild, the Pokémon runs.\n";
+        this.PP = 10;
+        this.category = "Physical";
     }
 
 
@@ -29,6 +39,7 @@ public class CircleThrow  extends Skill {
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +64,14 @@ public class CircleThrow  extends Skill {
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
