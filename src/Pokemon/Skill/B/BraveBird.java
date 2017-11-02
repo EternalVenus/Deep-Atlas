@@ -1,17 +1,27 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
+
 
 public class BraveBird extends Skill{
-    private static final String name = "Brave Bird";
-    private static final Type type = new Type("Flying");
-    private static final String ID = "none";
-    private static final int baseDamage = 120;
-    private static final String description = "Brave Bird deals damage, but the user receives 1⁄3 of the damage it inflicted in recoil.\n In other words, if the attack does 90 HP damage to the opponent, the user will lose 30 HP.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
+    private int PP;
+    private String category;
 
     public BraveBird() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+        this.name = "Brave Bird";
+        this.type = new Type("Flying");
+        this.ID = "none";
+        this.baseDamage = 120;
+        this.description = "Brave Bird deals damage, but the user receives 1⁄3 of the damage it inflicted in recoil.\n"+
+                "In other words, if the attack does 90 HP damage to the opponent, the user will lose 30 HP.";
+        this.PP = 15;
     }
 
     @Override
@@ -28,6 +38,7 @@ public class BraveBird extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -52,5 +63,14 @@ public class BraveBird extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

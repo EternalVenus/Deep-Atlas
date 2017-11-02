@@ -1,17 +1,26 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Brine extends Skill{
-    private static final String name = "Brine";
-    private static final Type type = new Type("Water");
-    private static final String ID = "TM65";
-    private static final int baseDamage = 110;
-    private static final String description = "Power doubles if opponent's HP is less than 50%.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage;
+    private   String description;
+    private int PP;
+    private String category;
 
     public Brine() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
+        this.name = "Brine";
+        this.type = new Type("Water");
+        this.ID = "TM65";
+        this.baseDamage  = 110;
+        this.description  = "Power doubles if opponent's HP is less than 50%.";
+        this.PP = 10;
+        this.category = "Special";
     }
 
     @Override
@@ -28,6 +37,7 @@ public class Brine extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -52,5 +62,14 @@ public class Brine extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
