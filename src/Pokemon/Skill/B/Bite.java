@@ -1,18 +1,27 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Bite extends Skill{
-    private static final String name = "Bite";
-    private static final Type type = new Type("Dark");
-    private static final String ID = "none";
-    private static final int baseDamage = 60;
-    private static final String description = "Bite deals damage and has a 30% chance of causing the target to flinch (if the target has not yet moved).\n" +
-            "Pokémon with the ability Inner Focus or those behind a Substitute cannot be made to flinch.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description;
+    private int PP;
+    private String category;
 
     public Bite() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 25);
+        this.name = "Bite";
+        this.type = new Type("Dark");
+        this.ID = "none";
+        this.baseDamage = 60;
+        this.description  = "Bite deals damage and has a 30% chance of causing the target to flinch (if the target has not yet moved).\n" +
+                "Pokémon with the ability Inner Focus or those behind a Substitute cannot be made to flinch.";
+        this.PP = 25;
+        this.category = "Physical";
     }
 
     @Override
@@ -29,6 +38,7 @@ public class Bite extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +63,14 @@ public class Bite extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }

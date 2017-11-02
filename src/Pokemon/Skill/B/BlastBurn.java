@@ -1,17 +1,26 @@
-package Skill.B;
+package Pokemon.Skill.B;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Pokemons.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class BlastBurn extends Skill{
-    private static final String name = "Blast Burn";
-    private static final Type type = new Type("Fire");
-    private static final String ID = "none";
-    private static final int baseDamage = 150;
-    private static final String description = "User must recharge next turn.\n";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage ;
+    private   String description ;
+    private int PP;
+    private String category;
 
     public BlastBurn() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 5);
+        this.name = "Blast Burn";
+        this.type = new Type("Fire");
+        this.ID = "none";
+        this.baseDamage = 150;
+        this.description = "User must recharge next turn.\n";
+        this.PP = 5;
+        this.category = "Special";
     }
 
     @Override
@@ -28,6 +37,7 @@ public class BlastBurn extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -52,5 +62,14 @@ public class BlastBurn extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
