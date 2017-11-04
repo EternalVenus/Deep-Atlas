@@ -28,6 +28,7 @@ public class PokemonBag {
             System.out.println(pokemon.getName() + " is added to the bag. There is a total of " + this.pokemon.size() + " pokemon in the bag.");
             return true;
         }else{
+            // SHOULD NOT GET HERE
             System.out.println("The bag is full. Only 6 pokemon is allowed in the bag.");
             return false;
         }
@@ -36,7 +37,7 @@ public class PokemonBag {
     public boolean removePokemon(Pokemon pokemon, PokemonPC pc, int boxNum){
         if (this.pokemon.contains(pokemon)){
             if (this.pokemon.size() == 1){
-                System.out.println("Only one IPokemon in the bag. Can not remove this pokemon from the bag. ");
+                System.out.println("Only one Pokemon in the bag. Can not remove this pokemon from the bag. ");
                 return false;
             }else{
                 this.pc.storePokemon(pokemon, boxNum);
@@ -59,7 +60,4 @@ public class PokemonBag {
         System.out.println("---------------------------------------");
     }
 
-    public int bagSize(){
-        return pokemon.size();
-    }
 }
