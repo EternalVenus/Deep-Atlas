@@ -1,70 +1,70 @@
-<<<<<<< HEAD
-package Pokemons;
+package Pokemon.Pokemons;
 
-import Skill.*;
-import Skill.F.FusionBolt;
-import Skill.T.TailWhip;
-import Skill.T.Thunder;
-import Skill.V.VoltTackle;
+import Pokemon.Pokemon;
+import Pokemon.Skill.*;
+import Pokemon.Skill.A.AquaJet;
+import Pokemon.Skill.A.ArmThrust;
+import Pokemon.Skill.A.Astonish;
+import Pokemon.Skill.A.AuraSphere;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Pichu extends Pokemon {
-    private String nickName;
-    private Skill skill1 = new VoltTackle();
-    private Skill skill2 = new Thunder();
-    private Skill skill3 = new FusionBolt();
-    private Skill skill4 = new TailWhip();
+    private Skill skill1 = new Astonish();
+    private Skill skill2 = new ArmThrust();
+    private Skill skill3 = new AuraSphere();
+    private Skill skill4 = new AquaJet();
     private Type type;
-
+    private Type type2;
+    private ArrayList<Skill> skillSet = new ArrayList<>();
 
     public Pichu(String nickName) {
-        super("Pichu");
-        this.nickName = nickName;
+        super("Pichu", nickName, "172", 20, 40, 15, 35, 35, 60);
         this.type = new Type("Electric");
+        this.type2 = null;
+        this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
     }
 
     public Pichu() {
-        super("Pichu");
-        this.nickName = null;
+        super("Pichu",  null, "172", 20, 40, 15, 35, 35, 60);
         this.type = new Type("Electric");
+        this.type2 = null;
+        this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
     }
 
-    private Pokemon attack(Pokemon enemy, Skill skill){
-        System.out.println(super.getName() + " uses " + skill.getName() + " on " + enemy.getName());
-        int damage = super.getAtk() + skill.getBaseDamage() - enemy.getDefense();
-        enemy.damageTaken(damage);
+    public Pokemon attack(Pokemon enemy, Skill skill){
+        //Calculating damage dealt
+//        int damage = ((2 * this.getLevel())/ 5  + 2) * skill.getBaseDamage() *
+        System.out.println(this.getName() + " uses " + skill.getName() + " on " + enemy.getName());
+//        int damage = this.getAtk() + skill.getBaseDamage() - enemy.getDefense();
+//        enemy.damageTaken(damage);
         return enemy;
     }
 
-    public String getNickName() {
-        if (this.nickName != null){
-            return nickName;
-        }else{
-            return super.getName();
-        }
-
-    }
-
-
+    @Override
     public void showSkills(){
+        System.out.println("===Skill Set===");
         System.out.println("1 :" + skill1.getName() + "\n" +
                 "2 :" + skill2.getName() + "\n" +
                 "3 :" + skill3.getName() + "\n" +
                 "4 :" + skill4.getName());
+        System.out.println("===============");
     }
 
-
+    @Override
     public Skill getSkill1() {
         return skill1;
     }
-
+    @Override
     public Skill getSkill2() {
         return skill2;
     }
-
+    @Override
     public Skill getSkill3() {
         return skill3;
     }
-
+    @Override
     public Skill getSkill4() {
         return skill4;
     }
@@ -75,81 +75,3 @@ public class Pichu extends Pokemon {
 
 
 }
-=======
-package Pokemons;
-
-import Skill.*;
-import Skill.F.FusionBolt;
-import Skill.T.TailWhip;
-import Skill.T.Thunder;
-import Skill.V.VoltTackle;
-
-public class Pichu extends Pokemon {
-    private String nickName;
-    private Skill skill1 = new VoltTackle();
-    private Skill skill2 = new Thunder();
-    private Skill skill3 = new FusionBolt();
-    private Skill skill4 = new TailWhip();
-    private Type type;
-
-
-    public Pichu(String nickName) {
-        super("Pichu");
-        this.nickName = nickName;
-        this.type = new Type("Electric");
-    }
-
-    public Pichu() {
-        super("Pichu");
-        this.nickName = null;
-        this.type = new Type("Electric");
-    }
-
-    private Pokemon attack(Pokemon enemy, Skill skill){
-        System.out.println(super.getName() + " uses " + skill.getName() + " on " + enemy.getName());
-        int damage = super.getAtk() + skill.getBaseDamage() - enemy.getDefense();
-        enemy.damageTaken(damage);
-        return enemy;
-    }
-
-    public String getNickName() {
-        if (this.nickName != null){
-            return nickName;
-        }else{
-            return super.getName();
-        }
-
-    }
-
-
-    public void showSkills(){
-        System.out.println("1 :" + skill1.getName() + "\n" +
-                "2 :" + skill2.getName() + "\n" +
-                "3 :" + skill3.getName() + "\n" +
-                "4 :" + skill4.getName());
-    }
-
-
-    public Skill getSkill1() {
-        return skill1;
-    }
-
-    public Skill getSkill2() {
-        return skill2;
-    }
-
-    public Skill getSkill3() {
-        return skill3;
-    }
-
-    public Skill getSkill4() {
-        return skill4;
-    }
-
-    public Type getType() {
-        return type;
-    }
-
-
-}
->>>>>>> 90693d60b0828c75d3160ae52fc74f69c760d587
