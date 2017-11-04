@@ -11,7 +11,7 @@ import Pokemon.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Pichu extends Pokemon {
+public class Pichu extends Pokemon implements IPokemon{
     private Skill skill1 = new Astonish();
     private Skill skill2 = new ArmThrust();
     private Skill skill3 = new AuraSphere();
@@ -21,12 +21,16 @@ public class Pichu extends Pokemon {
     private ArrayList<Skill> skillSet = new ArrayList<>();
 
     public Pichu(String nickName) {
+        // setting the name and the base stats
         super("Pichu", nickName, "172", 20, 40, 15, 35, 35, 60);
         this.type = new Type("Electric");
+        // there is no second type. setting it to null
         this.type2 = null;
+        // moving the 4 skills into an arraylist
         this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
     }
 
+    // an overload constructor without a nickname
     public Pichu() {
         super("Pichu",  null, "172", 20, 40, 15, 35, 35, 60);
         this.type = new Type("Electric");
@@ -34,11 +38,12 @@ public class Pichu extends Pokemon {
         this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
     }
 
+    // STILL NEED TO FIND THE MODIFIER VALUE
     public Pokemon attack(Pokemon enemy, Skill skill){
         int damage;
         //Calculating damage dealt
         // still need to calculate modifier
-        if (skill.getCategory() == "Physical"){
+        if (skill.getCategory().equals("Physical")){
             damage = ((((2 * this.getLevel())/ 5  + 2) * skill.getBaseDamage() *
                     this.getAtk()/ enemy.getDefense())/ 50 + 2);
         }else{
@@ -52,6 +57,7 @@ public class Pichu extends Pokemon {
         return enemy;
     }
 
+    // Listing the skill set for Pokemon Battle
     @Override
     public void showSkills(){
         System.out.println("===Skill Set===");
@@ -62,6 +68,7 @@ public class Pichu extends Pokemon {
         System.out.println("===============");
     }
 
+    // Gets one of the 4 skills
     @Override
     public Skill getSkill1() {
         return skill1;
