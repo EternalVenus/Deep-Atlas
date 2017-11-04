@@ -6,6 +6,7 @@ import Pokemon.Skill.A.AquaJet;
 import Pokemon.Skill.A.ArmThrust;
 import Pokemon.Skill.A.Astonish;
 import Pokemon.Skill.A.AuraSphere;
+import Pokemon.Type;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,9 +35,18 @@ public class Pichu extends Pokemon {
     }
 
     public Pokemon attack(Pokemon enemy, Skill skill){
+        int damage;
         //Calculating damage dealt
-//        int damage = ((2 * this.getLevel())/ 5  + 2) * skill.getBaseDamage() *
-        System.out.println(this.getName() + " uses " + skill.getName() + " on " + enemy.getName());
+        // still need to calculate modifier
+        if (skill.getCategory() == "Physical"){
+            damage = ((((2 * this.getLevel())/ 5  + 2) * skill.getBaseDamage() *
+                    this.getAtk()/ enemy.getDefense())/ 50 + 2);
+        }else{
+            damage = ((((2 * this.getLevel())/ 5  + 2) * skill.getBaseDamage() *
+                    this.getSpAtk()/ enemy.getSpDefense())/ 50 + 2);
+        }
+//
+//        enemy.
 //        int damage = this.getAtk() + skill.getBaseDamage() - enemy.getDefense();
 //        enemy.damageTaken(damage);
         return enemy;

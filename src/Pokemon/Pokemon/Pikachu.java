@@ -6,6 +6,7 @@ import Pokemon.Skill.A.AncientPower;
 import Pokemon.Skill.A.AuraSphere;
 import Pokemon.Skill.A.AuroraBeam;
 import Pokemon.Skill.B.*;
+import Pokemon.Type;
 
 import java.util.ArrayList;
 import java.util.*;
