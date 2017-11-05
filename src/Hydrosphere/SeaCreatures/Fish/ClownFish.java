@@ -10,9 +10,12 @@ public class ClownFish extends Fish {  // extend means it inherits from Fish cla
     public ClownFish(String name){
         this.name = name;
         this.toxinType = new neurotoxin;
+        this.Reproduction = new Oviparous;
         this.size = SIZE + (Math.floor((Math.random() * 4)));
 
+    @Override
     public void reproduce(){
+        super.reproduce();
         fry += 400 + (Math.floor((Math.random() * 600))); // at least 400 but at most 1000
         System.out.println(fry + "baby puffer fish have been born!");
     }    
