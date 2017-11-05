@@ -15,8 +15,9 @@ public class ClownFish extends Fish {  // extend means it inherits from Fish cla
 
     @Override
     public void reproduce(){
-        super.reproduce();
-        fry += 400 + (Math.floor((Math.random() * 600))); // at least 400 but at most 1000
+        super.reproduce(); // calls reproduce method in Fish class which then in turn refers to the one in Reproduction class
+        fry = reproduction.setBabies(400) + (Math.floor(Math.random() * reproduction.setBabiesMultiplier(600)));
+         // at least 400 but at most 1000
         System.out.println(fry + "baby puffer fish have been born!");
     }    
 

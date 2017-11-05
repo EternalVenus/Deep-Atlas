@@ -33,12 +33,14 @@ public class Fish{                      // defn: abstract class cannot be instan
         System.out.println("The animal attacks");
     }
     
+        //composition 
+    protected Toxin toxinType;
+    protected reproduction reproduce
+    
     public void reproduce(){
         System.println("The next generation is here")
     }
     
-    //composition 
-    protected Toxin toxinType;
     
     public void toxin(){
         toxinType.toxin();
