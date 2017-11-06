@@ -1,18 +1,30 @@
-package Skill.D;
+package Pokemon.Skill.D;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
-public class DarkestLariat extends Skill{
-    private static final String name = "Darkest Lariat";
-    private static final Type type = new Type("Dark");
-    private static final String ID = "none";
-    private static final int baseDamage = 85;
-    private static final String description = "Darkest Lariat deals damage, but ignores changes to the target's stats (i.e. Defense and Evasion in this case).";
+public class DarkestLariat extends Skill {
+    private  String name ;
+    private  Type type;
+    private  String ID;
+    private int baseDamage ;
+    private String description ;
+    private int PP;
+    private String category;
 
     public DarkestLariat() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+        super();
+        this.name = "Darkest Lariat";
+        this.type  = new Type("Dark");
+        this.ID = "none";
+        this.baseDamage = 85;
+        this.description = "Darkest Lariat deals damage, but ignores changes to the target's stats (i.e. Defense and Evasion in this case). \n";
+        this.PP = 10;
+        this.category = "Physical";
     }
+
+
 
     @Override
     public int effect(Pokemon pokemon) {
@@ -28,6 +40,7 @@ public class DarkestLariat extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -52,5 +65,14 @@ public class DarkestLariat extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
