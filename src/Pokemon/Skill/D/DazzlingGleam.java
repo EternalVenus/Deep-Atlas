@@ -1,17 +1,27 @@
-package Skill.D;
+package Pokemon.Skill.D;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class DazzlingGleam extends Skill{
-    private static final String name = "Dazzling Gleam ";
-    private static final Type type = new Type("Fairy");
-    private static final String ID = "TM99";
-    private static final int baseDamage = 80;
-    private static final String description = "Dazzling Gleam deals damage and hits all adjacent opponents in double/triple battles.\n";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage;
+    private   String description ;
+    private String category;
+    private int PP;
 
     public DazzlingGleam() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
+        super();
+        this.name = "Dazzling Gleam";
+        this.type  = new Type("Fairy");
+        this.ID = "TM99";
+        this.baseDamage = 80;
+        this.description = "Dazzling Gleam deals damage and hits all adjacent opponents in double/triple battles.\n";
+        this.PP = 80;
+        this.category = "Special";
     }
 
     @Override
