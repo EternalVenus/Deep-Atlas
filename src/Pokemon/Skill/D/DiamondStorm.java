@@ -1,19 +1,29 @@
-package Skill.D;
+package Pokemon.Skill.D;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class DiamondStorm extends Skill{
-    private static final String name = "Diamond Storm";
-    private static final Type type = new Type("Rock");
-    private static final String ID = "none";
-    private static final int baseDamage = 100;
-    private static final String description = "Diamond Storm deals damage and has a 50% chance of raising the user's Defense by one stage.\n" +
-            "It hits all adjacent opponents in double/triple battles.\n" +
-            "Stats can be raised to a maximum of +6 stages each.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage;
+    private   String description ;
+    private String category;
+    private int PP;
 
     public DiamondStorm() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 5);
+        super();
+        this.name = "Diamond Storm";
+        this.type  = new Type("Rock");
+        this.ID = "none";
+        this.baseDamage = 100;
+        this.description = "Diamond Storm deals damage and has a 50% chance of raising the user's Defense by one stage.\n" +
+                "It hits all adjacent opponents in double/triple battles.\n" +
+                "Stats can be raised to a maximum of +6 stages each.";
+        this.PP = 5;
+        this.category = "Physical";
     }
 
     @Override
