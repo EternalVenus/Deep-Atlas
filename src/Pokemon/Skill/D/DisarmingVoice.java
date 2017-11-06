@@ -1,18 +1,28 @@
-package Skill.D;
+package Pokemon.Skill.D;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class DisarmingVoice extends Skill{
-    private static final String name = "Disarming Voice";
-    private static final Type type = new Type("Fairy");
-    private static final String ID = "none";
-    private static final int baseDamage = 40;
-    private static final String description = "Disarming Voice deals damage and ignores changes to the Accuracy and Evasion stats.\n" +
-            "However, it will not hit Pokémon during the invulnerable stage of Bounce, Dig, Dive, Fly, Shadow Force or Sky Drop.";
+    private  String name ;
+    private  Type type;
+    private  String ID;
+    private int baseDamage ;
+    private String description ;
+    private int PP;
+    private String category;
 
     public DisarmingVoice() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+        super();
+        this.name = "Disarming Voice";
+        this.type  = new Type("Fairy");
+        this.ID = "none";
+        this.baseDamage = 40;
+        this.description = "Disarming Voice deals damage and ignores changes to the Accuracy and Evasion stats.\n" +
+                "However, it will not hit Pokémon during the invulnerable stage of Bounce, Dig, Dive, Fly, Shadow Force or Sky Drop.";
+        this.PP = 15;
+        this.category = "Special";
     }
 
     @Override
