@@ -1,18 +1,28 @@
-package Skill.D;
+package Pokemon.Skill.D;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class DarkPulse extends Skill{
-    private static final String name = "Dark Pulse";
-    private static final Type type = new Type("Dark");
-    private static final String ID = "TM79";
-    private static final int baseDamage = 80;
-    private static final String description = "Dark Pulse deals damage and has a 20% chance of causing the target to flinch (if the target has not yet moved).\n" +
-            "Pokémon with the ability Inner Focus or those behind a Substitute cannot be made to flinch.";
+    private   String name ;
+    private   Type type ;
+    private   String ID ;
+    private   int baseDamage;
+    private   String description ;
+    private String category;
+    private int PP;
 
     public DarkPulse() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+        super();
+        this.name = "Dark Pulse";
+        this.type  = new Type("Dark");
+        this.ID = "TM79";
+        this.baseDamage = 80;
+        this.description = "Dark Pulse deals damage and has a 20% chance of causing the target to flinch (if the target has not yet moved).\n" +
+                "Pokémon with the ability Inner Focus or those behind a Substitute cannot be made to flinch.\n";
+        this.PP = 15;
+        this.category = "Special";
     }
 
     @Override
