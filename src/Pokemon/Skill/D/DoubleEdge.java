@@ -1,18 +1,29 @@
-package Skill.D;
+package Pokemon.Skill.D;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class DoubleEdge extends Skill{
-    private static final String name = "Double-Edge";
-    private static final Type type = new Type("Normal");
-    private static final String ID = "none";
-    private static final int baseDamage = 120;
-    private static final String description = "Double-Edge deals damage, but the user receives 1⁄3 of the damage it inflicted in recoil.\n"  +
-            "In other words, if the attack does 90 HP damage to the opponent, the user will lose 30 HP.";
+    private  String name ;
+    private Type type;
+    private  String ID;
+    private int baseDamage ;
+    private String description ;
+    private int PP;
+    private String category;
+
 
     public DoubleEdge() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+        super();
+        this.name = "Double-Edge";
+        this.type  = new Type("Normal");
+        this.ID = "none";
+        this.baseDamage = 120;
+        this.description = "Double-Edge deals damage, but the user receives 1⁄3 of the damage it inflicted in recoil.\n"  +
+                "In other words, if the attack does 90 HP damage to the opponent, the user will lose 30 HP.\n";
+        this.PP = 15;
+        this.category = "Special";
     }
 
     @Override
@@ -29,6 +40,7 @@ public class DoubleEdge extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +65,14 @@ public class DoubleEdge extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
