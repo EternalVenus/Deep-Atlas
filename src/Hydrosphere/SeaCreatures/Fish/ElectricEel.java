@@ -12,13 +12,18 @@ public class ElectricEel extends Fish
         
     public ElectricEel(String name){
     this.name = name;
+    this.Reproduction = new Oviparous;
     this.length = LENGTH + (Math.floor((Math.random() * 3)));
     this.prey = Math.floor(Math.random() * 10);
     
+    
+    @Override
     public void reproduce(){
-        elver += 1300 + (Math.floor((Math.random() * 600))); // at least 1300 
-        System.out.println(elver + "baby eels fish have been born!");
-    }  
+        super.reproduce(); // calls reproduce method in Fish class which then in turn refers to the one in Reproduction class
+        fry = reproduction.setBabies(1300) + (Math.floor(Math.random() * reproduction.setBabiesMultiplier(600)));
+         // at least 1300 but at most 1900
+        System.out.println(fry + "baby eels have been born!");
+    }   
     
     public void dive() {
         long timeDifference;
