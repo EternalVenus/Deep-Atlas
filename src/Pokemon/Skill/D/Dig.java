@@ -16,12 +16,16 @@ public class Dig extends Skill{
 
     public Dig() {
         super();
-        this.name = "Catastropika";
-        this.type  = new Type("Electric");
+        this.name = "Dig";
+        this.type  = new Type("Ground");
         this.ID = "none";
-        this.baseDamage = 210;
-        this.description = "Catastropika is a Z-Move exclusive to Pikachu. It can only be used with Volt Tackle.\n";
-        this.PP = 1;
+        this.baseDamage = 80;
+        this.description = "The user of Dig will burrow its way underground on the first turn, disappearing from view and becoming invulnerable to most attacks.\n" +
+                "On the second turn, Dig deals damage.\n" +
+                "While underground, the Pokemon can only be hit by the moves Earthquake, Magnitude or Fissure, with Earthquake and Magnitude dealing twice normal damage.\n" +
+                "Moves from No Guard Pokemon, or any move following an identify move can also hit for regular power.\n " +
+                "The user also avoids end-of-turn damage from Sandstorm and Hail when underground.";
+        this.PP = 10;
         this.category = "Physical";
     }
 
@@ -39,6 +43,7 @@ public class Dig extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -63,5 +68,14 @@ public class Dig extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
