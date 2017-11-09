@@ -1,19 +1,31 @@
-package Skill.D;
+package Pokemon.Skill.D;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class DoomDesire extends Skill{
-    private static final String name = "Doom Desire";
-    private static final Type type = new Type("Steel");
-    private static final String ID = "none";
-    private static final int baseDamage = 140;
-    private static final String description = "Two turns after the move is selected, Doom Desire will deal damage. \n" +
-            "If the opponent switched Pokémon in the meantime, the damage dealt will depend on the Special Defense of the Pokémon the move hits, not the Pokémon it was originally targeted at.";
+    private  String name ;
+    private Type type;
+    private  String ID;
+    private int baseDamage ;
+    private String description ;
+    private int PP;
+    private String category;
 
     public DoomDesire() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 5);
+        super();
+        this.name = "Doom Desire";
+        this.type  = new Type("Steel");
+        this.ID = "none";
+        this.baseDamage = 140;
+        this.description = "Two turns after the move is selected, Doom Desire will deal damage. \n" +
+                "If the opponent switched Pokémon in the meantime, the damage dealt will depend on the \n" +
+                "Special Defense of the Pokémon the move hits, not the Pokémon it was originally targeted at.\n";
+        this.PP = 5;
+        this.category = "Special";
     }
+
 
     @Override
     public int effect(Pokemon pokemon) {
@@ -29,6 +41,7 @@ public class DoomDesire extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +66,14 @@ public class DoomDesire extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
