@@ -1,18 +1,28 @@
-package Skill.D;
+package Pokemon.Skill.D;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class DracoMeteor extends Skill {
-    private static final String name = "Draco Meteor";
-    private static final Type type = new Type("Dragon");
-    private static final String ID = "none";
-    private static final int baseDamage = 130;
-    private static final String description = "Draco Meteor deals damage but lowers the user's Special Attack by two stages after attacking.\n" +
-            "Stats can be lowered to a minimum of -6 stages each.";
+    private  String name ;
+    private Type type;
+    private  String ID;
+    private int baseDamage ;
+    private String description ;
+    private int PP;
+    private String category;
 
     public DracoMeteor() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 5);
+        super();
+        this.name = "Draco Meteor";
+        this.type  = new Type("Dragon");
+        this.ID = "none";
+        this.baseDamage = 130;
+        this.description = "Draco Meteor deals damage but lowers the user's Special Attack by two stages after attacking.\n" +
+                "Stats can be lowered to a minimum of -6 stages each.\n";
+        this.PP = 5;
+        this.category = "Special";
     }
 
 
@@ -30,6 +40,7 @@ public class DracoMeteor extends Skill {
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -54,5 +65,14 @@ public class DracoMeteor extends Skill {
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
