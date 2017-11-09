@@ -1,20 +1,30 @@
-package Skill.D;
+package Pokemon.Skill.D;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class Discharge extends Skill{
-    private static final String name = "Discharge";
-    private static final Type type = new Type("Electric");
-    private static final String ID = "none";
-    private static final int baseDamage = 80;
-    private static final String description = "Discharge deals damage and has a 30% chance of paralyzing the target(s).\n" +
-            "Electric type Pokémon, those with the ability Limber or those behind a Substitute cannot be paralyzed.";
+    private  String name ;
+    private  Type type;
+    private  String ID;
+    private int baseDamage ;
+    private String description ;
+    private int PP;
+    private String category;
+
 
     public Discharge() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+        super();
+        this.name = "Discharge";
+        this.type  = new Type("Electric");
+        this.ID = "none";
+        this.baseDamage = 80;
+        this.description = "Discharge deals damage and has a 30% chance of paralyzing the target(s).\n" +
+                "Electric type Pokémon, those with the ability Limber or those behind a Substitute cannot be paralyzed.\n";
+        this.PP = 15;
+        this.category = "Special";
     }
-
     @Override
     public int effect(Pokemon pokemon) {
         return super.effect(pokemon);
@@ -29,6 +39,7 @@ public class Discharge extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +64,14 @@ public class Discharge extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
