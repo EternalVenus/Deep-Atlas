@@ -1,19 +1,30 @@
-package Skill.D;
+package Pokemon.Skill.D;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class DizzyPunch extends Skill{
-    private static final String name = "Dizzy Punch";
-    private static final Type type = new Type("Normal");
-    private static final String ID = "none";
-    private static final int baseDamage = 70;
-    private static final String description = "Dizzy Punch deals damage and has a 20% chance of confusing the target.\n" +
-            "Pokémon with the ability Own Tempo or those behind a Substitute cannot be confused.";
+    private  String name ;
+    private Type type;
+    private  String ID;
+    private int baseDamage ;
+    private String description ;
+    private int PP;
+    private String category;
 
     public DizzyPunch() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 10);
+        super();
+        this.name = "Dizzy Punch";
+        this.type  = new Type("Normal");
+        this.ID = "none";
+        this.baseDamage = 70;
+        this.description = "Dizzy Punch deals damage and has a 20% chance of confusing the target.\n" +
+                "Pokémon with the ability Own Tempo or those behind a Substitute cannot be confused.";
+        this.PP = 10;
+        this.category = "Physical";
     }
+
 
     @Override
     public int effect(Pokemon pokemon) {
@@ -29,6 +40,7 @@ public class DizzyPunch extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +65,14 @@ public class DizzyPunch extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
