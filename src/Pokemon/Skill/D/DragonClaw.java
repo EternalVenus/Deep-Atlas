@@ -1,17 +1,27 @@
-package Skill.D;
+package Pokemon.Skill.D;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class DragonClaw extends Skill {
-    private static final String name = "Dragon Claw";
-    private static final Type type = new Type("Dragon");
-    private static final String ID = "TM02";
-    private static final int baseDamage = 80;
-    private static final String description = "Dragon Claw deals damage with no additional effect.";
+    private  String name ;
+    private Type type;
+    private  String ID;
+    private int baseDamage ;
+    private String description ;
+    private int PP;
+    private String category;
 
     public DragonClaw() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 15);
+        super();
+        this.name = "Draco Claw";
+        this.type  = new Type("Dragon");
+        this.ID = "TM02";
+        this.baseDamage = 80;
+        this.description ="Dragon Claw deals damage with no additional effect.\n";
+        this.PP = 15;
+        this.category = "Physical";
     }
 
 
@@ -29,6 +39,7 @@ public class DragonClaw extends Skill {
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -53,5 +64,14 @@ public class DragonClaw extends Skill {
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
