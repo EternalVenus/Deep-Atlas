@@ -1,20 +1,29 @@
-package Skill.D;
+package Pokemon.Skill.D;
 
-import Pokemons.Type;
-import Skill.*;
+import Pokemon.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class DragonBreath extends Skill {
-    private static final String name = "Dragon Breath";
-    private static final Type type = new Type("Dragon");
-    private static final String ID = "TM24";
-    private static final int baseDamage = 60;
-    private static final String description = "Dragon Breath deals damage and has a 30% chance of paralyzing the target.\n" +
-            "Electric type Pokémon, those with the ability Limber or those behind a Substitute cannot be paralyzed.";
+    private  String name ;
+    private Type type;
+    private  String ID;
+    private int baseDamage ;
+    private String description ;
+    private int PP;
+    private String category;
 
     public DragonBreath() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description, 20);
+        super();
+        this.name = "Draco Breath";
+        this.type  = new Type("Dragon");
+        this.ID = "TM24";
+        this.baseDamage = 60;
+        this.description ="Dragon Breath deals damage and has a 30% chance of paralyzing the target.\n" +
+                "Electric type Pokémon, those with the ability Limber or those behind a Substitute cannot be paralyzed.\n";
+        this.PP = 20;
+        this.category = "Special";
     }
-
 
     @Override
     public int effect(Pokemon pokemon) {
@@ -30,6 +39,7 @@ public class DragonBreath extends Skill {
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -54,5 +64,14 @@ public class DragonBreath extends Skill {
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
