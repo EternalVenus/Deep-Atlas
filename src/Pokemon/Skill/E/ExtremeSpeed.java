@@ -1,18 +1,30 @@
-package Pokemon.Skill;
+package Pokemon.Skill.E;
 
-import Pokemon.Pokemon.Type;
+import Pokemon.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class ExtremeSpeed extends Skill{
-    private static final String name = "Extreme Speed";
-    private static final Type type = new Type("Normal");
-    private static final String ID = "none";
-    private static final int baseDamage = 80;
-    private static final String description = "In Generations 1-4, its priority is +1, which means that an opponent using other priority moves such as Quick Attack or Aqua Jet can attack before Extreme Speed if the opponent is faster.\n" +
-            "In Generations 2-5, this move's name was formatted as ExtremeSpeed.";
+    private  String name ;
+    private  Type type;
+    private  String ID;
+    private int baseDamage ;
+    private String description ;
+    private int PP;
+    private String category;
 
     public ExtremeSpeed() {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+        super();
+        this.name = "Extreme Speed";
+        this.type  = new Type("Normal");
+        this.ID = "none";
+        this.baseDamage = 80;
+        this.description = "In Generations 1-4, its priority is +1, which means that an opponent using other priority moves such as Quick Attack or Aqua Jet can attack before Extreme Speed if the opponent is faster.\n" +
+                "In Generations 2-5, this move's name was formatted as ExtremeSpeed.\n";
+        this.PP = 5;
+        this.category = "Physical";
     }
+
 
     @Override
     public int effect(Pokemon pokemon) {
@@ -28,6 +40,7 @@ public class ExtremeSpeed extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -52,5 +65,14 @@ public class ExtremeSpeed extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
