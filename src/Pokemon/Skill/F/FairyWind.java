@@ -1,16 +1,27 @@
-package Pokemon.Skill;
+package Pokemon.Skill.F;
 
-import Pokemon.Pokemon.Type;
+import Pokemon.Type;
+import Pokemon.Skill.*;
+import Pokemon.Pokemon;
 
 public class FairyWind  extends Skill{
-    private static final String name = "Fairy Wind";
-    private static final Type type = new Type("Fairy");
-    private static final String ID = "none";
-    private static final int baseDamage = 40;
-    private static final String description = "Fairy Wind deals damage with no added effects.";
+    private  String name ;
+    private  Type type;
+    private  String ID;
+    private int baseDamage ;
+    private String description ;
+    private int PP;
+    private String category;
 
-    public FairyWind () {
-        super(this.ID, this.name, this.type, this.baseDamage, this.description);
+    public FairyWind() {
+        super();
+        this.name = "Fairy Wind";
+        this.type  = new Type("Fairy");
+        this.ID = "none";
+        this.baseDamage = 40;
+        this.description= "Fairy Wind deals damage with no added effects.\n";
+        this.PP = 30;
+        this.category = "Special";
     }
 
     @Override
@@ -27,6 +38,7 @@ public class FairyWind  extends Skill{
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
     }
+
 
     @Override
     public String getID() {
@@ -51,5 +63,14 @@ public class FairyWind  extends Skill{
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public int getPP() {
+        return this.PP;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
