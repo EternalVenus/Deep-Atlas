@@ -1,29 +1,23 @@
 package Pokemon.Skill.A;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
 public class AerialAce extends Skill{
-    private   String name ;
-    private   Type type;
-    private   String ID ;
-    private   int baseDamage ;
-    private   String description ;
-    private   int PP;
-    private String category;
-
-
 
     public AerialAce() {
-        this.name = "Aerial Ace";
-        this.type = new Type("Flying");
-        this.ID = "TM40";
-        this.baseDamage = 60;
-        this.description = "Aerial Ace deals damage and ignores changes to the Accuracy and Evasion stats.\n"+
-                "However, it will not hit Pokémon during the invulnerable stage of Bounce, Dig, Dive, Fly, Shadow Force or Sky Drop.";
-        this.PP = 20;
-        this.category = "Physical";
+        super("Aerial Ace",
+                new Type("Flying"),
+                "TM40",
+                60,
+                "Aerial Ace deals damage and ignores changes to the Accuracy and Evasion stats.\n"+
+                        "However, it will not hit Pokémon during the invulnerable stage of Bounce, Dig, Dive, Fly, \n" +
+                        "Shadow Force or Sky Drop.\n",
+                20,
+                "Physical"
+        );
+
     }
 
     @Override
@@ -39,39 +33,5 @@ public class AerialAce extends Skill{
     @Override
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
-    }
-
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public Type getType() {
-        return this.type;
-    }
-
-    @Override
-    public int getBaseDamage() {
-        return this.baseDamage;
-    }
-
-    @Override
-    public String getDescription() {
-        return this.description;
-    }
-
-    @Override
-    public int getPP() {
-        return this.PP;
-    }
-
-    public String getCategory() {
-        return category;
     }
 }
