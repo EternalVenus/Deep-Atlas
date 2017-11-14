@@ -1,26 +1,21 @@
 package Pokemon.Skill.A;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
-public class AnchorShot extends Skill{
-    private   String name ;
-    private   Type type ;
-    private   String ID ;
-    private   int baseDamage ;
-    private   String description ;
-    private int PP;
-    private String category;
+public class AnchorShot extends Skill {
 
     public AnchorShot() {
-        this.name = "Anchor Shot";
-        this.type = new Type("Steel");
-        this.ID = "none";
-        this.baseDamage = 80;
-        this.description = "The user entangles the target with its anchor chain while attacking. The target becomes unable to flee.";
-        this.PP = 20;
-        this.category = "Physical";
+        super("Anchor Shot",
+                new Type("Steel"),
+                "none",
+                80,
+                "The user entangles the target with its anchor chain while attacking.\n" +
+                        "The target becomes unable to flee.\n",
+                20,
+                "Physical"
+        );
     }
 
     @Override
@@ -36,39 +31,5 @@ public class AnchorShot extends Skill{
     @Override
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
-    }
-
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public Type getType() {
-        return this.type;
-    }
-
-    @Override
-    public int getBaseDamage() {
-        return this.baseDamage;
-    }
-
-    @Override
-    public String getDescription() {
-        return this.description;
-    }
-
-    @Override
-    public int getPP() {
-        return this.PP;
-    }
-
-    public String getCategory() {
-        return category;
     }
 }
