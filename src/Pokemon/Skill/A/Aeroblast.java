@@ -1,27 +1,22 @@
 package Pokemon.Skill.A;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
 
 public class Aeroblast extends Skill{
-    private   String name;
-    private   Type type ;
-    private   String ID ;
-    private   int baseDamage ;
-    private   String description ;
-    private int PP;
-    private String category;
+
 
     public Aeroblast() {
-        this.name  = "Aeroblast";
-        this.type = new Type("Flying");
-        this.ID = "none";
-        this.baseDamage = 100;
-        this.description = "Aeroblast deals damage and has an increased critical hit ratio (1⁄8 instead of 1⁄16).";
-        this.PP = 5;
-        this.category = "Special";
+        super("Aeroblast",
+                new Type("Flying"),
+                "none",
+                100,
+                "Aeroblast deals damage and has an increased critical hit ratio (1⁄8 instead of 1⁄16).\n",
+                5,
+                "Special"
+        );
     }
 
     @Override
@@ -37,39 +32,5 @@ public class Aeroblast extends Skill{
     @Override
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
-    }
-
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public Type getType() {
-        return this.type;
-    }
-
-    @Override
-    public int getBaseDamage() {
-        return this.baseDamage;
-    }
-
-    @Override
-    public String getDescription() {
-        return this.description;
-    }
-
-    @Override
-    public int getPP() {
-        return this.PP;
-    }
-
-    public String getCategory() {
-        return category;
     }
 }
