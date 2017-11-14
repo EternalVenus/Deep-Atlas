@@ -7,26 +7,15 @@ import Pokemon.Pokemon;
 public class BodySlam extends Skill{
 
     public BodySlam() {
-        super("Absorb",
-                new Type("Grass"),
-                "none",
-                20,
-                "Absorb deals damage and the user will recover 50% of the HP drained.\n" +
-                        "If the user is holding a Big Root, the move instead recovers 65% of the damage dealt (30% more than normal). \n" +
-                        "If used on a IPokemon with the ability Liquid Ooze,\n" +
-                        "the user instead loses the HP it would have otherwise gained.\n",
-                25,
-                "Special"
+        super("Body Slam",
+                new Type("Normal"),
+                "TM08",
+                85,
+                "Body Slam deals damage and has a 30% chance of paralyzing the target.\n" +
+                "Electric type Pokémon, those with the ability Limber or those behind a Substitute cannot be paralyzed.\n",
+                15,
+                "Physical"
                 );
-                
-        this.name = "Body Slam";
-        this.type = new Type("Normal");
-        this.ID = "TM08";
-        this.baseDamage = 85;
-        this.description = "Body Slam deals damage and has a 30% chance of paralyzing the target.\n" +
-                "Electric type Pokémon, those with the ability Limber or those behind a Substitute cannot be paralyzed.";
-        this.PP = 15;
-        this.category = "Physical";
     }
 
      @Override
