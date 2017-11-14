@@ -7,23 +7,22 @@ import Pokemon.Pokemon;
 public class Bonemerang extends Skill{
 
     public Bonemerang() {
-        super("Absorb",
-                new Type("Grass"),
+        super("Bonemerang",
+                new Type("Ground"),
                 "none",
-                20,
-                "Absorb deals damage and the user will recover 50% of the HP drained.\n" +
-                        "If the user is holding a Big Root, the move instead recovers 65% of the damage dealt (30% more than normal). \n" +
-                        "If used on a IPokemon with the ability Liquid Ooze,\n" +
-                        "the user instead loses the HP it would have otherwise gained.\n",
-                25,
-                "Special"
+                50,
+                "Bonemerang deals damage and will strike twice (with 50 base power each time).\m" + 
+                "Each strike of Bonemerang is treated like a separate attack.\n",
+                10,
+                "Physical"
                 );
                 
         this.name = "Bonemerang";
         this.type = new Type("Ground");
         this.ID = "none";
         this.baseDamage = 50;
-        this.description = "Bonemerang deals damage and will strike twice (with 50 base power each time). Each strike of Bonemerang is treated like a separate attack.";
+        this.description = "Bonemerang deals damage and will strike twice (with 50 base power each time).\m" + 
+        "Each strike of Bonemerang is treated like a separate attack.\n";
         this.PP = 10;
         this.category = "Physical";
     }
