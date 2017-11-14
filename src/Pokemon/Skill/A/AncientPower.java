@@ -1,27 +1,22 @@
 package Pokemon.Skill.A;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
 public class AncientPower  extends Skill{
-    private   String name ;
-    private   Type type ;
-    private   String ID ;
-    private   int baseDamage ;
-    private   String description ;
-    private int PP;
-    private String category;
 
     public AncientPower() {
-        this.name = "Ancient Power";
-        this.type = new Type("Rock");
-        this.ID = "none";
-        this.baseDamage = 60;
-        this.description = "Ancient Power deals damage and has a 10% chance of raising all the user's stats at once - Attack, Defense, Special Attack, Special Defense and Speed - by one stage each.\n" +
-                "Stats can be raised to a maximum of +6 stages each.";
-        this.PP = 5;
-        this.category = "Special";
+        super("Ancient Power",
+                new Type("Rock"),
+                "none",
+                60,
+                "Ancient Power deals damage and has a 10% chance of raising all the user's stats at once\n" +
+                        "- Attack, Defense, Special Attack, Special Defense and Speed - by one stage each.\n" +
+                        "Stats can be raised to a maximum of +6 stages each.\n",
+                5,
+                "Special"
+        );
     }
 
     @Override
@@ -37,39 +32,5 @@ public class AncientPower  extends Skill{
     @Override
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
-    }
-
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public Type getType() {
-        return this.type;
-    }
-
-    @Override
-    public int getBaseDamage() {
-        return this.baseDamage;
-    }
-
-    @Override
-    public String getDescription() {
-        return this.description;
-    }
-
-    @Override
-    public int getPP() {
-        return this.PP;
-    }
-
-    public String getCategory() {
-        return category;
     }
 }
