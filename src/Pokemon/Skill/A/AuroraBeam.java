@@ -1,27 +1,21 @@
 package Pokemon.Skill.A;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
 public class AuroraBeam extends Skill{
-    private  String name ;
-    private  Type type ;
-    private  String ID ;
-    private  int baseDamage ;
-    private  String description ;
-    private int PP;
-    private String category;
 
     public AuroraBeam() {
-        this.name = "Aurora Beam";
-        this.type = new Type("Ice");
-        this.ID = "none";
-        this.baseDamage = 65;
-        this.description = "Aurora Beam deals damage and has a 10% chance of lowering the target's Attack by one stage.\n" +
-                "Stats can be lowered to a minimum of -6 stages each.";
-        this.PP = 20;
-        this.category = "Special";
+        super("Aurora Beam",
+                new Type("Ice"),
+                "none",
+                65,
+                "Aurora Beam deals damage and has a 10% chance of lowering the target's Attack by one stage.\n" +
+                        "Stats can be lowered to a minimum of -6 stages each.\n",
+                20,
+                "Special"
+        );
     }
 
     @Override
@@ -37,39 +31,5 @@ public class AuroraBeam extends Skill{
     @Override
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
-    }
-
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public Type getType() {
-        return this.type;
-    }
-
-    @Override
-    public int getBaseDamage() {
-        return this.baseDamage;
-    }
-
-    @Override
-    public String getDescription() {
-        return this.description;
-    }
-
-    @Override
-    public int getPP() {
-        return this.PP;
-    }
-
-    public String getCategory() {
-        return category;
     }
 }
