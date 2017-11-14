@@ -7,25 +7,14 @@ import Pokemon.Pokemon;
 public class Boomburst extends Skill{
 
     public Boomburst() {
-        super("Absorb",
-                new Type("Grass"),
+        super("Boomburst",
+                new Type("Normal"),
                 "none",
-                20,
-                "Absorb deals damage and the user will recover 50% of the HP drained.\n" +
-                        "If the user is holding a Big Root, the move instead recovers 65% of the damage dealt (30% more than normal). \n" +
-                        "If used on a IPokemon with the ability Liquid Ooze,\n" +
-                        "the user instead loses the HP it would have otherwise gained.\n",
-                25,
+                140,
+                "Boomburst deals massive damage and targets all adjacent Pokémon in battle, including allies.\n",
+                10,
                 "Special"
                 );
-                
-        this.name = "Boomburst";
-        this.type = new Type("Normal");
-        this.ID = "none";
-        this.baseDamage  = 140;
-        this.description  = "Boomburst deals massive damage and targets all adjacent Pokémon in battle, including allies.";
-        this.PP = 10;
-        this.category = "Special";
     }
 
      @Override
