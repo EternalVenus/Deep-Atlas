@@ -7,14 +7,16 @@ import Pokemon.Pokemon;
 public class Barrage extends Skill{
 
     public Barrage() {
-        this.name = "Barrage";
-        this.type = new Type("Normal");
-        this.ID = "none";
-        this.baseDamage = 15;
-        this.description = "Barrage hits 2-5 times per turn used.\n" +
-                "The probability of each interval is shown to the right, with the total power after each hit.";
-        this.PP = 20;
-        this.category = "Physical";
+        
+        super("Barrage",
+                new Type("Normal"),
+                "none",
+                15,
+                "Barrage hits 2-5 times per turn used.\n" +
+                "The probability of each interval is shown to the right, with the total power after each hit.\n",
+                20,
+                "Physical"
+                );
     }
 
     @Override
