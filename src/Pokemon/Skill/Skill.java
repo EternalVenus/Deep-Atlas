@@ -12,8 +12,9 @@ public class Skill {
     private int PP;
     private String category;
     private int accuracy;
-//
-    public Skill(String ID, String name, Type type, int baseDamage, String description, int PP, String category) {
+
+
+    public Skill(String name, Type type, String ID, int baseDamage, String description, int PP, String category) {
         this.ID = ID;
         this.name = name;
         this.type = type;
@@ -23,9 +24,6 @@ public class Skill {
         this.category = category;
     }
 
-    public Skill(){
-
-    }
 
     public int effect(Pokemon pokemon){
         return 0;
