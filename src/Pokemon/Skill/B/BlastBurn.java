@@ -7,25 +7,14 @@ import Pokemon.Pokemon;
 public class BlastBurn extends Skill{
 
     public BlastBurn() {
-        super("Absorb",
-                new Type("Grass"),
+        super("Blast Burn",
+                new Type("Fire"),
                 "none",
-                20,
-                "Absorb deals damage and the user will recover 50% of the HP drained.\n" +
-                        "If the user is holding a Big Root, the move instead recovers 65% of the damage dealt (30% more than normal). \n" +
-                        "If used on a IPokemon with the ability Liquid Ooze,\n" +
-                        "the user instead loses the HP it would have otherwise gained.\n",
-                25,
+                150,
+                "User must recharge next turn.\n",
+                5,
                 "Special"
                 );
-                
-        this.name = "Blast Burn";
-        this.type = new Type("Fire");
-        this.ID = "none";
-        this.baseDamage = 150;
-        this.description = "User must recharge next turn.\n";
-        this.PP = 5;
-        this.category = "Special";
     }
 
     @Override
