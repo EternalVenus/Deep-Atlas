@@ -5,24 +5,18 @@ import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
 public class DizzyPunch extends Skill{
-    private  String name ;
-    private Type type;
-    private  String ID;
-    private int baseDamage ;
-    private String description ;
-    private int PP;
-    private String category;
+
 
     public DizzyPunch() {
-        super();
-        this.name = "Dizzy Punch";
-        this.type  = new Type("Normal");
-        this.ID = "none";
-        this.baseDamage = 70;
-        this.description = "Dizzy Punch deals damage and has a 20% chance of confusing the target.\n" +
-                "Pokémon with the ability Own Tempo or those behind a Substitute cannot be confused.";
-        this.PP = 10;
-        this.category = "Physical";
+        super("Dizzy Punch",
+                new Type("Normal"),
+                "none",
+                70,
+                "Dizzy Punch deals damage and has a 20% chance of confusing the target.\n" +
+                        "Pokémon with the ability Own Tempo or those behind a Substitute cannot be confused.\n",
+                10,
+                "Physical"
+        );
     }
 
 
@@ -42,37 +36,5 @@ public class DizzyPunch extends Skill{
     }
 
 
-    @Override
-    public String getID() {
-        return this.ID;
-    }
 
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public Type getType() {
-        return this.type;
-    }
-
-    @Override
-    public int getBaseDamage() {
-        return this.baseDamage;
-    }
-
-    @Override
-    public String getDescription() {
-        return this.description;
-    }
-
-    @Override
-    public int getPP() {
-        return this.PP;
-    }
-
-    public String getCategory() {
-        return category;
-    }
 }
