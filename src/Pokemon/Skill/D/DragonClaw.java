@@ -5,23 +5,15 @@ import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
 public class DragonClaw extends Skill {
-    private  String name ;
-    private Type type;
-    private  String ID;
-    private int baseDamage ;
-    private String description ;
-    private int PP;
-    private String category;
-
     public DragonClaw() {
-        super();
-        this.name = "Draco Claw";
-        this.type  = new Type("Dragon");
-        this.ID = "TM02";
-        this.baseDamage = 80;
-        this.description ="Dragon Claw deals damage with no additional effect.\n";
-        this.PP = 15;
-        this.category = "Physical";
+        super("Draco Claw",
+                new Type("Dragon"),
+                "TM02",
+                80,
+                "Dragon Claw deals damage with no additional effect.\n",
+                15,
+                "Physical"
+        );
     }
 
 
@@ -41,37 +33,4 @@ public class DragonClaw extends Skill {
     }
 
 
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public Type getType() {
-        return this.type;
-    }
-
-    @Override
-    public int getBaseDamage() {
-        return this.baseDamage;
-    }
-
-    @Override
-    public String getDescription() {
-        return this.description;
-    }
-
-    @Override
-    public int getPP() {
-        return this.PP;
-    }
-
-    public String getCategory() {
-        return category;
-    }
 }
