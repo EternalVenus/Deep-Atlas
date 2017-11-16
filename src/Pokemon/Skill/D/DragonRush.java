@@ -5,24 +5,16 @@ import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
 public class DragonRush extends Skill {
-    private  String name ;
-    private Type type;
-    private  String ID;
-    private int baseDamage ;
-    private String description ;
-    private int PP;
-    private String category;
-
     public DragonRush() {
-        super();
-        this.name = "Draco Rush";
-        this.type  = new Type("Dragon");
-        this.ID = "none";
-        this.baseDamage = 100;
-        this.description ="Dragon Rush deals damage and has a 20% chance of causing the target to flinch (if the target has not yet moved).\n" +
-                "Pokémon with the ability Inner Focus or those behind a Substitute cannot be made to flinch.\n";
-        this.PP = 10;
-        this.category = "Physical";
+        super("Draco Rush",
+                new Type("Dragon"),
+                "none",
+                100,
+                "Dragon Rush deals damage and has a 20% chance of causing the target to flinch (if the target has not yet moved).\n" +
+                        "Pokémon with the ability Inner Focus or those behind a Substitute cannot be made to flinch.\n",
+                10,
+                "Physical"
+        );
     }
 
     @Override
@@ -41,37 +33,4 @@ public class DragonRush extends Skill {
     }
 
 
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public Type getType() {
-        return this.type;
-    }
-
-    @Override
-    public int getBaseDamage() {
-        return this.baseDamage;
-    }
-
-    @Override
-    public String getDescription() {
-        return this.description;
-    }
-
-    @Override
-    public int getPP() {
-        return this.PP;
-    }
-
-    public String getCategory() {
-        return category;
-    }
 }
