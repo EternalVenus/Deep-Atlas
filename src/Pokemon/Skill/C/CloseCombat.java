@@ -1,28 +1,21 @@
 package Pokemon.Skill.C;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
 public class CloseCombat extends Skill{
-    private   String name ;
-    private   Type type ;
-    private   String ID ;
-    private   int baseDamage;
-    private   String description ;
-    private String category;
-    private int PP;
 
     public CloseCombat() {
-        super();
-        this.name = "Close Combat";
-        this.type  = new Type("Fighting");
-        this.ID = "none";
-        this.baseDamage = 120;
-        this.description  = "Close Combat deals damage but lowers the user's Defense and Special Defense by one stage each after attacking.\n" +
-                "Stats can be lowered to a minimum of -6 stages each.\n";
-        this.PP = 5;
-        this.category = "Physical";
+        super("Close Combat",
+                new Type("Fighting"),
+                "none",
+                120,
+                "Close Combat deals damage but lowers the user's Defense and Special Defense by one stage each after attacking.\n" +
+                        "Stats can be lowered to a minimum of -6 stages each.\n",
+                5,
+                "Physical"
+        );
     }
 
     @Override
@@ -38,40 +31,5 @@ public class CloseCombat extends Skill{
     @Override
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
-    }
-
-
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public Type getType() {
-        return this.type;
-    }
-
-    @Override
-    public int getBaseDamage() {
-        return this.baseDamage;
-    }
-
-    @Override
-    public String getDescription() {
-        return this.description;
-    }
-
-    @Override
-    public int getPP() {
-        return this.PP;
-    }
-
-    public String getCategory() {
-        return category;
     }
 }
