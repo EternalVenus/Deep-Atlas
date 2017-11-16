@@ -5,24 +5,16 @@ import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
 public class DrillPeck extends Skill {
-    private  String name ;
-    private Type type;
-    private  String ID;
-    private int baseDamage ;
-    private String description ;
-    private int PP;
-    private String category;
-
     public DrillPeck() {
-        super();
-        this.name = "Drill Peck";
-        this.type  = new Type("Flying");
-        this.ID = "none";
-        this.baseDamage = 80;
-        this.description= "Drill Peck deals damage with no additional effect, \n" +
-                "besides being able to hit non-adjacent Pokémon in triple battles.";
-        this.PP = 20;
-        this.category = "Physical";
+        super("Drill Peck",
+                new Type("Flying"),
+                "none",
+                80,
+                "Drill Peck deals damage with no additional effect, \n" +
+                        "besides being able to hit non-adjacent Pokémon in triple battles.\n",
+                20,
+                "Physical"
+        );
     }
     @Override
     public int effect(Pokemon pokemon) {
@@ -40,37 +32,4 @@ public class DrillPeck extends Skill {
     }
 
 
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public Type getType() {
-        return this.type;
-    }
-
-    @Override
-    public int getBaseDamage() {
-        return this.baseDamage;
-    }
-
-    @Override
-    public String getDescription() {
-        return this.description;
-    }
-
-    @Override
-    public int getPP() {
-        return this.PP;
-    }
-
-    public String getCategory() {
-        return category;
-    }
 }
