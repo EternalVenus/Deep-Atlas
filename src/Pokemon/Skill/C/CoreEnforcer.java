@@ -1,27 +1,20 @@
 package Pokemon.Skill.C;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
 public class CoreEnforcer extends Skill{
-    private   String name ;
-    private   Type type ;
-    private   String ID ;
-    private   int baseDamage ;
-    private   String description ;
-    private String category;
-    private int PP;
 
     public CoreEnforcer() {
-        super();
-        this.name = "Core Enforcer";
-        this.type  = new Type("Dragon");
-        this.ID = "none";
-        this.baseDamage  = 100;
-        this.description  = "Scorches a 'Z' pattern on the ground.\n";
-        this.PP = 10;
-        this.category = "Special";
+        super("Core Enforcer",
+                new Type("Dragon"),
+                "none",
+                100,
+                "Scorches a 'Z' pattern on the ground.\n",
+                10,
+                "Special"
+        );
     }
 
     @Override
@@ -37,40 +30,5 @@ public class CoreEnforcer extends Skill{
     @Override
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
-    }
-
-
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public Type getType() {
-        return this.type;
-    }
-
-    @Override
-    public int getBaseDamage() {
-        return this.baseDamage;
-    }
-
-    @Override
-    public String getDescription() {
-        return this.description;
-    }
-
-    @Override
-    public int getPP() {
-        return this.PP;
-    }
-
-    public String getCategory() {
-        return category;
     }
 }
