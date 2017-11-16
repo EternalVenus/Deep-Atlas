@@ -1,30 +1,21 @@
 package Pokemon.Skill.C;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
 public class Catastropika extends Skill {
-    private  String name ;
-    private  Type type;
-    private  String ID;
-    private int baseDamage ;
-    private String description ;
-    private int PP;
-    private String category;
-
     public Catastropika() {
-        super();
-        this.name = "Catastropika";
-        this.type  = new Type("Electric");
-        this.ID = "none";
-        this.baseDamage = 210;
-        this.description = "Catastropika is a Z-Move exclusive to Pikachu. It can only be used with Volt Tackle.\n";
-        this.PP = 1;
-        this.category = "Physical";
+        super("Catastropika",
+                new Type("Electric"),
+                "none",
+                210,
+                "Catastropika is a Z-Move exclusive to Pikachu. \n" +
+                        "It can only be used with Volt Tackle.\n",
+                1,
+                "Physical"
+        );
     }
-
-
 
     @Override
     public int effect(Pokemon pokemon) {
@@ -39,40 +30,5 @@ public class Catastropika extends Skill {
     @Override
     public int speedEffect(Pokemon pokemon) {
         return super.speedEffect(pokemon);
-    }
-
-
-    @Override
-    public String getID() {
-        return this.ID;
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public Type getType() {
-        return this.type;
-    }
-
-    @Override
-    public int getBaseDamage() {
-        return this.baseDamage;
-    }
-
-    @Override
-    public String getDescription() {
-        return this.description;
-    }
-
-    @Override
-    public int getPP() {
-        return this.PP;
-    }
-
-    public String getCategory() {
-        return category;
     }
 }
