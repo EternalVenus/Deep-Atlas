@@ -1,6 +1,6 @@
 package Pokemon.Skill.B;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
@@ -18,14 +18,7 @@ public class BrutalSwing extends Skill{
                 25,
                 "Special"
                 );
-                
-        this.name = "Brutal Swing";
-        this.type = new Type("Dark");
-        this.ID  = "TM59";
-        this.baseDamage  = 60;
-        this.description = "The user swings its body around violently to inflict damage on everything in its vicinity.\n";
-        this.PP = 20;
-        this.category = "Physical";
+
     }
 
     @Override

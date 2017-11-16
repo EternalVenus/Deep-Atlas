@@ -1,6 +1,6 @@
 package Pokemon.Skill.B;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
@@ -18,14 +18,7 @@ public class Bubble extends Skill{
                 25,
                 "Special"
                 );
-                
-        this.name = "Bubble";
-        this.type = new Type("Water");
-        this.ID = "none";
-        this.baseDamage = 40;
-        this.description = "Bubble deals damage and has a 10% chance of lowering the target's Speed by one stage. \n";
-        this.PP = 30;
-        this.category = "Special";
+
     }
 
      @Override

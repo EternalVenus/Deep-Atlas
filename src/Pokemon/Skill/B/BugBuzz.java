@@ -1,6 +1,6 @@
 package Pokemon.Skill.B;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
@@ -18,15 +18,7 @@ public class BugBuzz extends Skill{
                 25,
                 "Special"
                 );
-                
-        this.name = "Bug Buzz";
-        this.type = new Type("Bug");
-        this.ID  = "none";
-        this.baseDamage = 90;
-        this.description = "Bug Buzz deals damage and has a 10% chance of lowering the target's Special Defense by one stage.\n" +
-                "Stats can be lowered to a minimum of -6 stages each.";
-        this.PP = 10;
-        this.category = "Special";
+
     }
 
      @Override

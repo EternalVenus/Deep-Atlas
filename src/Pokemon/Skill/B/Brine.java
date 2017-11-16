@@ -1,6 +1,6 @@
 package Pokemon.Skill.B;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
@@ -18,14 +18,6 @@ public class Brine extends Skill{
                 25,
                 "Special"
                 );
-                
-        this.name = "Brine";
-        this.type = new Type("Water");
-        this.ID = "TM65";
-        this.baseDamage  = 110;
-        this.description  = "Power doubles if opponent's HP is less than 50%.";
-        this.PP = 10;
-        this.category = "Special";
     }
 
      @Override

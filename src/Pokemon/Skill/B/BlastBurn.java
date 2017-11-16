@@ -1,6 +1,6 @@
 package Pokemon.Skill.B;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 

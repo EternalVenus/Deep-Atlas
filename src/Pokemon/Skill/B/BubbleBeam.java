@@ -1,6 +1,6 @@
 package Pokemon.Skill.B;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
@@ -19,15 +19,7 @@ public class BubbleBeam extends Skill{
                 25,
                 "Special"
                 );
-                
-        this.name = "Bubble Beam";
-        this.type = new Type("Water");
-        this.ID = "TM11";
-        this.baseDamage  = 65;
-        this.description  = "Bubble Beam deals damage and has a 10% chance of lowering the target's Speed by one stage.\n" +
-                "Stats can be lowered to a minimum of -6 stages each.\n";
-        this.PP = 20;
-        this.category = "Special";
+
     }
 
     @Override
