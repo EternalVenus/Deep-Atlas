@@ -14,7 +14,6 @@ public class KeyItems{
         return "Key Item";
     }
 
-
     public String getName() {
         return name;
     }
@@ -26,4 +25,6 @@ public class KeyItems{
     public String getDescription() {
         return description;
     }
+
+
 }
