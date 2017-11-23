@@ -57,6 +57,10 @@ public class PokemonBattle {
 
     // starting battle method
     public void startBattle(){
+        initialDialogueAndMakeDecision();
+    }
+
+    private void initialDialogueAndMakeDecision(){
         System.out.println("=========BATTLE STARTS=========");
         // choose between playerBattle and wild pokemon battle
         this.playerTurn = true;
@@ -96,9 +100,7 @@ public class PokemonBattle {
                 }
             }
         }
-
     }
-
 
     private boolean decisionMade(int decision){
         int pokemonChosen = -1;
@@ -123,6 +125,7 @@ public class PokemonBattle {
                     this.playerTurn = false;
                     return true;
                 case 2:
+                    //initialize a value for the while loop
                     int bagPicked = -1;
                     this.player1.getItembag().listBattleBags();
 
@@ -136,8 +139,42 @@ public class PokemonBattle {
                             return true;
                         }
                     }
-
                     this.player1.getItembag().listBattleItemInBag(bagPicked);
+
+                    switch (bagPicked){
+                        case 0:
+                            System.out.println("Pick a Medicine to use.");
+
+                            break;
+                        case 1:
+                            int indexOfPokeball = -1;
+                            while(!this.player1.getItembag().getPokeBallBag().usePokeBall(indexOfPokeball)){
+                                System.out.println("Pick a Poke Ball to use.");
+                                indexOfPokeball = scan.nextInt();
+                                scan.nextLine();
+                            }
+                            System.out.println(this.player1.getName() + " uses " + this.player1.getItembag().getPokeBallBag().getPokeBallList().get(indexOfPokeball).getName());
+                            if(this.player1.getItembag().getPokeBallBag().getPokeBallList().get(indexOfPokeball).shake()){
+                                System.out.println("Gotcha! " + wildPokemon.getName() + " was caught!");
+                                this.player1.getPokemonBag().addToBag(wildPokemon);
+                                battleOver = true;
+                            }else{
+                                playerTurn = false;
+                            }
+                            break;
+                        case 2:
+                            System.out.println("Pick a Berry to use.");
+                            break;
+                        case 3:
+                            System.out.println("Pick a Battle Item to use.");
+                            break;
+                        case 4:
+                            System.out.println("Pick a Key Item to use.");
+                            break;
+                    }
+
+
+                    this.playerTurn = false;
                     // need to implement method to use items
                     return true;
                 case 3:
