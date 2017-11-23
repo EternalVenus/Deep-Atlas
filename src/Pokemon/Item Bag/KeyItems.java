@@ -1,8 +1,6 @@
 package Pokemon.ItemBag;
 
-import Pokemon.Pokemon;
-
-public class KeyItems {
+public class KeyItems extends BagCategory{
     private String name;
     private String location;
     private String description;
@@ -12,6 +10,10 @@ public class KeyItems {
         this.location = location;
         this.description = description;
     }
+    public String getClassName(){
+        return "Key Item";
+    }
+
 
     public String getName() {
         return name;

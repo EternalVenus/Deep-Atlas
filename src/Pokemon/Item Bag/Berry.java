@@ -2,7 +2,7 @@ package Pokemon.ItemBag;
 
 import Pokemon.Pokemon;
 
-public class Berry {
+public class Berry extends BagCategory{
     private String name;
     private String description;
     private String flavor;
@@ -25,6 +25,10 @@ public class Berry {
         this.size = size;
         this.location = location;
         this.firmness = firmness;
+    }
+
+    public String getClassName(){
+        return "Berry";
     }
 
     // function to be override

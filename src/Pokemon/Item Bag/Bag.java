@@ -3,26 +3,27 @@ package Pokemon.ItemBag;
 import java.util.ArrayList;
 
 public class Bag {
-    ArrayList<Item> itemBag;
-    ArrayList<Medicine> medicineBag;
-    ArrayList<PokeBall> pokeBallBag;
-    ArrayList<Berry> berryBag;
-    ArrayList<KeyItems> keyItemBag;
-    ArrayList<TM> tmBag;
-    ArrayList<BattleItem> battleItemBag;
-    ArrayList<Mail> mailBag;
+    private ArrayList<BagCategory> itemBag;
+    private ArrayList<BagCategory> medicineBag;
+    private ArrayList<BagCategory> pokeBallBag;
+    private ArrayList<BagCategory> berryBag;
+    private ArrayList<BagCategory> keyItemBag;
+    private ArrayList<BagCategory> tmBag;
+    private ArrayList<BagCategory> battleItemBag;
+    private ArrayList<BagCategory> mailBag;
 
     public Bag(){
-        this.berryBag = new ArrayList<Berry>();
-        this.keyItemBag = new ArrayList<KeyItems>();
-        this.tmBag = new ArrayList<TM>();
-        this.medicineBag = new ArrayList<Medicine>();
-        this.pokeBallBag = new ArrayList<PokeBall>();
-        this.battleItemBag = new ArrayList<BattleItem>();
-        this.itemBag = new ArrayList<Item>();
-        this.mailBag = new ArrayList<Mail>();
+        this.berryBag = new ArrayList<BagCategory>();
+        this.keyItemBag = new ArrayList<BagCategory>();
+        this.tmBag = new ArrayList<BagCategory>();
+        this.medicineBag = new ArrayList<BagCategory>();
+        this.pokeBallBag = new ArrayList<BagCategory>();
+        this.battleItemBag = new ArrayList<BagCategory>();
+        this.itemBag = new ArrayList<BagCategory>();
+        this.mailBag = new ArrayList<BagCategory>();
     }
 
+    // listing the names of each bag category
     public void listBags(){
         System.out.println("0) Items");
         System.out.println("1) Medicine");
@@ -34,7 +35,8 @@ public class Bag {
         System.out.println("8) Key Item");
     }
 
-    public void listItem(int bagNumber){
+    // listing all the items in each bag
+    public void listItemInBag(int bagNumber){
         switch (bagNumber){
             case 0:
                 System.out.println("--------------------------");
@@ -110,38 +112,68 @@ public class Bag {
                 break;
         }
     }
-    public void addItem(Object item){
-//        if ()
+
+    // The method checks the category of the item. Then add the item to the specific bag.
+    public void addItem(BagCategory item){
+        switch (item.getClassName()){
+            case "Battle Item":
+                this.battleItemBag.add(item);
+                break;
+            case "Berry":
+                this.berryBag.add(item);
+                break;
+            case "Item":
+                this.itemBag.add(item);
+                break;
+            case "Key Item":
+                this.keyItemBag.add(item);
+                break;
+            case "Mail":
+                this.mailBag.add(item);
+                break;
+            case "Medicine":
+                this.medicineBag.add(item);
+                break;
+            case "Poke Ball":
+                this.medicineBag.add(item);
+                break;
+            case "TM":
+                this.tmBag.add(item);
+                break;
+            default:
+                System.out.println("The Item can not be put inside the bag!!");
+        }
     }
-    public ArrayList<Berry> getBerryBag() {
+
+    public ArrayList<BagCategory> getBerryBag() {
         return berryBag;
     }
 
-    public ArrayList<KeyItems> getKeyItemBag() {
+    public ArrayList<BagCategory> getKeyItemBag() {
         return keyItemBag;
     }
 
-    public ArrayList<TM> getTmBag() {
+    public ArrayList<BagCategory> getTmBag() {
         return tmBag;
     }
 
-    public ArrayList<Medicine> getMedicineBag() {
+    public ArrayList<BagCategory> getMedicineBag() {
         return medicineBag;
     }
 
-    public ArrayList<PokeBall> getPokeBallBag() {
+    public ArrayList<BagCategory> getPokeBallBag() {
         return pokeBallBag;
     }
 
-    public ArrayList<BattleItem> getBattleItemBag() {
+    public ArrayList<BagCategory> getBattleItemBag() {
         return battleItemBag;
     }
 
-    public ArrayList<Item> getItemBag() {
+    public ArrayList<BagCategory> getItemBag() {
         return itemBag;
     }
 
-    public ArrayList<Mail> getMailBag() {
+    public ArrayList<BagCategory> getMailBag() {
         return mailBag;
     }
 }

@@ -1,6 +1,6 @@
 package Pokemon.ItemBag;
 
-public class BattleItem {
+public class BattleItem extends BagCategory{
     private String name;
     private int price;
     private int sellPrice;
@@ -15,6 +15,9 @@ public class BattleItem {
         this.effect = effect;
     }
 
+    public String getClassName(){
+        return "Battle Item";
+    }
     public String getName() {
         return name;
     }

@@ -1,8 +1,6 @@
 package Pokemon.ItemBag;
 
-import Pokemon.Pokemon;
-
-public class PokeBall {
+public class PokeBall extends BagCategory{
     private String name;
     private String effect;
     private int catchRate;
@@ -17,6 +15,10 @@ public class PokeBall {
         this.location = location;
         this.price = price;
         this.sellPrice = sellPrice;
+    }
+
+    public String getClassName(){
+        return "Poke Ball";
     }
 
     public String getName() {

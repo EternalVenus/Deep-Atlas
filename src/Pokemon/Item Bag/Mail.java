@@ -1,8 +1,6 @@
 package Pokemon.ItemBag;
 
-import Pokemon.Pokemon;
-
-public class Mail {
+public class Mail extends BagCategory{
     private String name;
     private String effect;
     private String location;
@@ -13,6 +11,10 @@ public class Mail {
         this.effect = effect;
         this.location = location;
         this.sellPrice = sellPrice;
+    }
+
+    public String getClassName(){
+        return "Mail";
     }
 
     public String getName() {

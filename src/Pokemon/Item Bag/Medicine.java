@@ -1,8 +1,6 @@
 package Pokemon.ItemBag;
 
-import Pokemon.Pokemon;
-
-public class Medicine {
+public class Medicine extends BagCategory{
     private String name;
     private String description;
     private int price;
@@ -15,6 +13,10 @@ public class Medicine {
         this.price = price;
         this.power = power;
         this.effect = effect;
+    }
+
+    public String getClassName(){
+        return "Medicine";
     }
 
     public String getName() {
