@@ -10,11 +10,13 @@ public class KeyItemBag {
     }
 
     public void listItems(){
-        for (int i = 0 ; i < keyItemList.size(); i++){
+        if (keyItemList.size() != 0){
             System.out.println("----- Key Items -----");
-            System.out.println(i + ") " + keyItemList.get(i));
-        }
+            for (int i = 0 ; i < keyItemList.size(); i++){
+                System.out.println(i + ") " + keyItemList.get(i));
+            }
             System.out.println("---------------------");
+        }
     }
 
     public boolean addKeyItem(KeyItems item){

@@ -39,7 +39,7 @@ public class Bag {
         System.out.println("4) Berries");
         System.out.println("5) Battle Item");
         System.out.println("6) Mails");
-        System.out.println("7) Key Item");
+        System.out.println("7) Key Item\n");
     }
 
     // listing all the items in each bag

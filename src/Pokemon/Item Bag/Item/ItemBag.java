@@ -33,11 +33,13 @@ public class ItemBag {
     }
 
     public void listItems(){
-        for (int i = 0 ; i < itemList.size(); i++){
+        if (itemList.size() != 0) {
             System.out.println("----- Items -----");
-            System.out.println(i + ") " + itemList.get(i) + " :" + itemList.get(i).getAmount());
-        }
+            for (int i = 0 ; i < itemList.size(); i++){
+                System.out.println(i + ") " + itemList.get(i) + " :" + itemList.get(i).getAmount());
+            }
             System.out.println("----------------");
+        }
     }
 
     public ArrayList<Item> getItemList() {

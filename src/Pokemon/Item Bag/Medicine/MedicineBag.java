@@ -32,11 +32,13 @@ public class MedicineBag {
     }
 
     public void listItems(){
-        for (int i = 0 ; i < medicineList.size(); i++){
+        if (medicineList.size() != 0){
             System.out.println("----- Medicines -----");
-            System.out.println(i + ") " + medicineList.get(i) + " :" + medicineList.get(i).getAmount());
-        }
+            for (int i = 0 ; i < medicineList.size(); i++){
+                System.out.println(i + ") " + medicineList.get(i) + " :" + medicineList.get(i).getAmount());
+            }
             System.out.println("---------------------");
+        }
     }
 
     public ArrayList<Medicine> getMedicineList() {

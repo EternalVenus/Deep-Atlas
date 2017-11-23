@@ -31,11 +31,14 @@ public class BattleItemBag{
     }
 
     public void listItems(){
-        for (int i = 0 ; i < battleItemList.size(); i++){
+        if (battleItemList.size() != 0){
             System.out.println("----Battle items----");
-            System.out.println(i + ") " + battleItemList.get(i) + " :" + battleItemList.get(i).getAmount());
-        }
+
+            for (int i = 0 ; i < battleItemList.size(); i++){
+                System.out.println(i + ") " + battleItemList.get(i).getName() + " :" + battleItemList.get(i).getAmount());
+            }
             System.out.println("--------------------");
+        }
     }
 
     public ArrayList<BattleItem> getBattleItemList() {

@@ -19,11 +19,14 @@ public class TMBag {
     }
 
     public void listItems(){
-        for (int i = 0 ; i < tmList.size(); i++){
+        if (tmList.size() != 0){
             System.out.println("----- TM/HM -----");
-            System.out.println(i + ") " + tmList.get(i));
-        }
+
+            for (int i = 0 ; i < tmList.size(); i++){
+                System.out.println(i + ") " + tmList.get(i));
+            }
             System.out.println("-----------------");
+        }
     }
 
     public ArrayList<TM> getTmList() {

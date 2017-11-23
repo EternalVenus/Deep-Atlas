@@ -33,11 +33,13 @@ public class BerryBag {
     }
 
     public void listItems(){
-        System.out.println("----- Berries -----");
-        for (int i = 0 ; i < berryList.size(); i++){
-            System.out.println(i + ") " + berryList.get(i).getName() + " :" + berryList.get(i).getAmount());
+        if (berryList.size() != 0){
+            System.out.println("----- Berries ------");
+            for (int i = 0 ; i < berryList.size(); i++){
+                System.out.println(i + ") " + berryList.get(i).getName() + " :" + berryList.get(i).getAmount());
+            }
+            System.out.println("--------------------");
         }
-        System.out.println("------------------");
     }
 
     public ArrayList<Berry> getBerryList() {
