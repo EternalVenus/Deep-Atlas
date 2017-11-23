@@ -11,11 +11,11 @@ public class KeyItemBag {
 
     public void listItems(){
         if (keyItemList.size() != 0){
-            System.out.println("----- Key Items -----");
+            System.out.println("---- Key Items ----");
             for (int i = 0 ; i < keyItemList.size(); i++){
-                System.out.println(i + ") " + keyItemList.get(i));
+                System.out.println(i + ") " + keyItemList.get(i).getName());
             }
-            System.out.println("---------------------");
+            System.out.println("-------------------");
         }
     }
 
