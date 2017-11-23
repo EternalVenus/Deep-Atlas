@@ -8,8 +8,9 @@ public class PokeBall{
     private int price;
     private int sellPrice;
     private int amount;
+    private String description;
 
-    public PokeBall(String name, String effect, int catchRate,
+    public PokeBall(String name, String effect, String description, int catchRate,
                     String location, int price, int sellPrice, int amount) {
         this.name = name;
         this.effect = effect;
@@ -18,6 +19,7 @@ public class PokeBall{
         this.price = price;
         this.sellPrice = sellPrice;
         this.amount = amount;
+        this.description = description;
     }
 
     public int addPokeBall(int amount){
@@ -55,6 +57,10 @@ public class PokeBall{
 
     public int getSellPrice() {
         return sellPrice;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public int getAmount() {
