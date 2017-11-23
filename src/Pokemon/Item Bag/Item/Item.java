@@ -43,4 +43,8 @@ public class Item {
     public String getDescription() {
         return description;
     }
+
+    public int getAmount() {
+        return amount;
+    }
 }
