@@ -87,7 +87,7 @@ public class Bag {
             this.itemBag.addItem((Item)item, quantity);
             return true;
 
-        }else if(item instanceof KeyItemBag){
+        }else if(item instanceof KeyItems){
             return this.keyItemBag.addKeyItem((KeyItems)item);
 
         }else if (item instanceof Mail) {
