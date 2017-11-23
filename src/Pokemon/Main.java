@@ -8,32 +8,43 @@ import Pokemon.Skill.B.Barrage;
 public class Main {
     public static void main(String[] args){
 
-        Skill barrage = new Barrage();
-
         Pikachu pikachu = new Pikachu();
         Pichu pichu = new Pichu();
-        Pokemon charmander = new Pokemon("Charmander");
-        Pokemon squirtle = new Pokemon("Squirtle");
-        Pokemon piplup = new Pokemon("Piplup");
-        Pokemon bulbasaur = new Pokemon("Bulbasaur");
-        Pokemon mew = new Pokemon("Mew");
-        Pokemon mewtwo = new Pokemon("MewTwo");
+//        Pokemon charmander = new Pokemon("Charmander");
+//        Pokemon squirtle = new Pokemon("Squirtle");
+//        Pokemon piplup = new Pokemon("Piplup");
+//        Pokemon bulbasaur = new Pokemon("Bulbasaur");
+//        Pokemon mew = new Pokemon("Mew");
+//        Pokemon mewtwo = new Pokemon("MewTwo");
 
-        pikachu.attack(charmander, barrage);
-        pikachu.showSkills();
+        PokemonPC pc = new PokemonPC();
+        PokemonBag pokemonBag = new PokemonBag(pc);
+        PokemonBag pokemonBag2 = new PokemonBag(pc);
 
-        pichu.showSkills();
+        pokemonBag.addToBag(pikachu);
+        pokemonBag.addToBag(pikachu);
+        pokemonBag.addToBag(pikachu);
+        pokemonBag.addToBag(pikachu);
+        pokemonBag.addToBag(pikachu);
+        pokemonBag.addToBag(pikachu);
 
+        pokemonBag2.addToBag(pichu);
+        pokemonBag2.addToBag(pichu);
+        pokemonBag2.addToBag(pichu);
+        pokemonBag2.addToBag(pichu);
+        pokemonBag2.addToBag(pichu);
+        pokemonBag2.addToBag(pichu);
 
-//        PokemonPC pc = new PokemonPC();
-//        PokemonBag bag = new PokemonBag(pc);
-//
-//        bag.addToBag(pikachu);
-//        bag.addToBag(charmander);
-//        bag.addToBag(squirtle);
-//        bag.addToBag(piplup);
-//        bag.addToBag(bulbasaur);
-//        bag.addToBag(mew);
+        // Testing player class and pokemon battle class
+        PokemonPlayer david = new PokemonPlayer("David", "Male", pokemonBag);
+        PokemonPlayer hen = new PokemonPlayer("Hen", "Female", pokemonBag2);
+
+        PokemonBattle pokemonBattle = new PokemonBattle(david, hen, true);
+
+        pokemonBattle.startBattle();
+    }
+}
+
 //
 //        //bag full here
 //        bag.addToBag(mewtwo);
@@ -55,5 +66,3 @@ public class Main {
 //        bag.listPokemons();
 //        pc.showPokemon(5);
 //        pc.showPokemon(10);
-    }
-}

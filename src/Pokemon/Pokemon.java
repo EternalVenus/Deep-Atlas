@@ -9,7 +9,8 @@ public class Pokemon {
     private int level;
     private int exp;
     private String nature;
-
+    private String ID;
+    private Type type;
     // stats
     private int hp;
     private int atk;
@@ -30,8 +31,8 @@ public class Pokemon {
     private int IV;
     private int EV;
 
-    public Pokemon(String name, int baseHp, int baseAtk, int baseSpAtk,
-                   int baseDef, int baseSpDef, int baseSpeed) {
+    public Pokemon(String name, String nickName, String ID,  int baseHp, int baseAtk, int baseDef, int baseSpAtk,
+                    int baseSpDef, int baseSpeed) {
 
         // gives a 50% chance to both female and male
         if (Math.random() < 0.5){
@@ -39,10 +40,12 @@ public class Pokemon {
         }else{
             this.gender = "Female";
         }
-        this.exp = 0;
+
+        this.nickName = nickName;
         this.name = name;
+        this.ID = ID;
 
-
+        this.exp = 0;
         this.level = (int) (Math.random() * (100 - 5)) + 5;
         this.hp = ((int) (Math.random() * (40 - 5)) + 5) * this.getLevel();
         this.spAtk = ((int) (Math.random() * (10 - 5)) + 5) * this.getLevel();
@@ -59,50 +62,32 @@ public class Pokemon {
         this.baseSpeed = baseSpeed;
     }
 
-
-    public Pokemon(String name, String nickName) {
-        if (Math.random() < 0.5){
-            this.gender = "Male";
-        }else{
-            this.gender = "Female";
-        }
-        this.nickName = nickName;
-        this.exp = 0;
-        this.name = name;
-        this.level = (int) (Math.random() * (100 - 5)) + 5;
-        this.hp = ((int) (Math.random() * (40 - 5)) + 5) * this.getLevel();
-        this.spAtk = ((int) (Math.random() * (10 - 5)) + 5) * this.getLevel();
-        this.atk = ((int) (Math.random() * (10 - 5)) + 5) * this.getLevel();
-        this.defense = ((int) (Math.random() * (10 - 5)) + 5) * this.getLevel();
-        this.spDefense = ((int) (Math.random() * (10 - 5)) + 5) * this.getLevel();
-
-    }
-
-
     public int damageTaken(int damage){
         this.hp = this.getHp() - damage;
         return this.hp;
     }
 
+    // methods to be Override
     public void showSkills(){
         //this function will be override
         System.out.println("Showing skills of the pokemon.");
     }
 
+    // to be overridden
     public Skill getSkill1() {
-        return new Skill();
+        return null;
     }
 
     public Skill getSkill2() {
-        return new Skill();
+        return null;
     }
 
     public Skill getSkill3() {
-        return new Skill();
+        return null;
     }
 
     public Skill getSkill4() {
-        return new Skill();
+        return null;
     }
 
     public String getNickName() {
@@ -114,6 +99,7 @@ public class Pokemon {
 
     }
 
+    // GETTERS FOR DETAILS ON THE POKEMON
     public String getGender() {
         return gender;
     }
@@ -122,8 +108,16 @@ public class Pokemon {
         return level;
     }
 
-    public int getHp() {
-        return hp;
+    public String getNature() {
+        return nature;
+    }
+
+    public int getIV() {
+        return IV;
+    }
+
+    public int getEV() {
+        return EV;
     }
 
     public int getExp() {
@@ -134,7 +128,18 @@ public class Pokemon {
         return name;
     }
 
+    public String getID() {
+        return ID;
+    }
 
+    public Type getType() {
+        return type;
+    }
+
+    // GETTERS FOR THE STATS
+    public int getHp() {
+        return hp;
+    }
 
     public int getSpAtk() {
         return spAtk;
@@ -150,5 +155,36 @@ public class Pokemon {
 
     public int getSpDefense() {
         return spDefense;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    // SETTERS FOR THE STATS
+
+    // subtract Hp after taking damage
+    public void setHp(int damage) {
+        this.hp -= damage;
+    }
+
+    public void setAtk(int atk) {
+        this.atk = atk;
+    }
+
+    public void setSpAtk(int spAtk) {
+        this.spAtk = spAtk;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    public void setSpDefense(int spDefense) {
+        this.spDefense = spDefense;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 }

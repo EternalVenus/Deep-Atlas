@@ -60,4 +60,15 @@ public class PokemonBag {
         System.out.println("---------------------------------------");
     }
 
+    public int bagSize(){
+        return pokemon.size();
+    }
+
+    public ArrayList<Pokemon> getPokemon() {
+        return pokemon;
+    }
+
+    public void setPokemon(ArrayList<Pokemon> pokemon) {
+        this.pokemon = pokemon;
+    }
 }

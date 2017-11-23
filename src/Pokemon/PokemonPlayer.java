@@ -1,6 +1,7 @@
 package Pokemon;
 
 import java.util.Collections;
+import Pokemon.Skill.*;
 
 public class PokemonPlayer {
     private String name;
@@ -74,21 +75,11 @@ public class PokemonPlayer {
     public String getGender() {
         return gender;
     }
-
-    public PokemonBag getBag() {
-        return this.pokemonBag;
-    }
+    
 
     public Pokemon getPokemonActive() {
         return pokemonActive;
     }
 
-    //    public void printInstruction(){
-//        System.out.println("What is your next move?");
-//        System.out.println("1 : Attack \n" +
-//                            "2 : Switch Pokemons.Pokemons.IPokemon \n" +
-//                            "3 : Use item \n" +
-//                            "4 : Run");
-//
-//    }
+
 }
