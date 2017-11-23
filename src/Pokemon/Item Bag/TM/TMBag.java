@@ -21,9 +21,8 @@ public class TMBag {
     public void listItems(){
         if (tmList.size() != 0){
             System.out.println("----- TM/HM -----");
-
             for (int i = 0 ; i < tmList.size(); i++){
-                System.out.println(i + ") " + tmList.get(i));
+                System.out.println(i + ") " + tmList.get(i).getID() + " : " + tmList.get(i).getName());
             }
             System.out.println("-----------------");
         }
