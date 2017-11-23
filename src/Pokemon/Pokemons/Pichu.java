@@ -2,7 +2,7 @@ package Pokemon.Pokemons;
 
 import Pokemon.Pokemon;
 import Pokemon.Skill.*;
-import Pokemon.Skill.A.AquaJet;
+import Pokemon.Skill.A.Absorb;
 import Pokemon.Skill.A.ArmThrust;
 import Pokemon.Skill.A.Astonish;
 import Pokemon.Skill.A.AuraSphere;
@@ -15,7 +15,7 @@ public class Pichu extends Pokemon implements IPokemon{
     private Skill skill1 = new Astonish();
     private Skill skill2 = new ArmThrust();
     private Skill skill3 = new AuraSphere();
-    private Skill skill4 = new AquaJet();
+    private Skill skill4 = new Absorb();
     private Type type;
     private Type type2;
     private ArrayList<Skill> skillSet = new ArrayList<>();

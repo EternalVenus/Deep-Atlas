@@ -42,6 +42,14 @@ public class Bag {
         System.out.println("7) Key Item\n");
     }
 
+    public void listBattleBags(){
+        System.out.println("0) Medicine");
+        System.out.println("1) Poke Balls");
+        System.out.println("2) Berries");
+        System.out.println("3) Battle Item");
+        System.out.println("4) Key Item\n");
+    }
+
     // listing all the items in each bag
     public void listItemInBag(int bagNumber){
         switch (bagNumber){
@@ -72,6 +80,27 @@ public class Bag {
         }
     }
 
+    public void listBattleItemInBag(int bagNumber){
+        switch (bagNumber){
+            case 0:
+                medicineBag.listItems();
+                break;
+            case 1:
+                pokeBallBag.listItems();
+                break;
+            case 2:
+                berryBag.listItems();
+                break;
+            case 3:
+                battleItemBag.listItems();
+                break;
+            case 4:
+                keyItemBag.listItems();
+                break;
+            default:
+                System.out.println("There is no such category.");
+        }
+    }
     // The method checks the category of the item. Then add the item to the specific bag.
     // Trying to make the method more generic by using Object. Then checking the instance of the Object
     public boolean addItem(Object item, int quantity){

@@ -1,6 +1,6 @@
 package Pokemon.Skill.B;
 
-import Pokemon.Pokemons.Type;
+import Pokemon.Type;
 import Pokemon.Skill.*;
 import Pokemon.Pokemon;
 
@@ -18,16 +18,6 @@ public class BulletSeed extends Skill{
                 25,
                 "Special"
                 );
-                
-                
-        this.name = "Bullet Seed";
-        this.type = new Type("Grass");
-        this.ID  = "TM09";
-        this.baseDamage  = 25;
-        this.description = "Bullet Seed hits 2-5 times per turn used.\n" +
-                "The probability of each interval is shown to the right, with the total power after each hit.";
-        this.PP = 30;
-        this.category = "Physical";
     }
 
      @Override

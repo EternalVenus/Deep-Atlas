@@ -11,7 +11,7 @@ import Pokemon.Type;
 import java.util.ArrayList;
 import java.util.*;
 
-public class Pikachu extends Pokemon {
+public class Pikachu extends Pokemon implements IPokemon {
     private Skill skill1 = new BoltStrike();
     private Skill skill2 = new AncientPower();
     private Skill skill3 = new AuraSphere();
@@ -38,7 +38,7 @@ public class Pikachu extends Pokemon {
         int damage;
         //Calculating damage dealt
         // still need to calculate modifier
-        if (skill.getCategory() == "Physical"){
+        if (skill.getCategory().equals("Physical")){
             damage = ((((2 * this.getLevel())/ 5  + 2) * skill.getBaseDamage() *
                             this.getAtk()/ enemy.getDefense())/ 50 + 2);
         }else{

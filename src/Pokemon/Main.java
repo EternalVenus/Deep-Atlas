@@ -1,5 +1,8 @@
 package Pokemon;
 
+import Pokemon.ItemBag.Bag;
+import Pokemon.ItemBag.PokeBall.AllPokeBalls.FriendBall;
+import Pokemon.ItemBag.PokeBall.AllPokeBalls.MoonBall;
 import Pokemon.Pokemons.Pichu;
 import Pokemon.Pokemons.Pikachu;
 import Pokemon.Skill.*;
@@ -21,25 +24,23 @@ public class Main {
         PokemonBag pokemonBag = new PokemonBag(pc);
         PokemonBag pokemonBag2 = new PokemonBag(pc);
 
-        pokemonBag.addToBag(pikachu);
-        pokemonBag.addToBag(pikachu);
-        pokemonBag.addToBag(pikachu);
-        pokemonBag.addToBag(pikachu);
-        pokemonBag.addToBag(pikachu);
-        pokemonBag.addToBag(pikachu);
+        Bag itemBag = new Bag();
 
+        pokemonBag.addToBag(pikachu);
         pokemonBag2.addToBag(pichu);
-        pokemonBag2.addToBag(pichu);
-        pokemonBag2.addToBag(pichu);
-        pokemonBag2.addToBag(pichu);
-        pokemonBag2.addToBag(pichu);
-        pokemonBag2.addToBag(pichu);
+
+        MoonBall moonBall = new MoonBall();
+        FriendBall friendBall = new FriendBall();
+
+        itemBag.addItem(moonBall, 30);
+        itemBag.addItem(friendBall, 30);
+
 
         // Testing player class and pokemon battle class
-        PokemonPlayer david = new PokemonPlayer("David", "Male", pokemonBag);
-        PokemonPlayer hen = new PokemonPlayer("Hen", "Female", pokemonBag2);
+        PokemonPlayer david = new PokemonPlayer("David", "Male", pokemonBag, itemBag);
+        PokemonPlayer hen = new PokemonPlayer("Hen", "Female", pokemonBag2, itemBag);
 
-        PokemonBattle pokemonBattle = new PokemonBattle(david, hen, true);
+        PokemonBattle pokemonBattle = new PokemonBattle(david, pikachu);
 
         pokemonBattle.startBattle();
     }

@@ -10,8 +10,8 @@ public class Belch extends Skill{
                 new Type("Poison"),
                 "none",
                 120,
-                 "Belch deals damage, but only works if the user has previously consumed a Berry during the battle.\n" +
-                "Manually feeding a Berry from the bag does not count.\n",
+                 "Belch deals damage, but only works if the user has previously consumed a Berries during the battle.\n" +
+                "Manually feeding a Berries from the bag does not count.\n",
                 10,
                 "Special"
                 );

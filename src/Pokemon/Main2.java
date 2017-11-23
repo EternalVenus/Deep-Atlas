@@ -8,9 +8,7 @@ import Pokemon.ItemBag.KeyItem.AllKeyItem.*;
 import Pokemon.ItemBag.Mail.AllMails.*;
 import Pokemon.ItemBag.Medicine.AllMedicine.*;
 import Pokemon.ItemBag.PokeBall.AllPokeBalls.*;
-import Pokemon.ItemBag.TM.AllTM.TM01;
-import Pokemon.ItemBag.TM.AllTM.TM02;
-import Pokemon.ItemBag.TM.TM;
+import Pokemon.ItemBag.TM.AllTM.*;
 
 public class Main2 {
     public static void main(String[] args) {
@@ -76,7 +74,7 @@ public class Main2 {
 
         itemBag.addItem(tm01,1);
         itemBag.addItem(tm02, 1);
-        
+
         for (int i = 0; i < 8; i++){
             itemBag.listItemInBag(i);
         }

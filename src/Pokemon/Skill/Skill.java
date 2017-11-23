@@ -45,8 +45,8 @@ public class Skill {
         return name;
     }
 
-    public Type getType() {
-        return type;
+    public String getType() {
+        return type.getType();
     }
 
     public int getBaseDamage() {

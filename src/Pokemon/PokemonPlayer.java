@@ -1,20 +1,24 @@
 package Pokemon;
 
 import java.util.Collections;
+
+import Pokemon.ItemBag.Bag;
 import Pokemon.Skill.*;
 
 public class PokemonPlayer {
     private String name;
     private String gender;
     private PokemonBag pokemonBag;
+    private Bag itembag;
     private int money;
     private Pokemon pokemonActive;
     private boolean blackOut;
 
-    public PokemonPlayer(String name, String gender, PokemonBag pokemonBag) {
+    public PokemonPlayer(String name, String gender, PokemonBag pokemonBag, Bag itembag) {
         this.name = name;
         this.gender = gender;
         this.pokemonBag = pokemonBag;
+        this.itembag = itembag;
         this.money = 0;
         // Active pokemon is the first pokemon in the bag
         this.pokemonActive = pokemonBag.getPokemon().get(0);
@@ -75,7 +79,10 @@ public class PokemonPlayer {
     public String getGender() {
         return gender;
     }
-    
+
+    public Bag getItembag() {
+        return itembag;
+    }
 
     public Pokemon getPokemonActive() {
         return pokemonActive;
