@@ -4,17 +4,19 @@ public class Medicine{
     private String name;
     private String description;
     private int price;
-    private int power;
-    private String effect;
+    private int sellPrice;
     private int amount;
+    private String effect;
+    private String location;
 
-    public Medicine(String name, String description, int price, int power, String effect, int amount) {
+    public Medicine(String name, String description,String effect, String location, int sellPrice,int price, int amount) {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.power = power;
-        this.effect = effect;
         this.amount = amount;
+        this.sellPrice = sellPrice;
+        this.effect = effect;
+        this.location = location;
     }
 
     public int addMedicine(int amount){
@@ -43,12 +45,12 @@ public class Medicine{
         return price;
     }
 
-    public int getPower() {
-        return power;
-    }
-
     public String getEffect() {
         return effect;
+    }
+
+    public String getLocation() {
+        return location;
     }
 
     public int getAmount() {

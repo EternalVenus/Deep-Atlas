@@ -1,4 +1,4 @@
-<h1>(ノ*゜▽゜*)Deep Atlas(ノ*゜▽゜*)</h1>
+<h1>(ノ*゜▽゜*) Deep Atlas (ノ*゜▽゜*)</h1>
 
 Deep Atlas will be a large scale object oriented programming project. 
 We will be using OOP to model the real world or virtual world (video game).

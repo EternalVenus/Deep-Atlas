@@ -35,7 +35,7 @@ public class MedicineBag {
         if (medicineList.size() != 0){
             System.out.println("----- Medicines -----");
             for (int i = 0 ; i < medicineList.size(); i++){
-                System.out.println(i + ") " + medicineList.get(i) + " :" + medicineList.get(i).getAmount());
+                System.out.println(i + ") " + medicineList.get(i).getName() + " :" + medicineList.get(i).getAmount());
             }
             System.out.println("---------------------");
         }
