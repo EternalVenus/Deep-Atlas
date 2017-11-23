@@ -42,4 +42,8 @@ public class Mail {
     public int getSellPrice() {
         return sellPrice;
     }
+
+    public int getAmount() {
+        return amount;
+    }
 }

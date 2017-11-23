@@ -30,4 +30,16 @@ public class MailBag {
             return 0;
         }
     }
+
+    public void listItems(){
+        for (int i = 0 ; i < mailList.size(); i++){
+            System.out.println("----- Mails -----");
+            System.out.println(i + ") " + mailList.get(i) + " :" + mailList.get(i).getAmount() );
+        }
+            System.out.println("-----------------");
+    }
+
+    public ArrayList<Mail> getMailList() {
+        return mailList;
+    }
 }
