@@ -18,14 +18,15 @@ public class PokeBallBag {
         }
     }
 
-    // If the Poke Ball is found, the method uses the Mail and subtract the amount.
-    public int usePokeBall(PokeBall mail){
+    // If the Poke Ball is found, the method uses the Pokeball and subtract the amount.
+    public boolean usePokeBall(int indexOfPokeBall){
         // if the PokeBall is found.
-        if (this.pokeBallList.indexOf(mail) >= 0){
-            return mail.usePokeBall();
+        if (indexOfPokeBall < 0 || indexOfPokeBall >= pokeBallList.size()){
+//            System.out.println("There is no such Poke ball in the bag.");
+            return false;
         }else{
-            System.out.println("There is no such Poke Ball in the bag");
-            return 0;
+            pokeBallList.get(indexOfPokeBall).setAmount(-1);
+            return true;
         }
     }
 

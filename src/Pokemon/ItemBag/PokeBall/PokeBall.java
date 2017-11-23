@@ -1,5 +1,7 @@
 package Pokemon.ItemBag.PokeBall;
 
+import java.util.concurrent.TimeUnit;
+
 public class PokeBall{
     private String name;
     private String effect;
@@ -25,6 +27,31 @@ public class PokeBall{
     public int addPokeBall(int amount){
         this.amount += amount;
         return this.amount;
+    }
+
+    public boolean shake(){
+        int counter = 0;
+        for (int i = 0; i < 3; i++){
+            double randomValue = Math.random();
+            if (randomValue < .8 ){
+                System.out.println("Shake");
+                try
+                {
+                    Thread.sleep(1000);
+                }
+                catch(InterruptedException ex)
+                {
+                    Thread.currentThread().interrupt();
+                }
+                counter++;
+            }
+        }
+
+        if (counter == 3){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public int usePokeBall(){
@@ -67,4 +94,7 @@ public class PokeBall{
         return amount;
     }
 
+    public void setAmount(int amount) {
+        this.amount += amount;
+    }
 }
