@@ -1,6 +1,6 @@
 package Pokemon.ItemBag.BattleItem;
 
-public class BattleItem  {
+public class BattleItem {
     private String name;
     private int price;
     private int sellPrice;
@@ -50,5 +50,9 @@ public class BattleItem  {
 
     public String getEffect() {
         return effect;
+    }
+
+    public int getAmount() {
+        return amount;
     }
 }

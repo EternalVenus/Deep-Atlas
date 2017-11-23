@@ -2,7 +2,7 @@ package Pokemon.ItemBag.BattleItem;
 
 import java.util.ArrayList;
 
-public class BattleItemBag {
+public class BattleItemBag{
     private ArrayList<BattleItem> battleItemList;
 
     public BattleItemBag(){
@@ -28,5 +28,17 @@ public class BattleItemBag {
             System.out.println("There is no such berry in the bag");
             return 0;
         }
+    }
+
+    public void listItems(){
+        for (int i = 0 ; i < battleItemList.size(); i++){
+            System.out.println("----Battle items----");
+            System.out.println(i + ") " + battleItemList.get(i) + " :" + battleItemList.get(i).getAmount());
+        }
+            System.out.println("--------------------");
+    }
+
+    public ArrayList<BattleItem> getBattleItemList() {
+        return battleItemList;
     }
 }
