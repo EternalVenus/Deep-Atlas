@@ -4,15 +4,19 @@ public class Mail {
     private String name;
     private String effect;
     private String location;
+    private String description;
+    private int price;
     private int sellPrice;
     private int amount;
 
-    public Mail(String name, String effect, String location, int sellPrice, int amount) {
+    public Mail(String name, String effect, String location, String description, int price ,int sellPrice, int amount) {
         this.name = name;
         this.effect = effect;
         this.location = location;
         this.sellPrice = sellPrice;
         this.amount = amount;
+        this.price = price;
+        this.description = description;
     }
 
     public int addMail(int amount){
