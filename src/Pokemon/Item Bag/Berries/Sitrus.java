@@ -1,7 +1,5 @@
 package Pokemon.ItemBag.Berries;
 
-import Pokemon.ItemBag.Berry;
-
 public class Sitrus extends Berry{
 
     public Sitrus() {
