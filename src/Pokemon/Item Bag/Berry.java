@@ -5,35 +5,31 @@ import Pokemon.Pokemon;
 public class Berry extends BagCategory{
     private String name;
     private String description;
-    private String flavor;
     private int growthTime;
     private int amount;
-    private String generation;
-    private int size;
+    private double size;
     private String location;
     private String firmness;
 
 
-    public Berry(String name, String description, String flavor, int growthTime, int amount,
-                 String generation, int size, String location, String firmness) {
+    public Berry(String name, String description, int growthTime, int amount,
+                 double size, String location, String firmness) {
         this.name = name;
         this.description = description;
-        this.flavor = flavor;
         this.growthTime = growthTime;
         this.amount = amount;
-        this.generation = generation;
         this.size = size;
         this.location = location;
         this.firmness = firmness;
     }
 
     public String getClassName(){
-        return "Berry";
+        return "Berries";
     }
 
     // function to be override
     public void effect(Pokemon pokemon){
-        System.out.println("Effect of the Berry");
+        System.out.println("Effect of the Berries");
     }
 
     public String getName() {
@@ -44,10 +40,6 @@ public class Berry extends BagCategory{
         return description;
     }
 
-    public String getFlavor() {
-        return flavor;
-    }
-
     public int getGrowthTime() {
         return growthTime;
     }
@@ -56,11 +48,7 @@ public class Berry extends BagCategory{
         return amount;
     }
 
-    public String getGeneration() {
-        return generation;
-    }
-
-    public int getSize() {
+    public double getSize() {
         return size;
     }
 
@@ -70,5 +58,10 @@ public class Berry extends BagCategory{
 
     public String getFirmness() {
         return firmness;
+    }
+
+    public int addBerry(int berryAmount){
+        this.amount += berryAmount;
+        return this.amount;
     }
 }

@@ -28,11 +28,11 @@ public class Bag {
         System.out.println("0) Items");
         System.out.println("1) Medicine");
         System.out.println("2) Poke Balls");
-        System.out.println("4) TM");
-        System.out.println("5) Berry");
-        System.out.println("6) Battle Item");
-        System.out.println("7) Mails");
-        System.out.println("8) Key Item");
+        System.out.println("3) TM");
+        System.out.println("4) Berries");
+        System.out.println("5) Battle Item");
+        System.out.println("6) Mails");
+        System.out.println("7) Key Item");
     }
 
     // listing all the items in each bag
@@ -42,35 +42,27 @@ public class Bag {
                 System.out.println("--------------------------");
                 System.out.println("Listing Items in Bag");
                 for (int i = 0; i < itemBag.size(); i++){
-                    System.out.println(i + ") " + itemBag.get(i).getName());
+                    System.out.println(i + ") " + itemBag.get(i).getName() + " - " +  itemBag.get(i).getAmount());
                 }
                 System.out.println("--------------------------");
                 break;
             case 1:
                 System.out.println("--------------------------");
-                System.out.println("Listing Medicines in Bag");
+                System.out.println("Listing Medicine in Bag");
                 for (int i = 0; i < medicineBag.size(); i++){
-                    System.out.println(i + ") " + medicineBag.get(i).getName());
+                    System.out.println(i + ") " + medicineBag.get(i).getName()+ " - " +  medicineBag.get(i).getAmount() );
                 }
                 System.out.println("--------------------------");
                 break;
             case 2:
                 System.out.println("--------------------------");
-                System.out.println("Listing Medicine in Bag");
-                for (int i = 0; i < medicineBag.size(); i++){
-                    System.out.println(i + ") " + medicineBag.get(i).getName());
+                System.out.println("Listing Poke Balls in Bag");
+                for (int i = 0; i < pokeBallBag.size(); i++){
+                    System.out.println(i + ") " + pokeBallBag.get(i).getName() + " - " +  pokeBallBag.get(i).getAmount() );
                 }
                 System.out.println("--------------------------");
                 break;
             case 3:
-                System.out.println("--------------------------");
-                System.out.println("Listing Poke Balls in Bag");
-                for (int i = 0; i < pokeBallBag.size(); i++){
-                    System.out.println(i + ") " + pokeBallBag.get(i).getName());
-                }
-                System.out.println("--------------------------");
-                break;
-            case 4:
                 System.out.println("--------------------------");
                 System.out.println("Listing TMs in Bag");
                 for (int i = 0; i < tmBag.size(); i++){
@@ -78,35 +70,35 @@ public class Bag {
                 }
                 System.out.println("--------------------------");
                 break;
-            case 5:
+            case 4:
                 System.out.println("--------------------------");
                 System.out.println("Listing Berries in Bag");
                 for (int i = 0; i < berryBag.size(); i++){
-                    System.out.println(i + ") " + berryBag.get(i).getName());
+                    System.out.println(i + ") " + berryBag.get(i).getName() + " - " +  berryBag.get(i).getAmount());
+                }
+                System.out.println("--------------------------");
+                break;
+            case 5:
+                System.out.println("--------------------------");
+                System.out.println("Listing Battle Items in Bag");
+                for (int i = 0; i < battleItemBag.size(); i++){
+                    System.out.println(i + ") " + battleItemBag.get(i).getName() + " - " +  battleItemBag.get(i).getAmount());
                 }
                 System.out.println("--------------------------");
                 break;
             case 6:
                 System.out.println("--------------------------");
-                System.out.println("Listing Battle Items in Bag");
-                for (int i = 0; i < battleItemBag.size(); i++){
-                    System.out.println(i + ") " + battleItemBag.get(i).getName());
+                System.out.println("Listing Mails in Bag");
+                for (int i = 0; i < mailBag.size(); i++){
+                    System.out.println(i + ") " + mailBag.get(i).getName() + " - " +  mailBag.get(i).getAmount());
                 }
                 System.out.println("--------------------------");
                 break;
             case 7:
                 System.out.println("--------------------------");
-                System.out.println("Listing Mails in Bag");
-                for (int i = 0; i < mailBag.size(); i++){
-                    System.out.println(i + ") " + mailBag.get(i).getName());
-                }
-                System.out.println("--------------------------");
-                break;
-            case 8:
-                System.out.println("--------------------------");
                 System.out.println("Listing Key Items in Bag");
                 for (int i = 0; i < keyItemBag.size(); i++){
-                    System.out.println(i + ") " + keyItemBag.get(i).getName());
+                    System.out.println(i + ") " + keyItemBag.get(i).getName() + " - " +  keyItemBag.get(i).getAmount());
                 }
                 System.out.println("--------------------------");
                 break;
@@ -114,13 +106,20 @@ public class Bag {
     }
 
     // The method checks the category of the item. Then add the item to the specific bag.
-    public void addItem(BagCategory item){
+    public void addItem(BagCategory item, int quantity){
         switch (item.getClassName()){
             case "Battle Item":
                 this.battleItemBag.add(item);
                 break;
-            case "Berry":
-                this.berryBag.add(item);
+            case "Berries":
+                // if the item is already in the bag. just increase the quantity
+                if (this.berryBag.indexOf(item) >= 0){
+                    item.addBerry(quantity);
+                }else{
+                    this.berryBag.add(item);
+                    item.addBerry(quantity);
+                }
+
                 break;
             case "Item":
                 this.itemBag.add(item);
