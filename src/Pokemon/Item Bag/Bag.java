@@ -1,26 +1,33 @@
 package Pokemon.ItemBag;
 
-import java.util.ArrayList;
+import Pokemon.ItemBag.BattleItem.*;
+import Pokemon.ItemBag.Berries.*;
+import Pokemon.ItemBag.Item.*;
+import Pokemon.ItemBag.KeyItem.*;
+import Pokemon.ItemBag.Mail.*;
+import Pokemon.ItemBag.Medicine.*;
+import Pokemon.ItemBag.PokeBall.*;
+import Pokemon.ItemBag.TM.*;
 
 public class Bag {
-    private ArrayList<BagCategory> itemBag;
-    private ArrayList<BagCategory> medicineBag;
-    private ArrayList<BagCategory> pokeBallBag;
-    private ArrayList<BagCategory> berryBag;
-    private ArrayList<BagCategory> keyItemBag;
-    private ArrayList<BagCategory> tmBag;
-    private ArrayList<BagCategory> battleItemBag;
-    private ArrayList<BagCategory> mailBag;
+    private BattleItemBag battleItemBag;
+    private BerryBag berryBag;
+    private ItemBag itemBag;
+    private KeyItemBag keyItemBag;
+    private MailBag mailBag;
+    private MedicineBag medicineBag;
+    private PokeBallBag pokeBallBag;
+    private TMBag tmBag;
 
     public Bag(){
-        this.berryBag = new ArrayList<BagCategory>();
-        this.keyItemBag = new ArrayList<BagCategory>();
-        this.tmBag = new ArrayList<BagCategory>();
-        this.medicineBag = new ArrayList<BagCategory>();
-        this.pokeBallBag = new ArrayList<BagCategory>();
-        this.battleItemBag = new ArrayList<BagCategory>();
-        this.itemBag = new ArrayList<BagCategory>();
-        this.mailBag = new ArrayList<BagCategory>();
+        this.battleItemBag = new BattleItemBag();
+        this.berryBag = new BerryBag();
+        this.itemBag = new ItemBag();
+        this.keyItemBag = new KeyItemBag();
+        this.mailBag = new MailBag();
+        this.medicineBag = new MedicineBag();
+        this.pokeBallBag = new PokeBallBag();
+        this.tmBag = new TMBag();
     }
 
     // listing the names of each bag category
@@ -39,140 +46,101 @@ public class Bag {
     public void listItemInBag(int bagNumber){
         switch (bagNumber){
             case 0:
-                System.out.println("--------------------------");
-                System.out.println("Listing Items in Bag");
-                for (int i = 0; i < itemBag.size(); i++){
-                    System.out.println(i + ") " + itemBag.get(i).getName() + " - " +  itemBag.get(i).getAmount());
-                }
-                System.out.println("--------------------------");
+                itemBag.listItems();
                 break;
             case 1:
-                System.out.println("--------------------------");
-                System.out.println("Listing Medicine in Bag");
-                for (int i = 0; i < medicineBag.size(); i++){
-                    System.out.println(i + ") " + medicineBag.get(i).getName()+ " - " +  medicineBag.get(i).getAmount() );
-                }
-                System.out.println("--------------------------");
+                medicineBag.listItems();
                 break;
             case 2:
-                System.out.println("--------------------------");
-                System.out.println("Listing Poke Balls in Bag");
-                for (int i = 0; i < pokeBallBag.size(); i++){
-                    System.out.println(i + ") " + pokeBallBag.get(i).getName() + " - " +  pokeBallBag.get(i).getAmount() );
-                }
-                System.out.println("--------------------------");
+                pokeBallBag.listItems();
                 break;
             case 3:
-                System.out.println("--------------------------");
-                System.out.println("Listing TMs in Bag");
-                for (int i = 0; i < tmBag.size(); i++){
-                    System.out.println(i + ") " + tmBag.get(i).getName());
-                }
-                System.out.println("--------------------------");
+                tmBag.listItems();
                 break;
             case 4:
-                System.out.println("--------------------------");
-                System.out.println("Listing Berries in Bag");
-                for (int i = 0; i < berryBag.size(); i++){
-                    System.out.println(i + ") " + berryBag.get(i).getName() + " - " +  berryBag.get(i).getAmount());
-                }
-                System.out.println("--------------------------");
+                berryBag.listItems();
                 break;
             case 5:
-                System.out.println("--------------------------");
-                System.out.println("Listing Battle Items in Bag");
-                for (int i = 0; i < battleItemBag.size(); i++){
-                    System.out.println(i + ") " + battleItemBag.get(i).getName() + " - " +  battleItemBag.get(i).getAmount());
-                }
-                System.out.println("--------------------------");
+                battleItemBag.listItems();
                 break;
             case 6:
-                System.out.println("--------------------------");
-                System.out.println("Listing Mails in Bag");
-                for (int i = 0; i < mailBag.size(); i++){
-                    System.out.println(i + ") " + mailBag.get(i).getName() + " - " +  mailBag.get(i).getAmount());
-                }
-                System.out.println("--------------------------");
+                mailBag.listItems();
                 break;
             case 7:
-                System.out.println("--------------------------");
-                System.out.println("Listing Key Items in Bag");
-                for (int i = 0; i < keyItemBag.size(); i++){
-                    System.out.println(i + ") " + keyItemBag.get(i).getName() + " - " +  keyItemBag.get(i).getAmount());
-                }
-                System.out.println("--------------------------");
+                keyItemBag.listItems();
                 break;
         }
     }
 
     // The method checks the category of the item. Then add the item to the specific bag.
-    public void addItem(BagCategory item, int quantity){
-        switch (item.getClassName()){
-            case "Battle Item":
-                this.battleItemBag.add(item);
-                break;
-            case "Berries":
-                // if the item is already in the bag. just increase the quantity
-                if (this.berryBag.indexOf(item) >= 0){
-                    item.addBerry(quantity);
-                }else{
-                    this.berryBag.add(item);
-                    item.addBerry(quantity);
-                }
+    // Trying to make the method more generic by using Object. Then checking the instance of the Object
+    public boolean addItem(Object item, int quantity){
+        if (item instanceof BattleItem){
+            this.battleItemBag.addBattleItem((BattleItem)item, quantity);
+            return true;
 
-                break;
-            case "Item":
-                this.itemBag.add(item);
-                break;
-            case "Key Item":
-                this.keyItemBag.add(item);
-                break;
-            case "Mail":
-                this.mailBag.add(item);
-                break;
-            case "Medicine":
-                this.medicineBag.add(item);
-                break;
-            case "Poke Ball":
-                this.medicineBag.add(item);
-                break;
-            case "TM":
-                this.tmBag.add(item);
-                break;
-            default:
-                System.out.println("The Item can not be put inside the bag!!");
+        }else if(item instanceof Berry){
+            this.berryBag.addBerry((Berry)item, quantity);
+            return true;
+
+        }else if(item instanceof Item){
+            this.itemBag.addItem((Item)item, quantity);
+            return true;
+
+        }else if(item instanceof KeyItemBag){
+            return this.keyItemBag.addKeyItem((KeyItems)item);
+
+        }else if (item instanceof Mail) {
+            this.mailBag.addMail((Mail)item, quantity);
+            return true;
+
+        }else if(item instanceof Medicine) {
+            this.medicineBag.addMedicine((Medicine) item, quantity);
+            return true;
+
+        }else if(item instanceof PokeBall) {
+            this.pokeBallBag.addPokeBall((PokeBall)item, quantity);
+            return true;
+
+        }else if(item instanceof TM) {
+            this.tmBag.addTM((TM)item);
+            return true;
+
+        }else {
+            return false;
         }
+
     }
 
-    public ArrayList<BagCategory> getBerryBag() {
+    public BerryBag getBerryBag() {
         return berryBag;
     }
 
-    public ArrayList<BagCategory> getKeyItemBag() {
+    public KeyItemBag getKeyItemBag() {
         return keyItemBag;
     }
 
-    public ArrayList<BagCategory> getTmBag() {
+    public TMBag getTmBag() {
         return tmBag;
     }
 
-    public ArrayList<BagCategory> getMedicineBag() {
+    public MedicineBag getMedicineBag() {
         return medicineBag;
     }
 
-    public ArrayList<BagCategory> getPokeBallBag() {
+    public PokeBallBag getPokeBallBag() {
         return pokeBallBag;
     }
 
-    public ArrayList<BagCategory> getBattleItemBag() {
+    public BattleItemBag getBattleItemBag() {
         return battleItemBag;
     }
 
-    public ArrayList<BagCategory> getItemBag() {
+    public ItemBag getItemBag() {
         return itemBag;
     }
 
-    public ArrayList<BagCategory> getMailBag() {
+    public MailBag getMailBag() {
         return mailBag;
     }
 }
