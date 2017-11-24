@@ -1,6 +1,7 @@
 package Pokemon.ItemBag.BattleItem.AllBattleItem;
 
 import Pokemon.ItemBag.BattleItem.BattleItem;
+import Pokemon.Pokemons.Pokemon;
 
 public class XDefense extends BattleItem{
 
@@ -13,5 +14,27 @@ public class XDefense extends BattleItem{
                         "and finally the Unova region games have X Defense located in the Dreamyard and the Shopping Mall Nine.\n",
                 "X Defend is an item introduced in Generation I that raises the defense of a Pokémon for only a single battle. \n",
                 0);
+    }
+
+    // a method to add def multiplier to the pokemon
+    // the highest amount of def multiplier a pokemon can have is 6
+    @Override
+    public boolean useBattleItem(Pokemon pokemon) {
+        int currentDefMultiplier = pokemon.getDefenseMultiplier() + 2;
+        if (pokemon.getDefenseMultiplier() == 6) {
+            System.out.println("There is no effect!");
+            return false;
+        } else if (currentDefMultiplier > 6) {
+            // if the battle item increase the multiplier to more than 6
+            // set it to 6
+            System.out.println("Used a " + super.getName());
+            pokemon.setDefenseMultiplier(6);
+            return true;
+        }else {
+            // anything else. just set the amount after using the battle item
+            System.out.println("Used a " + super.getName());
+            pokemon.setDefenseMultiplier(currentDefMultiplier);
+            return true;
+        }
     }
 }
