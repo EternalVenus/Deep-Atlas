@@ -1,5 +1,7 @@
 package Pokemon.ItemBag.BattleItem;
 
+import Pokemon.Pokemons.Pokemon;
+
 public class BattleItem {
     private String name;
     private int price;
@@ -20,11 +22,12 @@ public class BattleItem {
 
     public int addBattleItem(int amount){
         this.amount += amount;
-        return this.amount;
+        return getAmount();
     }
 
-    public int useBattleItem(){
-        return --this.amount;
+    // to be overriden by extended classes
+    public boolean useBattleItem(Pokemon pokemon){
+        return true;
     }
 
 
@@ -54,5 +57,9 @@ public class BattleItem {
 
     public int getAmount() {
         return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount += amount;
     }
 }
