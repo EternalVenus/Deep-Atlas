@@ -28,12 +28,9 @@ public class Berry{
         return this.amount;
     }
 
-    public int useBerry(){
-        return --this.amount;
-    }
-
-    public String getClassName(){
-        return "Berries";
+    // to be overriden by extended classes
+    public boolean useBerry(Pokemon pokemon){
+        return true;
     }
 
     // function to be override
