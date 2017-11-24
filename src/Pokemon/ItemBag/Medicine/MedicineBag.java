@@ -1,6 +1,7 @@
 package Pokemon.ItemBag.Medicine;
 
 import Pokemon.ItemBag.Mail.Mail;
+import Pokemon.Pokemons.Pokemon;
 
 import java.util.ArrayList;
 
@@ -21,13 +22,17 @@ public class MedicineBag {
     }
 
     // If the medicine is found, the method uses the medicine and subtract the amount.
-    public int useMedicine(Medicine medicine){
-        // if the berry is found.
-        if (this.medicineList.indexOf(medicine) >= 0){
-            return medicine.useMedicine();
+    public boolean useMedicine(int indexOfMedicine, Pokemon pokemon){
+        // if the Medicine is found.
+        if (indexOfMedicine < 0 || indexOfMedicine >= medicineList.size()){
+            return false;
         }else{
-            System.out.println("There is no such Medicine in the bag");
-            return 0;
+            if (medicineList.get(indexOfMedicine).useMedicine(pokemon)){
+                medicineList.get(indexOfMedicine).setAmount(-1);
+                return true;
+            }else{
+                return false;
+            }
         }
     }
 

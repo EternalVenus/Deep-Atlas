@@ -1,5 +1,7 @@
 package Pokemon.ItemBag.Medicine;
 
+import Pokemon.Pokemons.Pokemon;
+
 public class Medicine{
     private String name;
     private String description;
@@ -24,10 +26,10 @@ public class Medicine{
         return this.amount;
     }
 
-    public int useMedicine(){
-        return --this.amount;
+    // to be overriden by extended classes
+    public boolean useMedicine(Pokemon pokemon){
+        return true;
     }
-
 
     public String getClassName(){
         return "Medicine";
@@ -55,5 +57,9 @@ public class Medicine{
 
     public int getAmount() {
         return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount += amount;
     }
 }
