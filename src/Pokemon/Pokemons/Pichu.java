@@ -1,6 +1,5 @@
 package Pokemon.Pokemons;
 
-import Pokemon.Pokemon;
 import Pokemon.Skill.*;
 import Pokemon.Skill.A.Absorb;
 import Pokemon.Skill.A.ArmThrust;
@@ -11,7 +10,7 @@ import Pokemon.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Pichu extends Pokemon implements IPokemon{
+public class Pichu extends Pokemon{
     private Skill skill1 = new Astonish();
     private Skill skill2 = new ArmThrust();
     private Skill skill3 = new AuraSphere();

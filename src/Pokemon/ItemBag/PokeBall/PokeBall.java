@@ -33,7 +33,7 @@ public class PokeBall{
         int counter = 0;
         for (int i = 0; i < 3; i++){
             double randomValue = Math.random();
-            if (randomValue < .8 ){
+            if (randomValue < .5 ){
                 System.out.println("Shake");
                 try
                 {

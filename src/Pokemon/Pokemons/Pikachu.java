@@ -1,6 +1,5 @@
 package Pokemon.Pokemons;
 
-import Pokemon.Pokemon;
 import Pokemon.Skill.*;
 import Pokemon.Skill.A.AncientPower;
 import Pokemon.Skill.A.AuraSphere;
@@ -11,7 +10,7 @@ import Pokemon.Type;
 import java.util.ArrayList;
 import java.util.*;
 
-public class Pikachu extends Pokemon implements IPokemon {
+public class Pikachu extends Pokemon{
     private Skill skill1 = new BoltStrike();
     private Skill skill2 = new AncientPower();
     private Skill skill3 = new AuraSphere();

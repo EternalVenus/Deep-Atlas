@@ -1,7 +1,7 @@
 package Pokemon.Skill;
 
 import Pokemon.Type;
-import Pokemon.Pokemon;
+import Pokemon.Pokemons.Pokemon;
 
 public class Skill {
     private String ID;

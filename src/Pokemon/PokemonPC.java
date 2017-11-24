@@ -1,6 +1,6 @@
 package Pokemon;
 
-import Pokemon.Pokemon;
+import Pokemon.Pokemons.Pokemon;
 
 import java.util.ArrayList;
 

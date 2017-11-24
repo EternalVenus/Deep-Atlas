@@ -1,6 +1,6 @@
 package Pokemon.ItemBag.Berries;
 
-import Pokemon.Pokemon;
+import Pokemon.Pokemons.Pokemon;
 
 public class Berry{
     private String name;

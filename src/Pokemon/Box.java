@@ -1,5 +1,7 @@
 package Pokemon;
 
+import Pokemon.Pokemons.Pokemon;
+
 import java.util.LinkedList;
 
 public class Box {

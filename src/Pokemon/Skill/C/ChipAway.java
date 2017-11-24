@@ -2,7 +2,7 @@ package Pokemon.Skill.C;
 
 import Pokemon.Type;
 import Pokemon.Skill.*;
-import Pokemon.Pokemon;
+import Pokemon.Pokemons.Pokemon;
 
 public class ChipAway extends Skill {
     public ChipAway() {

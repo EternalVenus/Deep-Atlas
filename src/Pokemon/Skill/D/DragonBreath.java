@@ -2,7 +2,7 @@ package Pokemon.Skill.D;
 
 import Pokemon.Type;
 import Pokemon.Skill.*;
-import Pokemon.Pokemon;
+import Pokemon.Pokemons.Pokemon;
 
 public class DragonBreath extends Skill {
     public DragonBreath() {

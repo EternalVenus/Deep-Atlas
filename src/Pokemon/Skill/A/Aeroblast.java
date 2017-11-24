@@ -2,7 +2,7 @@ package Pokemon.Skill.A;
 
 import Pokemon.Type;
 import Pokemon.Skill.*;
-import Pokemon.Pokemon;
+import Pokemon.Pokemons.Pokemon;
 
 
 public class Aeroblast extends Skill{

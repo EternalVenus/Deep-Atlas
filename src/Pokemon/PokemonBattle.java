@@ -1,6 +1,7 @@
 package Pokemon;
 
 import Pokemon.Pokemons.Pikachu;
+import Pokemon.Pokemons.Pokemon;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -125,7 +126,9 @@ public class PokemonBattle {
                     this.playerTurn = false;
                     return true;
                 case 2:
-                    //initialize a value for the while loop
+                    // this case is when the player picks the bag
+                    //initialize a value for the while loop.
+                    // the while loop waits for the user to make the right decision
                     int bagPicked = -1;
                     this.player1.getItembag().listBattleBags();
 
@@ -143,25 +146,24 @@ public class PokemonBattle {
 
                     switch (bagPicked){
                         case 0:
-                            System.out.println("Pick a Medicine to use.");
+                            int indexOfMedicine = -1;
+                            while (!this.player1.getItembag().getMedicineBag().useMedicine(indexOfMedicine, player1.getPokemonActive())){
+                                System.out.println("Pick a Medicine to use. " + this.player1.getItembag().getMedicineBag().getMedicineList().size() + " to cancel.");
+                                indexOfMedicine = scan.nextInt();
+                                scan.nextLine();
 
+                                if (indexOfMedicine == this.player1.getItembag().getMedicineBag().getMedicineList().size()){
+                                    return true;
+                                }
+                            }
                             break;
                         case 1:
-                            int indexOfPokeball = -1;
-                            while(!this.player1.getItembag().getPokeBallBag().usePokeBall(indexOfPokeball)){
-                                System.out.println("Pick a Poke Ball to use.");
-                                indexOfPokeball = scan.nextInt();
-                                scan.nextLine();
-                            }
-                            System.out.println(this.player1.getName() + " uses " + this.player1.getItembag().getPokeBallBag().getPokeBallList().get(indexOfPokeball).getName());
-                            if(this.player1.getItembag().getPokeBallBag().getPokeBallList().get(indexOfPokeball).shake()){
-                                System.out.println("Gotcha! " + wildPokemon.getName() + " was caught!");
-                                this.player1.getPokemonBag().addToBag(wildPokemon);
-                                battleOver = true;
+                            if (pokeBallBagDecisionMaking()){
+                                break;
                             }else{
-                                playerTurn = false;
+                                // if the user cancels his decision. Just return back to the option screen
+                                return true;
                             }
-                            break;
                         case 2:
                             System.out.println("Pick a Berry to use.");
                             break;
@@ -264,6 +266,42 @@ public class PokemonBattle {
             }
     }
 
+    // this method executes which pokeball the player chooses
+    // if the player decide to cancel his decision. It returns a false value, which can later be used
+    // to transfer to the option screen
+    private boolean pokeBallBagDecisionMaking(){
+        // initialize an initial index and then use the while loop to get input from the user
+        int indexOfPokeball = -1;
+        while(!this.player1.getItembag().getPokeBallBag().usePokeBall(indexOfPokeball)){
+            System.out.println("Pick a Poke Ball to use. " + this.player1.getItembag().getPokeBallBag().getPokeBallList().size() + " to cancel.");
+            indexOfPokeball = scan.nextInt();
+            scan.nextLine();
+
+            if (indexOfPokeball == this.player1.getItembag().getPokeBallBag().getPokeBallList().size()){
+                return false;
+            }
+        }
+
+        // The player uses the pokeball that was picked
+        System.out.println(this.player1.getName() + " uses " + this.player1.getItembag().getPokeBallBag().getPokeBallList().get(indexOfPokeball).getName());
+        // check if the pokemon is caught. If the pokemon is caught. Adds the pokemon into the bag
+        // otherwise display message and end of player's turn
+        if(this.player1.getItembag().getPokeBallBag().getPokeBallList().get(indexOfPokeball).shake()){
+            System.out.println("Gotcha! " + wildPokemon.getName() + " was caught!");
+            this.player1.getPokemonBag().addToBag(wildPokemon);
+            battleOver = true;
+        }else{
+            System.out.println("Oh no, " + wildPokemon.getName() + " came out of the poke ball");
+            playerTurn = false;
+        }
+
+        // if the amount of pokeball is equal to zero. remove it from the bag
+        if (this.player1.getItembag().getPokeBallBag().getPokeBallList().get(indexOfPokeball).getAmount() == 0){
+            this.player1.getItembag().getPokeBallBag().getPokeBallList().remove(indexOfPokeball);
+        }
+
+        return true;
+    }
 
     private void showOptions(){
         System.out.println();

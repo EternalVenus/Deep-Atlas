@@ -32,8 +32,8 @@ public class Main {
         MoonBall moonBall = new MoonBall();
         FriendBall friendBall = new FriendBall();
 
-        itemBag.addItem(moonBall, 30);
-        itemBag.addItem(friendBall, 30);
+        itemBag.addItem(moonBall, 2);
+        itemBag.addItem(friendBall, 2);
 
 
         // Testing player class and pokemon battle class

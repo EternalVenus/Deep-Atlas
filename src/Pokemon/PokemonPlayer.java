@@ -3,7 +3,7 @@ package Pokemon;
 import java.util.Collections;
 
 import Pokemon.ItemBag.Bag;
-import Pokemon.Skill.*;
+import Pokemon.Pokemons.Pokemon;
 
 public class PokemonPlayer {
     private String name;
