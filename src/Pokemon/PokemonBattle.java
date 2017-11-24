@@ -144,19 +144,16 @@ public class PokemonBattle {
                     }
                     this.player1.getItembag().listBattleItemInBag(bagPicked);
 
+                    // the switch statement gets the specific bag
+                    // then ask for the item that the user want to use
                     switch (bagPicked){
                         case 0:
-                            int indexOfMedicine = -1;
-                            while (!this.player1.getItembag().getMedicineBag().useMedicine(indexOfMedicine, player1.getPokemonActive())){
-                                System.out.println("Pick a Medicine to use. " + this.player1.getItembag().getMedicineBag().getMedicineList().size() + " to cancel.");
-                                indexOfMedicine = scan.nextInt();
-                                scan.nextLine();
-
-                                if (indexOfMedicine == this.player1.getItembag().getMedicineBag().getMedicineList().size()){
-                                    return true;
-                                }
+                            if (medicineBagDecisionMaking()){
+                                break;
+                            }else{
+                                // if the user cancels his decision. Just return back to the option screen
+                                return true;
                             }
-                            break;
                         case 1:
                             if (pokeBallBagDecisionMaking()){
                                 break;
@@ -300,6 +297,29 @@ public class PokemonBattle {
             this.player1.getItembag().getPokeBallBag().getPokeBallList().remove(indexOfPokeball);
         }
 
+        return true;
+    }
+
+    // this medicine executes which medicine the player chooses
+    // if the player decide to cancel his decision. It returns a false value, which can later be used
+    // to transfer to the option screen
+    private boolean medicineBagDecisionMaking(){
+        int indexOfMedicine = -1;
+//        this.player1.getPokemonActive().setCurrentHp(10);
+        while (!this.player1.getItembag().getMedicineBag().useMedicine(indexOfMedicine, player1.getPokemonActive())){
+            System.out.println("Pick a Medicine to use. " + this.player1.getItembag().getMedicineBag().getMedicineList().size() + " to cancel.");
+            indexOfMedicine = scan.nextInt();
+            scan.nextLine();
+
+            if (indexOfMedicine == this.player1.getItembag().getMedicineBag().getMedicineList().size()){
+                return false;
+            }
+        }
+
+        // if the amount of medicine is equal to zero. remove it from the bag
+        if (this.player1.getItembag().getMedicineBag().getMedicineList().get(indexOfMedicine).getAmount() == 0){
+            this.player1.getItembag().getMedicineBag().getMedicineList().remove(indexOfMedicine);
+        }
         return true;
     }
 
