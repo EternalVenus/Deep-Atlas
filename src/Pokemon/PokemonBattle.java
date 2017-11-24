@@ -162,8 +162,12 @@ public class PokemonBattle {
                                 return true;
                             }
                         case 2:
-                            System.out.println("Pick a Berry to use.");
-                            break;
+                            if (berryBagDecisionMaking()){
+                                break;
+                            }else{
+                                // if the user cancels his decision. Just return back to the option screen
+                                return true;
+                            }
                         case 3:
                             System.out.println("Pick a Battle Item to use.");
                             break;
@@ -300,7 +304,7 @@ public class PokemonBattle {
         return true;
     }
 
-    // this medicine executes which medicine the player chooses
+    // this method executes which medicine the player chooses
     // if the player decide to cancel his decision. It returns a false value, which can later be used
     // to transfer to the option screen
     private boolean medicineBagDecisionMaking(){
@@ -319,6 +323,30 @@ public class PokemonBattle {
         // if the amount of medicine is equal to zero. remove it from the bag
         if (this.player1.getItembag().getMedicineBag().getMedicineList().get(indexOfMedicine).getAmount() == 0){
             this.player1.getItembag().getMedicineBag().getMedicineList().remove(indexOfMedicine);
+        }
+        return true;
+    }
+
+    // this method executes which medicine the player chooses
+    // if the player decide to cancel his decision. It returns a false value, which can later be used
+    // to transfer to the option screen
+    private boolean berryBagDecisionMaking(){
+        int indexOfBerry = -1;
+        this.player1.getPokemonActive().setCurrentHp(10);
+
+        while (!this.player1.getItembag().getBerryBag().useBerry(indexOfBerry, player1.getPokemonActive())){
+            System.out.println("Pick a Berry to use. " + this.player1.getItembag().getBerryBag().getBerryList().size() + " to cancel.");
+            indexOfBerry = scan.nextInt();
+            scan.nextLine();
+
+            if (indexOfBerry == this.player1.getItembag().getBerryBag().getBerryList().size()){
+                return false;
+            }
+        }
+
+        // if the amount of berry is equal to zero. remove it from the bag
+        if (this.player1.getItembag().getBerryBag().getBerryList().get(indexOfBerry).getAmount() == 0){
+            this.player1.getItembag().getBerryBag().getBerryList().remove(indexOfBerry);
         }
         return true;
     }
