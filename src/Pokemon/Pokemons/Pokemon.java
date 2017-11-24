@@ -1,6 +1,7 @@
-package Pokemon;
+package Pokemon.Pokemons;
 
 import Pokemon.Skill.Skill;
+import Pokemon.Type;
 
 public class Pokemon {
     private String name;
@@ -11,13 +12,24 @@ public class Pokemon {
     private String nature;
     private String ID;
     private Type type;
-    // stats
+
+    // all of the stats will the separated into 2 categories. One for Maximum and One for current state
+    // This allows the pokemon to restore to original stats when healed
     private int hp;
     private int atk;
     private int spAtk;
     private int defense;
     private int spDefense;
     private int speed;
+
+    // current stats.
+    private int currentHp;
+    private int currentAtk;
+    private int currentSpAtk;
+    private int currentDef;
+    private int currentSpDef;
+    private int currentSpeed;
+
 
     //base stats
     private int baseHp;
@@ -60,6 +72,13 @@ public class Pokemon {
         this.baseDefense = baseDef;
         this.baseSpDefense = baseSpDef;
         this.baseSpeed = baseSpeed;
+
+        this.currentHp = this.hp;
+        this.currentAtk = this.atk;
+        this.currentSpAtk = this.spAtk;
+        this.currentDef = this.defense;
+        this.currentSpDef = this.spDefense;
+        this.currentSpeed = this.speed;
     }
 
     public int damageTaken(int damage){
@@ -136,7 +155,7 @@ public class Pokemon {
         return type;
     }
 
-    // GETTERS FOR THE STATS
+    // GETTERS FOR THE Maximum STATS
     public int getHp() {
         return hp;
     }
@@ -161,30 +180,61 @@ public class Pokemon {
         return speed;
     }
 
-    // SETTERS FOR THE STATS
+    //GETTERS FOR THE CURRENT STATS
 
-    // subtract Hp after taking damage
-    public void setHp(int damage) {
-        this.hp -= damage;
+    public int getCurrentHp() {
+        return currentHp;
     }
 
-    public void setAtk(int atk) {
-        this.atk = atk;
+    public int getCurrentAtk() {
+        return currentAtk;
     }
 
-    public void setSpAtk(int spAtk) {
-        this.spAtk = spAtk;
+    public int getCurrentSpAtk() {
+        return currentSpAtk;
     }
 
-    public void setDefense(int defense) {
-        this.defense = defense;
+    public int getCurrentDef() {
+        return currentDef;
     }
 
-    public void setSpDefense(int spDefense) {
-        this.spDefense = spDefense;
+    public int getCurrentSpDef() {
+        return currentSpDef;
     }
 
-    public void setSpeed(int speed) {
-        this.speed = speed;
+    public int getCurrentSpeed() {
+        return currentSpeed;
+    }
+
+
+    // SETTERS FOR THE Current STATS
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // method to increase or decrease the current hp
+    public void setCurrentHp(int hp) {
+        this.currentHp = hp;
+    }
+
+    public void setCurrentAtk(int currentAtk) {
+        this.currentAtk = currentAtk;
+    }
+
+    public void setCurrentSpAtk(int currentSpAtk) {
+        this.currentSpAtk = currentSpAtk;
+    }
+
+    public void setCurrentDef(int currentDef) {
+        this.currentDef = currentDef;
+    }
+
+    public void setCurrentSpDef(int currentSpDef) {
+        this.currentSpDef = currentSpDef;
+    }
+
+    public void setCurrentSpeed(int currentSpeed) {
+        this.currentSpeed = currentSpeed;
     }
 }
