@@ -169,8 +169,12 @@ public class PokemonBattle {
                                 return true;
                             }
                         case 3:
-                            System.out.println("Pick a Battle Item to use.");
-                            break;
+                            if (battleItemBagDecisionMaking()){
+                                break;
+                            }else{
+                                // if the user cancels his decision. Just return back to the option screen
+                                return true;
+                            }
                         case 4:
                             System.out.println("Pick a Key Item to use.");
                             break;
@@ -332,7 +336,7 @@ public class PokemonBattle {
     // to transfer to the option screen
     private boolean berryBagDecisionMaking(){
         int indexOfBerry = -1;
-        this.player1.getPokemonActive().setCurrentHp(10);
+        //this.player1.getPokemonActive().setCurrentHp(10);
 
         while (!this.player1.getItembag().getBerryBag().useBerry(indexOfBerry, player1.getPokemonActive())){
             System.out.println("Pick a Berry to use. " + this.player1.getItembag().getBerryBag().getBerryList().size() + " to cancel.");
@@ -351,6 +355,27 @@ public class PokemonBattle {
         return true;
     }
 
+
+    private boolean battleItemBagDecisionMaking(){
+        int indexOfBattleItem = -1;
+        //this.player1.getPokemonActive().setCurrentHp(10);
+
+        while (!this.player1.getItembag().getBattleItemBag().useBattleItem(indexOfBattleItem, player1.getPokemonActive())){
+            System.out.println("Pick a Battle Item to use. " + this.player1.getItembag().getBattleItemBag().getBattleItemList().size() + " to cancel.");
+            indexOfBattleItem = scan.nextInt();
+            scan.nextLine();
+
+            if (indexOfBattleItem == this.player1.getItembag().getBattleItemBag().getBattleItemList().size()){
+                return false;
+            }
+        }
+
+        // if the amount of berry is equal to zero. remove it from the bag
+        if (this.player1.getItembag().getBattleItemBag().getBattleItemList().get(indexOfBattleItem).getAmount() == 0){
+            this.player1.getItembag().getBattleItemBag().getBattleItemList().remove(indexOfBattleItem);
+        }
+        return true;
+    }
     private void showOptions(){
         System.out.println();
         System.out.println("====================");
