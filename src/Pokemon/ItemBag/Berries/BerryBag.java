@@ -1,5 +1,7 @@
 package Pokemon.ItemBag.Berries;
 
+import Pokemon.Pokemons.Pokemon;
+
 import java.util.ArrayList;
 
 public class BerryBag {
@@ -22,13 +24,20 @@ public class BerryBag {
     }
 
     // If the berry is found, the method use the berry and subtract the amount.
-    public int useBerry(Berry berry){
-        // if the berry is found.
-        if (this.berryList.indexOf(berry) >= 0){
-            return berry.useBerry();
+    public boolean useBerry(int indexOfBerry, Pokemon pokemon){
+        // if the berry is not found.
+        if (indexOfBerry < 0 || indexOfBerry >= berryList.size()){
+            return false;
         }else{
-            System.out.println("There is no such berry in the bag");
-            return 0;
+            // if the berry is found.
+            // The "if" statement returns true is the item is used
+            // returns false if the item has no effect and is not used
+            if (berryList.get(indexOfBerry).useBerry(pokemon)){
+                berryList.get(indexOfBerry).setAmount(-1);
+                return true;
+            }else{
+                return false;
+            }
         }
     }
 

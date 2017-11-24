@@ -66,4 +66,7 @@ public class Berry{
         return firmness;
     }
 
+    public void setAmount(int amount) {
+        this.amount += amount;
+    }
 }
