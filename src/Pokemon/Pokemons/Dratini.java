@@ -1,34 +1,37 @@
 package Pokemon.Pokemons;
 
-import Pokemon.Skill.*;
-import Pokemon.Skill.A.*;
-import Pokemon.Skill.C.*;
 import Pokemon.Skill.D.*;
+import Pokemon.Skill.*;
 import Pokemon.Type;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Pichu extends Pokemon{
-    private Skill skill1 = new DoubleHit();
-    private Skill skill2 = new Covet();
-    private Skill skill3 = new AuraSphere();
-    private Skill skill4 = new ChargeBeam();
-    private ArrayList<Skill> skillSet = new ArrayList<>();
 
-    public Pichu(String nickName) {
-        // setting the name and the base stats
-        super("Pichu", nickName, "172", 20, 40, 15, 35, 35, 60,
-                new Type("Electric"), null);
+public class Dratini extends Pokemon{
+    private Skill skill1 = new DragonAscent();
+    private Skill skill2 = new DracoMeteor();
+    private Skill skill3 = new DragonHammer();
+    private Skill skill4 = new DragonTail();
+    private ArrayList<Skill> skillSet = new ArrayList<>();
+    private String ability;
+
+    public Dratini() {
+        super("Dratini", null, "147", 41, 64,
+                45, 50, 50, 50, new Type("Dragon"), null);
+
         // moving the 4 skills into an array list
         this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
+        this.ability = "Shed Skin";
     }
 
-    // an overload constructor without a nickname
-    public Pichu() {
-        super("Pichu",  null, "172", 20, 40, 15, 35, 35, 60,
-                new Type("Electric"), null);
+    public Dratini(String nickName) {
+        super("Dratini", nickName, "147", 41, 64,
+                45, 50, 50, 50, new Type("Dragon"), null);
+
+        // moving the 4 skills into an array list
         this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
+        this.ability = "Shed Skin";
     }
 
     // Listing the skill set for Pokemon Battle

@@ -1,10 +1,11 @@
 package Pokemon.Pokemons;
 
 import Pokemon.Skill.*;
-import Pokemon.Skill.A.AncientPower;
-import Pokemon.Skill.A.AuraSphere;
-import Pokemon.Skill.A.AuroraBeam;
+import Pokemon.Skill.A.*;
 import Pokemon.Skill.B.*;
+import Pokemon.Skill.C.ChargeBeam;
+import Pokemon.Skill.C.Covet;
+import Pokemon.Skill.D.DoubleHit;
 import Pokemon.Type;
 
 import java.util.ArrayList;
@@ -12,45 +13,23 @@ import java.util.*;
 
 public class Pikachu extends Pokemon{
     private Skill skill1 = new BoltStrike();
-    private Skill skill2 = new AncientPower();
+    private Skill skill2 = new DoubleHit();
     private Skill skill3 = new AuraSphere();
-    private Skill skill4 = new AuroraBeam();
-    private Type type;
-    private Type type2;
+    private Skill skill4 = new ChargeBeam();
     private ArrayList<Skill> skillSet = new ArrayList<>();
 
 
     public Pikachu(String nickName) {
-        super("Pikachu", nickName, "025", 35, 55, 30,50,40, 90 );
-        this.type = new Type("Electric");
-        this.type2 = null;
+        super("Pikachu", nickName, "025", 35, 55, 30,50,40, 90 ,
+                new Type("Electric"), null);
         this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
     }
 
     public Pikachu() {
-        super("Pikachu", null,"025", 35, 55, 30,50,40, 90);
-        this.type = new Type("Electric");
+        super("Pikachu", null,"025", 35, 55, 30,50,40, 90,
+                new Type("Electric"), null);
         this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
     }
-
-    public Pokemon attack(Pokemon enemy, Skill skill){
-        int damage;
-        //Calculating damage dealt
-        // still need to calculate modifier
-        if (skill.getCategory().equals("Physical")){
-            damage = ((((2 * this.getLevel())/ 5  + 2) * skill.getBaseDamage() *
-                            this.getAtk()/ enemy.getDefense())/ 50 + 2);
-        }else{
-            damage = ((((2 * this.getLevel())/ 5  + 2) * skill.getBaseDamage() *
-                    this.getSpAtk()/ enemy.getSpDefense())/ 50 + 2);
-        }
-//
-//        enemy.
-//        int damage = this.getAtk() + skill.getBaseDamage() - enemy.getDefense();
-//        enemy.damageTaken(damage);
-        return enemy;
-    }
-
 
     @Override
     public void showSkills(){
@@ -83,8 +62,4 @@ public class Pikachu extends Pokemon{
         return skill4;
     }
 
-    @Override
-    public Type getType() {
-        return type;
-    }
 }
