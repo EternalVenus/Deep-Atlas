@@ -32,12 +32,12 @@ public class Main {
 
         Bag itemBag = new Bag();
 
-        pokemonBag.addToBag(new Pikachu(100));
-        pokemonBag.addToBag(new Pikachu(99));
-        pokemonBag.addToBag(new Pikachu(98));
-        pokemonBag.addToBag(new Pikachu(97));
-        pokemonBag.addToBag(new Pikachu(96));
-        pokemonBag.addToBag(new Pikachu(95));
+        pokemonBag.addToBag(new Pikachu(2));
+//        pokemonBag.addToBag(new Pikachu(2));
+//        pokemonBag.addToBag(new Pikachu(2));
+//        pokemonBag.addToBag(new Pikachu(2));
+//        pokemonBag.addToBag(new Pikachu(2));
+//        pokemonBag.addToBag(new Pikachu(2));
 
         pokemonBag2.addToBag(new Pichu(99));
         pokemonBag2.addToBag(new Pichu(99));
@@ -112,8 +112,8 @@ public class Main {
         PokemonPlayer hen = new PokemonPlayer("Hen", "Female", pokemonBag2, itemBag);
 
         // TEST POKEMON BATTLE HERE
-//        PokemonBattle pokemonBattle = new PokemonBattle(david, hen);
-//        pokemonBattle.startBattle();
+        PokemonBattle pokemonBattle = new PokemonBattle(david, hen);
+        pokemonBattle.startBattle();
     }
 }
 

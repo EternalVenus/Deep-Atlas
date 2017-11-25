@@ -22,7 +22,7 @@ public class XDefense extends BattleItem{
     public boolean useBattleItem(Pokemon pokemon) {
         int currentDefMultiplier = pokemon.getDefenseMultiplier() + 2;
         if (pokemon.getDefenseMultiplier() == 6) {
-            System.out.println("There is no effect!");
+            System.out.println("\t\t\t\t\tThere is no effect ꒰ ꒪⌑꒪꒱˖ꂚ*ᵎ");
             return false;
         } else if (currentDefMultiplier > 6) {
             // if the battle item increase the multiplier to more than 6

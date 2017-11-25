@@ -20,7 +20,7 @@ public class Sitrus extends Berry{
     public boolean useBerry(Pokemon pokemon) {
         int currentHpOfPokemon = pokemon.getCurrentHp() + (int)(.25 * pokemon.getHp());
         if (pokemon.getCurrentHp() == pokemon.getHp()){
-            System.out.println("There is no effect.");
+            System.out.println("\t\t\t\t\tThere is no effect ꒰ ꒪⌑꒪꒱˖ꂚ*ᵎ");
             return false;
         }else if(currentHpOfPokemon > pokemon.getHp()){
             // if the berry adds to an amount greater than the max hp. Set the current hp

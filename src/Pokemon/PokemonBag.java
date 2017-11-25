@@ -57,7 +57,7 @@ public class PokemonBag {
         for (int i = 0; i < pokemon.size(); i++){
             if (pokemon.get(i).isFainted()){
                 String text = i + ": LV  " + pokemon.get(i).getLevel() + " " + pokemon.get(i).getName() + " ( ✖ ︿ ✖ )";
-                System.out.println("           " + text);
+                System.out.println("             " + text);
             }else{
                 String text2 = i + ": LV  " + pokemon.get(i).getLevel() + " " + pokemon.get(i).getName() + " ୧ʕ ◕ o ◕ ʔ୨";
                 System.out.println("             " + text2);

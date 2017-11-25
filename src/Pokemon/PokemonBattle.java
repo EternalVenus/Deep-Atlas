@@ -141,12 +141,8 @@ public class PokemonBattle {
                     // still need to implement this function
                     // need to add the function to attack enemy pokemon
                     // damage calculation here
+                    System.out.println("☪☪☪☪☪☪☪☪☪☪☪☪☪☪☪☪☪ Battle Phase ☪☪☪☪☪☪☪☪☪☪☪☪☪☪☪☪☪☪");
                     this.playerTurn = !useSkill(move);
-//                    if (useSkill(move)){
-//                        this.playerTurn = false;
-//                    }else{
-//                        this.playerTurn = true;
-//                    }
 
                     return true;
                 case 2:
@@ -209,7 +205,7 @@ public class PokemonBattle {
                     return choosePokemon(-1, true);
                 case 4:
                     if (playerBattle){
-                        System.out.println("Can't run from a trainer battle! ヾ(￣ー￣ヾ)");
+                        System.out.println("\t\t\tCan't run from a trainer battle! ヾ(￣ー￣ヾ)");
                         return false;
                     }else{
                         System.out.println("Safely got away! ┌(・。・)┘♪");
@@ -261,29 +257,22 @@ public class PokemonBattle {
 
             switch (move) {
                 case 1:
+                    System.out.println("             (๑و•̀ω•́)و " + activePokemonName + " uses " + activePokemon.getSkill1().getName() + " (๑و•̀ω•́)و");
                     System.out.println();
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    System.out.println("          (๑و•̀ω•́)و " + activePokemonName + " uses " + activePokemon.getSkill1().getName() + " (๑و•̀ω•́)و");
-                    System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     return checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill1() );
 
                 case 2:
+                    System.out.println("             (๑و•̀ω•́)و " + activePokemonName + " uses " + activePokemon.getSkill2().getName()+ " (๑و•̀ω•́)و");
                     System.out.println();
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    System.out.println("          (๑و•̀ω•́)و " + activePokemonName + " uses " + activePokemon.getSkill2().getName()+ " (๑و•̀ω•́)و");
-                    System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     return checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill2() );
                 case 3:
+                    System.out.println("             (๑و•̀ω•́)و " + activePokemonName + " uses " + activePokemon.getSkill3().getName()+ " (๑و•̀ω•́)و");
+
                     System.out.println();
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    System.out.println("          (๑و•̀ω•́)و " + activePokemonName + " uses " + activePokemon.getSkill3().getName()+ " (๑و•̀ω•́)و");
-                    System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     return checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill3() );
                 case 4:
+                    System.out.println( "            (๑و•̀ω•́)و " +activePokemonName + " uses " + activePokemon.getSkill4().getName()+ " (๑و•̀ω•́)و");
                     System.out.println();
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    System.out.println( "         (๑و•̀ω•́)و " +activePokemonName + " uses " + activePokemon.getSkill4().getName()+ " (๑و•̀ω•́)و");
-                    System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     // returns true if player2 turn. returns false if still player1 turn
                     return checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill4() );
                 default:
@@ -498,12 +487,13 @@ public class PokemonBattle {
             // Then checks if the player blacks out or choose the next pokemon
             if (activePokemon.attack(enemyPokemon, skill)) {
                 System.out.println();
-                System.out.println(enemyPokemon.getName() + " fainted");
+                System.out.println("\t\t\t\tฅ(✖╭╮✖)ฅ " + enemyPokemon.getName() + " fainted  ฅ(✖╭╮✖)ฅ");
                 if (this.player1.isBlackOut()){
-                    System.out.println(this.player1.getName() + " ran out of pokemon o(╥﹏╥)o");
-                    System.out.println(this.player1.getName() + " blacked out (;ಥ;ω;ಥ;)");
-                    System.out.println(this.player2.getName() + " won the pokemon battle!!! (╬•᷅д•᷄╬)");
-                    System.out.println(this.player1.getName() + " hurries to the pokemon center ε=ε=ε=ε=ε=ε=┌(;￣◇￣)┘");
+                    System.out.println();
+                    System.out.println("\t\t\t\t  " + this.player1.getName() + " ran out of pokemon o(╥﹏╥)o");
+                    System.out.println("\t\t\t\t\t" + this.player1.getName() + " blacked out (;ಥ;ω;ಥ;)");
+                    System.out.println("\t\t\t\t" + this.player2.getName() + " won the pokemon battle!!! (╬•᷅д•᷄╬)");
+                    System.out.println("\t  " + this.player1.getName() + " hurries to the pokemon center ε=ε=ε=ε=ε=ε=┌(;￣◇￣)┘");
                     battleOver = true;
                 }else{
                     // allows player 1 to choose the next pokemon

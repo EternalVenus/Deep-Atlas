@@ -19,16 +19,16 @@ public class Potion extends Medicine {
     public boolean useMedicine(Pokemon pokemon) {
         int currentHpOfPokemon = pokemon.getCurrentHp() + 20;
         if (pokemon.getCurrentHp() == pokemon.getHp()){
-            System.out.println("There is no effect.");
+            System.out.println("\t\t\t\t\tThere is no effect ꒰ ꒪⌑꒪꒱˖ꂚ*ᵎ");
             return false;
         }else if(currentHpOfPokemon > pokemon.getHp()){
-            System.out.println("Used a Potion");
-            System.out.println(pokemon.getName() + "'s HP is restored to full.");
+            System.out.println("\t\t\t\t\t\tД Used a Potion Д");
+            System.out.println("\t\t\t\t" + pokemon.getName() + "'s HP is restored to full ♥");
             pokemon.setCurrentHp(currentHpOfPokemon);
             return true;
         }else{
-            System.out.println("Used a Potion");
-            System.out.printf(pokemon.getName() + "'s HP is restored to " + currentHpOfPokemon);
+            System.out.println("\t\t\t\t\t\tД Used a Potion Д");
+            System.out.println("\t\t\t\t" + pokemon.getName() + "'s HP is restored to " + currentHpOfPokemon + " ♥");
             pokemon.setCurrentHp(currentHpOfPokemon);
             return true;
         }

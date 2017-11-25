@@ -19,19 +19,19 @@ public class SuperPotion extends Medicine {
     public boolean useMedicine(Pokemon pokemon) {
         int currentHpOfPokemon = pokemon.getCurrentHp() + 60;
         if (pokemon.getCurrentHp() == pokemon.getHp()){
-            System.out.println("There is no effect.");
+            System.out.println("\t\t\t\t\tThere is no effect ꒰ ꒪⌑꒪꒱˖ꂚ*ᵎ");
             return false;
         }else if(currentHpOfPokemon > pokemon.getHp()){
             // if the potion adds to a amount greater than the max hp. Set the current hp
             // to max hp
-            System.out.println("Used a Super Potion");
-            System.out.println(pokemon.getName() + "'s HP is restored to full.");
+            System.out.println("\t\t\t\t\t\tД Used a Super Potion Д");
+            System.out.println("\t\t\t\t" + pokemon.getName() + "'s HP is restored to full ♥");
             pokemon.setCurrentHp(pokemon.getHp());
             return true;
         }else{
             // anything else. just set the current hp after using the potion
-            System.out.println("Used a Super Potion");
-            System.out.printf(pokemon.getName() + "'s HP is restored to " + currentHpOfPokemon);
+            System.out.println("\t\t\t\t\t\tД Used a Super Potion Д");
+            System.out.println("\t\t\t\t" + pokemon.getName() + "'s HP is restored to " + currentHpOfPokemon + " ♥");
             pokemon.setCurrentHp(currentHpOfPokemon);
             return true;
         }

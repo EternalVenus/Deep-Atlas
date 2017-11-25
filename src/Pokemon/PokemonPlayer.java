@@ -47,10 +47,11 @@ public class PokemonPlayer {
             }else{
                 // if the pokemon is not fainted
                 // swaps the 2 pokemon in the pokemon bag
-                System.out.println(this.pokemonActive.getName() + " return! ʕ>⌓<｡ʔ");
+                System.out.println("\t\t\t\t\t" + this.pokemonActive.getName() + " return! ʕ>⌓<｡ʔ");
                 Collections.swap(this.pokemonBag.getPokemon(), 0, num);
                 this.pokemonActive = this.pokemonBag.getPokemon().get(0);
-                System.out.println("Go! " + this.pokemonActive.getName() + " ୧ʕ ◕ o ◕ ʔ୨");
+                System.out.println("\t\t\t\t\tGo! " + this.pokemonActive.getName() + " ୧ʕ ◕ o ◕ ʔ୨");
+                System.out.println();
                 return true;
             }
 
