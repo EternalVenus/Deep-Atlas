@@ -127,9 +127,14 @@ public class PokemonBattle {
                     System.out.println("Which move to use?");
                     int move = 0;
                     while(move < 1 || move > 4){
-                        System.out.println("Choose a move using values 1 - 4");
+                        System.out.println("Choose a move using values (1 - 4) (5 to cancel)");
                         move = scan.nextInt();
                         scan.nextLine();
+
+                        // go back to options
+                        if (move == 5){
+                            return true;
+                        }
                     }
                     useSkill(move);
                     // still need to implement this function
@@ -194,7 +199,7 @@ public class PokemonBattle {
                     // need to implement method to use items
                     return true;
                 case 3:
-                    return choosePokemon(-1);
+                    return choosePokemon(-1, true);
                 case 4:
                     if (playerBattle){
                         System.out.println("Can't run from a trainer battle!");
@@ -366,7 +371,6 @@ public class PokemonBattle {
         return true;
     }
 
-
     private boolean battleItemBagDecisionMaking(){
         int indexOfBattleItem = -1;
         //this.player1.getPokemonActive().setCurrentHp(10);
@@ -428,13 +432,20 @@ public class PokemonBattle {
         return decision;
     }
 
-    private boolean choosePokemon(int pokemonChosen){
-        this.player1.getPokemonBag().listPokemons();
-        System.out.println("Choose a Pokemon");
+    private boolean choosePokemon(int pokemonChosen, boolean listPokemons){
+        if (listPokemons){
+            this.player1.getPokemonBag().listPokemons();
+            System.out.println("Choose a Pokemon");
+        }
         while(pokemonChosen < 0 || pokemonChosen > 5){
-            System.out.println("Choose a pokemon (0 - 5)");
+            System.out.println("Choose a pokemon (0 - 5) (6 to cancel)");
             pokemonChosen = scan.nextInt();
             scan.nextLine();
+
+            // go back to options
+            if (pokemonChosen == 6){
+                return true;
+            }
         }
 
         // if the player successfully switches, it is enemy player turn
@@ -488,7 +499,9 @@ public class PokemonBattle {
                     // allows player 1 to choose the next pokemon
                     // FINISH THIS METHOD HERE
                     int pokemonChose = -1;
-                    while (!choosePokemon(pokemonChose)){
+                    boolean listPokemon = true;
+                    while (!choosePokemon(pokemonChose, listPokemon)){
+                        listPokemon = false;
                         pokemonChose = scan.nextInt();
                         scan.nextLine();
                     }
