@@ -30,7 +30,7 @@ public class BerryBag {
             return false;
         }else{
             // if the berry is found.
-            // The "if" statement returns true is the item is used
+            // The "if" statement returns true if the item is used
             // returns false if the item has no effect and is not used
             if (berryList.get(indexOfBerry).useBerry(pokemon)){
                 berryList.get(indexOfBerry).setAmount(-1);

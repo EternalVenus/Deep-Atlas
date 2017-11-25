@@ -34,7 +34,6 @@ public class PokeBall{
         for (int i = 0; i < 3; i++){
             double randomValue = Math.random();
             if (randomValue < .5 ){
-                System.out.println("Shake");
                 try
                 {
                     Thread.sleep(1000);
@@ -43,6 +42,7 @@ public class PokeBall{
                 {
                     Thread.currentThread().interrupt();
                 }
+                System.out.println("Shake");
                 counter++;
             }
         }

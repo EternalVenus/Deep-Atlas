@@ -46,8 +46,7 @@ public class Bag {
         System.out.println("0) Medicine");
         System.out.println("1) Poke Balls");
         System.out.println("2) Berries");
-        System.out.println("3) Battle Item");
-        System.out.println("4) Key Item\n");
+        System.out.println("3) Battle Item\n");
     }
 
     // listing all the items in each bag

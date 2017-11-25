@@ -110,9 +110,17 @@ public class Pokemon {
         this.speedMultiplier = 1;
     }
 
-    public int damageTaken(int damage){
-        this.hp = this.getHp() - damage;
-        return this.hp;
+    // returns true if the pokemon faints
+    // returns false if the pokemon does not faint
+    private boolean damageTaken(int damage){
+        int currentHp = this.getCurrentHp() - damage;
+        if (currentHp < 0){
+            this.setCurrentHp(0);
+            return true;
+        }else{
+            this.setCurrentHp(currentHp);
+            return false;
+        }
     }
 
     // STILL NEED TO FIND THE MODIFIER VALUE
@@ -128,9 +136,11 @@ public class Pokemon {
                     this.getSpAtk()/ enemy.getSpDefense())/ 50 + 2);
         }
 
-        enemy.damageTaken(damage);
-        return true;
+        // returns true if the pokemon has zero hp
+        // else returns false
+        return enemy.damageTaken(damage);
     }
+
 
 
     // methods to be Override

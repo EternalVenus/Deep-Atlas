@@ -291,7 +291,8 @@ public class PokemonBattle {
                                 battleOver = true;
                             }else{
                                 // allows player 1 to choose the next pokemon
-                                this.player2.chooseActivePokemon();
+                                // FINISH THIS METHOD HERE
+                                choosePokemon(-1);
                             }
                         }
                     }
