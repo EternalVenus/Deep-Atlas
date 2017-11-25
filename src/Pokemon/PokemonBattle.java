@@ -126,10 +126,10 @@ public class PokemonBattle {
             switch (decision){
                 case 1:
                     this.player1.getPokemonActive().showSkills();
-                    System.out.println("⚔ Which move to use? ⚔");
+                    System.out.println("\t\t\t\t\t  " + "⚔ Which move to use? ⚔");
                     int move = 0;
                     while(move < 1 || move > 4){
-                        System.out.println("⇒ Choose a move using values (1 - 4) (5 to cancel) ⇐");
+                        System.out.println("\t   " + "⇒ Choose a move using values (1 - 4) (5 to cancel) ⇐");
                         move = scan.nextInt();
                         scan.nextLine();
 
@@ -138,11 +138,16 @@ public class PokemonBattle {
                             return true;
                         }
                     }
-                    useSkill(move);
                     // still need to implement this function
                     // need to add the function to attack enemy pokemon
                     // damage calculation here
-                    this.playerTurn = false;
+                    this.playerTurn = !useSkill(move);
+//                    if (useSkill(move)){
+//                        this.playerTurn = false;
+//                    }else{
+//                        this.playerTurn = true;
+//                    }
+
                     return true;
                 case 2:
                     // this case is when the player picks the bag
@@ -152,7 +157,7 @@ public class PokemonBattle {
                     this.player1.getItembag().listBattleBags();
 
                     while (bagPicked < 0 || bagPicked > 4){
-                        System.out.println("⇒ Choose a Category (0 - 3) or 4 to cancel ⇐");
+                        System.out.println("\t\t  " + "⇒ Choose a Category (0 - 3) or 4 to cancel ⇐");
                         bagPicked = scan.nextInt();
                         scan.nextLine();
 
@@ -257,32 +262,30 @@ public class PokemonBattle {
             switch (move) {
                 case 1:
                     System.out.println();
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     System.out.println("          (๑و•̀ω•́)و " + activePokemonName + " uses " + activePokemon.getSkill1().getName() + " (๑و•̀ω•́)و");
-                    System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill1() );
-                    return true;
+                    System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    return checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill1() );
+
                 case 2:
                     System.out.println();
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     System.out.println("          (๑و•̀ω•́)و " + activePokemonName + " uses " + activePokemon.getSkill2().getName()+ " (๑و•̀ω•́)و");
-                    System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill2() );
-                    return true;
+                    System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    return checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill2() );
                 case 3:
                     System.out.println();
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     System.out.println("          (๑و•̀ω•́)و " + activePokemonName + " uses " + activePokemon.getSkill3().getName()+ " (๑و•̀ω•́)و");
-                    System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill3() );
-                    return true;
+                    System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    return checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill3() );
                 case 4:
                     System.out.println();
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     System.out.println( "         (๑و•̀ω•́)و " +activePokemonName + " uses " + activePokemon.getSkill4().getName()+ " (๑و•̀ω•́)و");
-                    System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill4() );
-                    return true;
+                    System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    // returns true if player2 turn. returns false if still player1 turn
+                    return checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill4() );
                 default:
                     System.out.println( "                " + activePokemonName + " does not have this skill! (๑و•̀ω•́)و");
                     return false;
@@ -333,7 +336,7 @@ public class PokemonBattle {
         int indexOfMedicine = -1;
 //        this.player1.getPokemonActive().setCurrentHp(10);
         while (!this.player1.getItembag().getMedicineBag().useMedicine(indexOfMedicine, player1.getPokemonActive())){
-            System.out.println("(ؑ ᵒ ᵕ ؑ̇ᵒ)◞✧ Pick a Medicine to use (" + this.player1.getItembag().getMedicineBag().getMedicineList().size() + " to cancel) (ؑ ᵒ ᵕ ؑ̇ᵒ)◞✧");
+            System.out.println("   ?(ؑ ᵒ ᵕ ؑ̇ᵒ)◞✧ Pick a Medicine to use (" + this.player1.getItembag().getMedicineBag().getMedicineList().size() + " to cancel) ?(ؑ ᵒ ᵕ ؑ̇ᵒ)◞✧");
             indexOfMedicine = scan.nextInt();
             scan.nextLine();
 
@@ -357,7 +360,7 @@ public class PokemonBattle {
         //this.player1.getPokemonActive().setCurrentHp(10);
 
         while (!this.player1.getItembag().getBerryBag().useBerry(indexOfBerry, player1.getPokemonActive())){
-            System.out.println("(ｏﾟﾛﾟ)=● Pick a Berry to use (" + this.player1.getItembag().getBerryBag().getBerryList().size() + " to cancel) (ｏﾟﾛﾟ)=●");
+            System.out.println("\t?(ｏﾟﾛﾟ)=● Pick a Berry to use (" + this.player1.getItembag().getBerryBag().getBerryList().size() + " to cancel) ?(ｏﾟﾛﾟ)=●");
             indexOfBerry = scan.nextInt();
             scan.nextLine();
 
@@ -378,7 +381,7 @@ public class PokemonBattle {
         //this.player1.getPokemonActive().setCurrentHp(10);
 
         while (!this.player1.getItembag().getBattleItemBag().useBattleItem(indexOfBattleItem, player1.getPokemonActive())){
-            System.out.println(" ( ಠ o ಠ)¤=[] Pick a Battle Item to use (" + this.player1.getItembag().getBattleItemBag().getBattleItemList().size() + " to cancel) ( ಠ o ಠ)¤=[]");
+            System.out.println("( ಠ o ಠ)¤=[] Pick a Battle Item to use (" + this.player1.getItembag().getBattleItemBag().getBattleItemList().size() + " to cancel) ( ಠ o ಠ)¤=[]");
             indexOfBattleItem = scan.nextInt();
             scan.nextLine();
 
@@ -399,24 +402,26 @@ public class PokemonBattle {
         if (playerBattle){
             Pokemon pokemonActive = player2.getPokemonActive();
             System.out.println();
-            System.out.println("\t\t\t\t\tLV: " + pokemonActive.getLevel() + " " + pokemonActive.getName());
-            System.out.println("\t\t\t\t\tHP: " + pokemonActive.getCurrentHp());
-            System.out.println("LV: " + playerActivePokemon.getLevel() + " " + playerActivePokemon.getName());
-            System.out.println("HP: " + playerActivePokemon.getCurrentHp());
+            System.out.println("๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑ Pokemon Menu ๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑");
+            System.out.println("\t\t\t\t\t\t\t\t\t\tLV: " + pokemonActive.getLevel() + " " + pokemonActive.getName());
+            System.out.println("\t\t\t\t\t\t\t\t\t\tHP: " + pokemonActive.getCurrentHp());
+            System.out.println("\t\t\tLV: " + playerActivePokemon.getLevel() + " " + playerActivePokemon.getName());
+            System.out.println("\t\t\tHP: " + playerActivePokemon.getCurrentHp());
             System.out.println("========================== Battle Menu ========================");
             System.out.println( "           | 1)FIGHT                      2)BAG |\n" +
                                 "           | 3)POKEMON                    4)RUN |");
-            System.out.println("===============================================================");
+            System.out.println("๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑");
         }else{
             System.out.println();
-            System.out.println("\t\t\t\t\tLV: " + wildPokemon.getLevel() + " " + wildPokemon.getName());
-            System.out.println("\t\t\t\t\tHP: " + wildPokemon.getCurrentHp());
-            System.out.println("LV: " + playerActivePokemon.getLevel() + " " + playerActivePokemon.getName());
-            System.out.println("HP: " + playerActivePokemon.getCurrentHp());
-            System.out.println("========================== Battle Menu ========================");
+            System.out.println("๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑ Pokemon Menu ๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑");
+            System.out.println("\t\t\t\t\t\t\t\t\t\tLV: " + wildPokemon.getLevel() + " " + wildPokemon.getName());
+            System.out.println("\t\t\t\t\t\t\t\t\t\tHP: " + wildPokemon.getCurrentHp());
+            System.out.println("\t\t\tLV: " + playerActivePokemon.getLevel() + " " + playerActivePokemon.getName());
+            System.out.println("\t\t\tHP: " + playerActivePokemon.getCurrentHp());
+            System.out.println("=========================== Battle Menu ========================");
             System.out.println( "           | 1)FIGHT                      2)BAG |\n" +
                                 "           | 3)POKEMON                    4)RUN |");
-            System.out.println("===============================================================");
+            System.out.println("๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑๑");
         }
 
     }
@@ -460,7 +465,7 @@ public class PokemonBattle {
         }
     }
 
-    private void checkIfPokemonFaints(Pokemon activePokemon, Pokemon enemyPokemon, Skill skill){
+    private boolean checkIfPokemonFaints(Pokemon activePokemon, Pokemon enemyPokemon, Skill skill){
         // if this is current players turn
         if (this.playerTurn){
             // checks if it is player battle or wild pokemon battle
@@ -469,13 +474,14 @@ public class PokemonBattle {
                 // if player2 does not black out. picks the next pokemon of player2
                 if (activePokemon.attack(enemyPokemon, skill)) {
                     System.out.println();
-                    System.out.println("(☞◣д◢)☞ Enemy " + enemyPokemon.getName() + " fainted");
+                    System.out.println("               (☞◣д◢)☞ Enemy " + enemyPokemon.getName() + " fainted");
                     if (this.player2.isBlackOut()){
-                        System.out.println("✌.ʕʘ‿ʘʔ.✌" + player1.getName() + " won the pokemon battle!! ✌.ʕʘ‿ʘʔ.✌");
+                        System.out.println("        ✌.ʕʘ‿ʘʔ.✌ " + player1.getName() + " won the pokemon battle!! ✌.ʕʘ‿ʘʔ.✌");
                         battleOver = true;
                     }else{
                         // chooses the next pokemon
                         this.player2.chooseActivePokemon();
+                        return false;
                     }
                 }
             }else{
@@ -512,5 +518,7 @@ public class PokemonBattle {
                 }
             }
         }
+
+        return true;
     }
 }
