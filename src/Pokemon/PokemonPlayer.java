@@ -65,7 +65,7 @@ public class PokemonPlayer {
                 setPokemonActive(this.pokemonBag.getPokemon().get(i));
             }
         }
-        System.out.println(this.getName() + " chooses " + this.getPokemonActive().getName() + " ୧ʕ ⇀ ⌂ ↼ ʔ୨");
+        System.out.println("\t\t\t\t" + this.getName() + " chooses " + this.getPokemonActive().getName() + " ୧ʕ ⇀ ⌂ ↼ ʔ୨");
     }
 
 
