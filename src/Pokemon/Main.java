@@ -1,24 +1,22 @@
 package Pokemon;
 
 import Pokemon.ItemBag.Bag;
+import Pokemon.ItemBag.BattleItem.AllBattleItem.XAttack;
+import Pokemon.ItemBag.BattleItem.AllBattleItem.XDefense;
+import Pokemon.ItemBag.Berries.AllBerry.Oran;
+import Pokemon.ItemBag.Berries.AllBerry.Sitrus;
+import Pokemon.ItemBag.Medicine.AllMedicine.HyperPotion;
+import Pokemon.ItemBag.Medicine.AllMedicine.Potion;
+import Pokemon.ItemBag.Medicine.AllMedicine.SuperPotion;
 import Pokemon.ItemBag.PokeBall.AllPokeBalls.FriendBall;
 import Pokemon.ItemBag.PokeBall.AllPokeBalls.MoonBall;
-import Pokemon.Pokemons.Pichu;
-import Pokemon.Pokemons.Pikachu;
+import Pokemon.Pokemons.*;
 import Pokemon.Skill.*;
 import Pokemon.Skill.B.Barrage;
+import org.omg.CORBA.ORB;
 
 public class Main {
     public static void main(String[] args){
-
-        Pikachu pikachu = new Pikachu();
-        Pichu pichu = new Pichu();
-//        Pokemon charmander = new Pokemon("Charmander");
-//        Pokemon squirtle = new Pokemon("Squirtle");
-//        Pokemon piplup = new Pokemon("Piplup");
-//        Pokemon bulbasaur = new Pokemon("Bulbasaur");
-//        Pokemon mew = new Pokemon("Mew");
-//        Pokemon mewtwo = new Pokemon("MewTwo");
 
         PokemonPC pc = new PokemonPC();
         PokemonBag pokemonBag = new PokemonBag(pc);
@@ -26,44 +24,55 @@ public class Main {
 
         Bag itemBag = new Bag();
 
-        pokemonBag.addToBag(pikachu);
-        pokemonBag2.addToBag(pichu);
+        pokemonBag.addToBag(new Dragonair());
+        pokemonBag.addToBag(new Dragonite());
+        pokemonBag.addToBag(new Dratini());
+        pokemonBag.addToBag(new Pichu());
+        pokemonBag.addToBag(new Pikachu());
+        pokemonBag.addToBag(new Dragonite());
 
+        pokemonBag2.addToBag(new Dratini());
+//        pokemonBag2.addToBag(new Pichu());
+//        pokemonBag2.addToBag(new Pichu());
+//        pokemonBag2.addToBag(new Dragonite());
+//        pokemonBag2.addToBag(new Dragonair());
+//        pokemonBag2.addToBag(new Pikachu());
+
+        // TEST POKEBALLS HERE
         MoonBall moonBall = new MoonBall();
         FriendBall friendBall = new FriendBall();
 
+        // TEST MEDICINES HERE
+        HyperPotion hyperPotion = new HyperPotion();
+        Potion potion = new Potion();
+        SuperPotion superPotion = new SuperPotion();
+
+        // TEST BERRIES HERE
+        Oran oran = new Oran();
+        Sitrus sitrus = new Sitrus();
+
+        // TEST BATTLE ITEMS HERE
+        XDefense xDefense = new XDefense();
+        XAttack xAttack = new XAttack();
+
         itemBag.addItem(moonBall, 2);
         itemBag.addItem(friendBall, 2);
+        itemBag.addItem(hyperPotion, 10);
+        itemBag.addItem(potion, 100);
+        itemBag.addItem(superPotion, 1);
+        itemBag.addItem(oran, 1);
+        itemBag.addItem(sitrus, 20);
+        itemBag.addItem(xDefense, 1);
+        itemBag.addItem(xAttack, 20);
 
 
         // Testing player class and pokemon battle class
         PokemonPlayer david = new PokemonPlayer("David", "Male", pokemonBag, itemBag);
         PokemonPlayer hen = new PokemonPlayer("Hen", "Female", pokemonBag2, itemBag);
 
-        PokemonBattle pokemonBattle = new PokemonBattle(david, pikachu);
+        PokemonBattle pokemonBattle = new PokemonBattle(david, hen);
 
         pokemonBattle.startBattle();
     }
 }
 
-//
-//        //bag full here
-//        bag.addToBag(mewtwo);
-//        bag.addToBag(mew);
-//
-//        bag.removePokemon(pikachu,pc, 10);
-//        bag.removePokemon(squirtle,pc, 10);
-//
-////        bag.listPokemons();
-//
-//        pc.storePokemon(pikachu,10);
-//        pc.storePokemon(pikachu,10);
-//        pc.storePokemon(mew,10);
-//        pc.storePokemon(mewtwo,10);
-//
-//
-//        pc.retrievePokemon(pikachu, 10, bag);
-//        pc.retrievePokemon(pikachu, 10, bag);
-//        bag.listPokemons();
-//        pc.showPokemon(5);
-//        pc.showPokemon(10);
