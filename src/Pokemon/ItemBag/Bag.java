@@ -43,10 +43,12 @@ public class Bag {
     }
 
     public void listBattleBags(){
-        System.out.println("0) Medicine");
-        System.out.println("1) Poke Balls");
-        System.out.println("2) Berries");
-        System.out.println("3) Battle Item\n");
+        System.out.println("✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧ Item Bag ✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧");
+        System.out.println("\t\t\t\t\t\t" + "0) ࿐ Medicine ࿐");
+        System.out.println("\t\t\t\t\t\t" + "1) ࿐ Poke Balls ࿐");
+        System.out.println("\t\t\t\t\t\t" + "2) ࿐ Berries ࿐");
+        System.out.println("\t\t\t\t\t\t" + "3) ࿐ Battle Item ࿐");
+        System.out.println("✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧");
     }
 
     // listing all the items in each bag
