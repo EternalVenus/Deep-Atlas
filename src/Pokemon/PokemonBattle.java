@@ -2,6 +2,7 @@ package Pokemon;
 
 import Pokemon.Pokemons.Pikachu;
 import Pokemon.Pokemons.Pokemon;
+import Pokemon.Skill.Skill;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -252,72 +253,28 @@ public class PokemonBattle {
                     System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     System.out.println(activePokemonName + " uses " + activePokemon.getSkill1().getName());
                     System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    // if this is current players turn
-                    if (this.playerTurn){
-                        // checks if it is player battle or wild pokemon battle
-                        if (playerBattle){
-                            // if the enemy pokemon faints. checks if the player2 blacks out
-                            // if player2 does not black out. picks the next pokemon of player2
-                            if (activePokemon.attack(enemyPokemon, activePokemon.getSkill1())) {
-                                System.out.println();
-                                System.out.println(enemyPokemon.getName() + " fainted");
-                                if (this.player2.isBlackOut()){
-                                    System.out.println(player1.getName() + " won the pokemon battle!!");
-                                    battleOver = true;
-                                }else{
-                                    // chooses the next pokemon
-                                    this.player2.chooseActivePokemon();
-                                }
-                            }
-                        }else{
-                            // if the wild pokemon faints. Battle ends
-                            if (activePokemon.attack(enemyPokemon, activePokemon.getSkill1())){
-                                System.out.println(wildPokemon.getName() + " fainted");
-                                System.out.println(player1.getName() + " won the wild pokemon battle!!");
-                                battleOver = true;
-                            }
-                        }
-                    }else{
-                        // if the other players turn or the wild pokemon's turn
-                        // This "else" statement checks if player1's active pokemon faints
-                        // Then checks if the player blacks out or choose the next pokemon
-                        if (activePokemon.attack(enemyPokemon, activePokemon.getSkill1())) {
-                            System.out.println();
-                            System.out.println(enemyPokemon.getName() + " fainted");
-                            if (this.player1.isBlackOut()){
-                                System.out.println(this.player1.getName() + " ran out of pokemon");
-                                System.out.println(this.player1.getName() + " blacked out.");
-                                System.out.println(this.player2.getName() + " won the pokemon battle!!!");
-                                battleOver = true;
-                            }else{
-                                // allows player 1 to choose the next pokemon
-                                // FINISH THIS METHOD HERE
-                                choosePokemon(-1);
-                            }
-                        }
-                    }
-
+                    checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill1() );
                     return true;
                 case 2:
                     System.out.println();
                     System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     System.out.println(activePokemonName + " uses " + activePokemon.getSkill2().getName());
                     System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    activePokemon.attack(enemyPokemon, activePokemon.getSkill2());
+                    checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill2() );
                     return true;
                 case 3:
                     System.out.println();
                     System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     System.out.println(activePokemonName + " uses " + activePokemon.getSkill3().getName());
                     System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    activePokemon.attack(enemyPokemon, activePokemon.getSkill3());
+                    checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill3() );
                     return true;
                 case 4:
                     System.out.println();
                     System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     System.out.println(activePokemonName + " uses " + activePokemon.getSkill4().getName());
                     System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    activePokemon.attack(enemyPokemon, activePokemon.getSkill4());
+                    checkIfPokemonFaints(activePokemon, enemyPokemon,activePokemon.getSkill4() );
                     return true;
                 default:
                     System.out.println(activePokemonName + " does not have this skill!");
@@ -486,6 +443,57 @@ public class PokemonBattle {
             return true;
         }else {
             return false;
+        }
+    }
+
+    private void checkIfPokemonFaints(Pokemon activePokemon, Pokemon enemyPokemon, Skill skill){
+        // if this is current players turn
+        if (this.playerTurn){
+            // checks if it is player battle or wild pokemon battle
+            if (playerBattle){
+                // if the enemy pokemon faints. checks if the player2 blacks out
+                // if player2 does not black out. picks the next pokemon of player2
+                if (activePokemon.attack(enemyPokemon, skill)) {
+                    System.out.println();
+                    System.out.println("Enemy " + enemyPokemon.getName() + " fainted");
+                    if (this.player2.isBlackOut()){
+                        System.out.println(player1.getName() + " won the pokemon battle!!");
+                        battleOver = true;
+                    }else{
+                        // chooses the next pokemon
+                        this.player2.chooseActivePokemon();
+                    }
+                }
+            }else{
+                // if the wild pokemon faints. Battle ends
+                if (activePokemon.attack(enemyPokemon, skill)){
+                    System.out.println(wildPokemon.getName() + " fainted");
+                    System.out.println(player1.getName() + " won the wild pokemon battle!!");
+                    battleOver = true;
+                }
+            }
+        }else{
+            // if the other players turn or the wild pokemon's turn
+            // This "else" statement checks if player1's active pokemon faints
+            // Then checks if the player blacks out or choose the next pokemon
+            if (activePokemon.attack(enemyPokemon, skill)) {
+                System.out.println();
+                System.out.println(enemyPokemon.getName() + " fainted");
+                if (this.player1.isBlackOut()){
+                    System.out.println(this.player1.getName() + " ran out of pokemon");
+                    System.out.println(this.player1.getName() + " blacked out.");
+                    System.out.println(this.player2.getName() + " won the pokemon battle!!!");
+                    battleOver = true;
+                }else{
+                    // allows player 1 to choose the next pokemon
+                    // FINISH THIS METHOD HERE
+                    int pokemonChose = -1;
+                    while (!choosePokemon(pokemonChose)){
+                        pokemonChose = scan.nextInt();
+                        scan.nextLine();
+                    }
+                }
+            }
         }
     }
 }
