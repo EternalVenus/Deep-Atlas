@@ -26,14 +26,12 @@ public class XAttack extends BattleItem{
             // if the battle item increase the multiplier to more than 6
             // set it to 6
             System.out.println("Used a " + super.getName());
-            System.out.println("Attack multiplier of " + pokemon.getName() + " is " + 6);
             pokemon.setAtkMultiplier(6);
             return true;
         }else {
             // anything else. just set the amount after using the battle item
             System.out.println("Used a " + super.getName());
             pokemon.setAtkMultiplier(currentAtkMultiplier);
-            System.out.println("Attack multiplier of " + pokemon.getName() + " is " + pokemon.getAtkMultiplier());
             return true;
         }
     }
