@@ -26,15 +26,15 @@ public class PokemonPlayer {
     // switches to a pokemon in the bag using its index value
     public boolean switchPokemon(int num){
         if (num < 0 || num > 5){
-            System.out.println("There are only 6 pokemon (0 - 5) ");
+            System.out.println("There are only 6 pokemon (0 - 5) (ꐦ ಠ皿ಠ ) ");
             return false;
         }else if(num == 0){
             // Telling the player the first pokemon in the bag is already in battle
             if (this.pokemonBag.getPokemon().get(0).getCurrentHp() == 0){
-                System.out.println(this.pokemonBag.getPokemon().get(0).getName() + " fainted. Choose another pokemon!");
+                System.out.println(this.pokemonBag.getPokemon().get(0).getName() + " fainted (」ﾟﾛﾟ)｣NOOOooooo━ʔ Choose another pokemon!   ?(ο´･д･)??");
                 return false;
             }else {
-                System.out.println(this.pokemonBag.getPokemon().get(0).getName() + " is already on the battle field.");
+                System.out.println(this.pokemonBag.getPokemon().get(0).getName() + " is already on the battle field (ꐦ ಠ皿ಠ )");
                 return false;
             }
         }
@@ -42,15 +42,15 @@ public class PokemonPlayer {
             // checks if the pokemon is a fainted pokemon before switching
             // if the pokemon is a fainted pokemon
             if (this.pokemonBag.getPokemon().get(num).getCurrentHp() == 0){
-                System.out.println(this.pokemonBag.getPokemon().get(num).getName() + " is unable to battle. Choose a different pokemon.");
+                System.out.println(this.pokemonBag.getPokemon().get(num).getName() + " is unable to battle (」ﾟﾛﾟ)｣NOOOooooo. Choose a different pokemon. ?(ο´･д･)??");
                 return false;
             }else{
                 // if the pokemon is not fainted
                 // swaps the 2 pokemon in the pokemon bag
-                System.out.println(this.pokemonActive.getName() + " return.");
+                System.out.println(this.pokemonActive.getName() + " return! ʕ>⌓<｡ʔ");
                 Collections.swap(this.pokemonBag.getPokemon(), 0, num);
                 this.pokemonActive = this.pokemonBag.getPokemon().get(0);
-                System.out.println("Go! " + this.pokemonActive.getName());
+                System.out.println("Go! " + this.pokemonActive.getName() + " ୧ʕ ◕ o ◕ ʔ୨");
                 return true;
             }
 
@@ -65,7 +65,7 @@ public class PokemonPlayer {
                 setPokemonActive(this.pokemonBag.getPokemon().get(i));
             }
         }
-        System.out.println(this.getName() + " chooses " + this.getPokemonActive().getName());
+        System.out.println(this.getName() + " chooses " + this.getPokemonActive().getName() + " ୧ʕ ⇀ ⌂ ↼ ʔ୨");
     }
 
 
