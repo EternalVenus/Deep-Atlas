@@ -33,11 +33,11 @@ public class MailBag {
 
     public void listItems(){
         if (mailList.size() != 0){
-            System.out.println("------ Mails ------");
+            System.out.println("♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬ Mails ♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬");
             for (int i = 0 ; i < mailList.size(); i++){
-                System.out.println(i + ") " + mailList.get(i).getName() + " :" + mailList.get(i).getAmount() );
+                System.out.println("\t\t\t\t\t\t" + i + ") " + mailList.get(i).getName() + " :" + mailList.get(i).getAmount() );
             }
-            System.out.println("-------------------");
+            System.out.println("♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬♬");
         }
 
     }

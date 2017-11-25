@@ -57,10 +57,7 @@ public class PokeBall{
     public int usePokeBall(){
         return --this.amount;
     }
-
-    public String getClassName(){
-        return "Poke Ball";
-    }
+    
 
     public String getName() {
         return name;

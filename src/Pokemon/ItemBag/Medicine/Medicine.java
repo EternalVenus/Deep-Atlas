@@ -31,10 +31,6 @@ public class Medicine{
         return true;
     }
 
-    public String getClassName(){
-        return "Medicine";
-    }
-
     public String getName() {
         return name;
     }

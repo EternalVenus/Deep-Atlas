@@ -41,12 +41,12 @@ public class BattleItemBag{
 
     public void listItems(){
         if (battleItemList.size() != 0){
-            System.out.println("----Battle items----");
+            System.out.println("❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃ Battle items ❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃");
 
             for (int i = 0 ; i < battleItemList.size(); i++){
-                System.out.println(i + ") " + battleItemList.get(i).getName() + " :" + battleItemList.get(i).getAmount());
+                System.out.println("\t\t\t\t\t\t" + i + ") " + battleItemList.get(i).getName() + " :" + battleItemList.get(i).getAmount());
             }
-            System.out.println("--------------------");
+            System.out.println("❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃❃");
         }
     }
 

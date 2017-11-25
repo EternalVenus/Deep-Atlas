@@ -38,11 +38,11 @@ public class MedicineBag {
 
     public void listItems(){
         if (medicineList.size() != 0){
-            System.out.println("----- Medicines -----");
+            System.out.println("❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀ Medicines ❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀");
             for (int i = 0 ; i < medicineList.size(); i++){
-                System.out.println(i + ") " + medicineList.get(i).getName() + " :" + medicineList.get(i).getAmount());
+                System.out.println("\t\t\t\t\t  " + i + ") " + medicineList.get(i).getName() + " :" + medicineList.get(i).getAmount());
             }
-            System.out.println("---------------------");
+            System.out.println("❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀");
         }
     }
 

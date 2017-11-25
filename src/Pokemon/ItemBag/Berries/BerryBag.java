@@ -43,11 +43,11 @@ public class BerryBag {
 
     public void listItems(){
         if (berryList.size() != 0){
-            System.out.println("----- Berries ------");
+            System.out.println("♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ Berries ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪");
             for (int i = 0 ; i < berryList.size(); i++){
-                System.out.println(i + ") " + berryList.get(i).getName() + " :" + berryList.get(i).getAmount());
+                System.out.println("\t\t\t\t\t\t" + i + ") " + berryList.get(i).getName() + " :" + berryList.get(i).getAmount());
             }
-            System.out.println("--------------------");
+            System.out.println("♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪ ♪");
         }
     }
 

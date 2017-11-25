@@ -20,11 +20,11 @@ public class TMBag {
 
     public void listItems(){
         if (tmList.size() != 0){
-            System.out.println("----- TM/HM -----");
+            System.out.println("తతతతతతతతతతతతతతతతత TM/HM తతతతతతతతతతతతతతతతతతత");
             for (int i = 0 ; i < tmList.size(); i++){
-                System.out.println(i + ") " + tmList.get(i).getID() + " : " + tmList.get(i).getName());
+                System.out.println("\t\t\t\t\t  " + i + ") " + tmList.get(i).getID() + " : " + tmList.get(i).getName());
             }
-            System.out.println("-----------------");
+            System.out.println("తతతతతతతతతతతతతతతతతతతతతతతతతతతతతతతతతతతతతతతతత");
         }
     }
 

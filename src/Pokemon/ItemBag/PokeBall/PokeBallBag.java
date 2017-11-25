@@ -32,12 +32,13 @@ public class PokeBallBag {
 
     public void listItems(){
         if (pokeBallList.size() != 0){
-            System.out.println("-----Poke Balls-----");
+            System.out.println("●●●●●●●●●●●●●●●●●● Poke Balls ●●●●●●●●●●●●●●●●●●");
 
             for (int i = 0 ; i < pokeBallList.size(); i++){
-                System.out.println(i + ") " + pokeBallList.get(i).getName() + " :" + pokeBallList.get(i).getAmount());
+                System.out.println("                       " + i + ") " + pokeBallList.get(i).getName()
+                                    + " :" + pokeBallList.get(i).getAmount());
             }
-            System.out.println("---------------------");
+            System.out.println("●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●");
         }
     }
 
