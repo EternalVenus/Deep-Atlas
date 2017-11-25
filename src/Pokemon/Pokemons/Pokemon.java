@@ -110,6 +110,65 @@ public class Pokemon {
         this.speedMultiplier = 1;
     }
 
+    // FOR TESTING PURPOSE
+    public Pokemon(String name, String nickName, String ID,  int baseHp, int baseAtk,
+                   int baseDef, int baseSpAtk, int baseSpDef, int baseSpeed, Type type1, Type type2 , int level) {
+
+        // gives a 50% chance to both female and male
+        if (Math.random() < 0.5){
+            this.gender = "Male";
+        }else{
+            this.gender = "Female";
+        }
+
+        this.nickName = nickName;
+        this.name = name;
+        this.ID = ID;
+        this.type = type1;
+        this.type2 = type2;
+
+        // GENERATE RANDOM IV AND EV
+        // Maximum value for EV is 252
+        // Maximum value for IV is 15
+        this.IV = (int)(Math.random() * 15);
+        this.EV = (int)(Math.random() * 253);
+
+
+        // CALCULATING MAX STATS FROM BASE STATS
+        // generating a random level
+        this.level =  level;
+        this.exp = 0;
+        // using the formula to calculate maximum stats
+        this.hp = (int)Math.floor(((2 * baseHp + this.IV + Math.floor(EV/4)) * this.level)/ 100) + this.level + 10;
+        this.spAtk = (int)Math.floor((Math.floor(((2 * baseSpAtk + this.IV + Math.floor(this.EV/4))* this.level)/100) + 5) * 1 );
+        this.atk = (int)Math.floor((Math.floor(((2 * baseAtk + this.IV + Math.floor(this.EV/4))* this.level)/100) + 5) * 1 );
+        this.defense = (int)Math.floor((Math.floor(((2 * baseDef + this.IV + Math.floor(this.EV/4))* this.level)/100) + 5) * 1 );
+        this.spDefense = (int)Math.floor((Math.floor(((2 * baseSpDef + this.IV + Math.floor(this.EV/4))* this.level)/100) + 5) * 1 );
+        this.speed = (int)Math.floor((Math.floor(((2 * baseSpeed + this.IV + Math.floor(this.EV/4))* this.level)/100) + 5) * 1 );
+
+        // initializing the base stats of a pokemon
+        this.baseHp = baseHp;
+        this.baseAtk = baseAtk;
+        this.baseSpAtk = baseSpAtk;
+        this.baseDefense = baseDef;
+        this.baseSpDefense = baseSpDef;
+        this.baseSpeed = baseSpeed;
+
+        // Setting full health of pokemon when created
+        this.currentHp = this.hp;
+        this.currentAtk = this.atk;
+        this.currentSpAtk = this.spAtk;
+        this.currentDef = this.defense;
+        this.currentSpDef = this.spDefense;
+        this.currentSpeed = this.speed;
+
+        // Setting all stat multiplier by 1 when declared
+        this.atkMultiplier = 1;
+        this.spAtkMultiplier = 1;
+        this.defenseMultiplier = 1;
+        this.spDefenseMultiplier = 1;
+        this.speedMultiplier = 1;
+    }
     // returns true if the pokemon faints
     // returns false if the pokemon does not faint
     private boolean damageTaken(int damage){
@@ -141,7 +200,14 @@ public class Pokemon {
         return enemy.damageTaken(damage);
     }
 
-
+    // this method checks if the pokemon is fainted or not
+    public boolean isFainted(){
+        if (this.getCurrentHp() == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     // methods to be Override
     public void showSkills(){

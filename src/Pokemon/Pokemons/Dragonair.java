@@ -37,10 +37,10 @@ public class Dragonair extends Pokemon {
     @Override
     public void showSkills(){
         System.out.println("===Skill Set===");
-        System.out.println("1 :" + skill1.getName() + "\n" +
-                "2 :" + skill2.getName() + "\n" +
-                "3 :" + skill3.getName() + "\n" +
-                "4 :" + skill4.getName());
+        System.out.println("1: " + skill1.getName() + "\n" +
+                "2: " + skill2.getName() + "\n" +
+                "3: " + skill3.getName() + "\n" +
+                "4: " + skill4.getName());
         System.out.println("===============");
     }
 

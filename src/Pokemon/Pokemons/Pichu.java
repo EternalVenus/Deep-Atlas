@@ -31,14 +31,20 @@ public class Pichu extends Pokemon{
         this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
     }
 
+    public Pichu(int level) {
+        super("Pichu",  null, "172", 20, 40, 15, 35, 35, 60,
+                new Type("Electric"), null, level);
+        this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
+    }
+
     // Listing the skill set for Pokemon Battle
     @Override
     public void showSkills(){
         System.out.println("===Skill Set===");
-        System.out.println("1 :" + skill1.getName() + "\n" +
-                "2 :" + skill2.getName() + "\n" +
-                "3 :" + skill3.getName() + "\n" +
-                "4 :" + skill4.getName());
+        System.out.println("1: " + skill1.getName() + "\n" +
+                "2: " + skill2.getName() + "\n" +
+                "3: " + skill3.getName() + "\n" +
+                "4: " + skill4.getName());
         System.out.println("===============");
     }
 

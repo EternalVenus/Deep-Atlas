@@ -31,14 +31,21 @@ public class Pikachu extends Pokemon{
         this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
     }
 
+    // FOR TESTING PURPOSE
+    public Pikachu(int level) {
+        super("Pikachu", null,"025", 35, 55, 30,50,40, 90,
+                new Type("Electric"), null, level);
+        this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
+    }
+
+    // Listing the skill set for Pokemon Battle
     @Override
     public void showSkills(){
-        System.out.println();
         System.out.println("===Skill Set===");
-        System.out.println("| 1 :" + skill1.getName() + " |\n" +
-                "| 2 :" + skill2.getName() + " |\n" +
-                "| 3 :" + skill3.getName() + " |\n" +
-                "| 4 :" + skill4.getName() +  " |");
+        System.out.println("1: " + skill1.getName() + "\n" +
+                "2: " + skill2.getName() + "\n" +
+                "3: " + skill3.getName() + "\n" +
+                "4: " + skill4.getName());
         System.out.println("===============");
     }
 
