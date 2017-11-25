@@ -18,18 +18,18 @@ public class PokemonBag {
 
     public boolean addToBag(Pokemon pokemon){
         if (this.pokemon.size() == MAX_SLOTS){
-            System.out.println("Bag too full. Please select a PC box to sent to.");
+            System.out.println("ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ Bag too full! Select a PC Box to sent to ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ" );
             int boxNum = scanner.nextInt();
             scanner.nextLine();
             this.pc.storePokemon(pokemon, boxNum);
             return true;
         } else if (this.pokemon.size() < MAX_SLOTS){
             this.pokemon.add(pokemon);
-            System.out.println(pokemon.getName() + " is added to the bag. There is a total of " + this.pokemon.size() + " pokemon in the bag.");
+            System.out.println(pokemon.getName() + " is added to the bag. There is a total of " + this.pokemon.size() + " pokemon in the bag. ʕ•̫͡•ིʔྀʕ•̫͡•ིʔྀʕ•̫͡•ིʔྀ");
             return true;
         }else{
             // SHOULD NOT GET HERE
-            System.out.println("The bag is full. Only 6 pokemon is allowed in the bag.");
+            System.out.println("The bag is full. Only 6 pokemon is allowed in the bag. •̫͡•ʔʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•");
             return false;
         }
     }
@@ -52,12 +52,18 @@ public class PokemonBag {
     }
 
     public void listPokemons(){
-        System.out.println("---------------------------------------");
-        System.out.println("Listing Pokemons in the Bag.");
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("        " + "ฅ^•ﻌ•^ฅ Listing Pokemons in the Bag ฅ^•ﻌ•^ฅ");
         for (int i = 0; i < pokemon.size(); i++){
-            System.out.println(i + ": " + pokemon.get(i).getName());
+            if (pokemon.get(i).isFainted()){
+                String text = i + ": LV  " + pokemon.get(i).getLevel() + " " + pokemon.get(i).getName() + " ( ✖ ︿ ✖ )";
+                System.out.println("           " + text);
+            }else{
+                String text2 = i + ": LV  " + pokemon.get(i).getLevel() + " " + pokemon.get(i).getName() + " ୧ʕ ◕ o ◕ ʔ୨";
+                System.out.println("             " + text2);
+            }
         }
-        System.out.println("---------------------------------------");
+        System.out.println("---------------------------------------------------------------");
     }
 
     public int bagSize(){
