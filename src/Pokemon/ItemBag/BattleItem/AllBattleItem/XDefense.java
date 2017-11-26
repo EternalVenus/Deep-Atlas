@@ -27,15 +27,15 @@ public class XDefense extends BattleItem{
         } else if (currentDefMultiplier > 6) {
             // if the battle item increase the multiplier to more than 6
             // set it to 6
-            System.out.println("Used a " + super.getName());
-            System.out.println("Defense multiplier of " + pokemon.getName() + " is " + 6);
+            System.out.println("\t\t\t\t\t\tUsed a " + super.getName());
+            System.out.println("\t\t\t\tDefense multiplier of " + pokemon.getName() + " is " + 6 + "\n");
             pokemon.setDefenseMultiplier(6);
             return true;
         }else {
             // anything else. just set the amount after using the battle item
-            System.out.println("Used a " + super.getName());
+            System.out.println("\t\t\t\t\t\tUsed a " + super.getName());
             pokemon.setDefenseMultiplier(currentDefMultiplier);
-            System.out.println("Defense multiplier of " + pokemon.getName() + " is " + pokemon.getDefenseMultiplier());
+            System.out.println("\t\t\t\tDefense multiplier of " + pokemon.getName() + " is " + pokemon.getDefenseMultiplier() + "\n");
             return true;
         }
     }
