@@ -62,6 +62,8 @@ public class PokemonBattle {
         initialDialogueAndMakeDecision();
     }
 
+    // displays the initial dialogue that chooses between player battle and wild pokemon battle
+    // using the while loop to keep track if the battle is over using the variable BattleOver
     private void initialDialogueAndMakeDecision(){
         System.out.println();
         System.out.println("||☆FIGHT☆||=============BATTLE STARTS=============||☆FIGHT☆||");
@@ -89,8 +91,8 @@ public class PokemonBattle {
 
             // restore all stat multipliers to 1
             if (battleOver){
-                for (int i = 0; i < this.player1.getPokemonBag().bagSize(); i++){
-                    player1.getPokemonBag().getPokemon().get(i).restoreToBaseMultiplier();
+                for (Pokemon pokemon : player1.getPokemonBag().getPokemon()){
+                    pokemon.restoreToBaseMultiplier();
                 }
             }
         }else{
@@ -111,13 +113,23 @@ public class PokemonBattle {
 
             // restore all stat multipliers to 1
             if (battleOver){
-                for (int i = 0; i < this.player1.getPokemonBag().bagSize(); i++){
-                    player1.getPokemonBag().getPokemon().get(i).restoreToBaseMultiplier();
+                for (Pokemon pokemon : player1.getPokemonBag().getPokemon()){
+                    pokemon.restoreToBaseMultiplier();
                 }
             }
         }
     }
 
+    // Method that process the decision (Fight,Bag,Pokemon,Run) (1-4) by the player.
+    // if the player chooses 1 (Fight). The skill set of the pokemon shows
+    // The user picks a skill from (0-3) from the skillset
+    // After the user picks a skill. It goes into battle phase and calculates the damage calculation
+    // if the player chooses 2 (bag). All of the category of the bag shows
+    // The user picks one category (0-3). Then picks an item from that category
+    // if the player chooses 3 (Pokemon). The pokemons are listed from pokemon bag
+    // The user picks a pokemon that is not the first pokemon or a fainted pokemon
+    // if the player chooses 4(run). It checks if this is a player battle or a wild pokemon battle
+    // unable to run from player battle
     private boolean decisionMade(int decision){
         // creates a random number from 1 - 4 for the move of the enemy pokemon
         int randomMoveOfEnemy = random.nextInt(4) + 1;
@@ -138,9 +150,6 @@ public class PokemonBattle {
                             return true;
                         }
                     }
-                    // still need to implement this function
-                    // need to add the function to attack enemy pokemon
-                    // damage calculation here
                     System.out.println("☪☪☪☪☪☪☪☪☪☪☪☪☪☪☪☪☪ Battle Phase ☪☪☪☪☪☪☪☪☪☪☪☪☪☪☪☪☪☪");
                     this.playerTurn = !useSkill(move);
 
@@ -213,6 +222,7 @@ public class PokemonBattle {
                         return true;
                     }
                 default:
+                    // SHOULD NOT GET HERE
                     System.out.println("There is no such command. ⎧ᴿᴵᴾ⎫◟◟◟◟◟◟◟◟ ❀◟(ó ̯ ò, )");
                     return false;
             }
@@ -225,10 +235,12 @@ public class PokemonBattle {
 
     }
 
-    // If it is player1's turn. The active pokemon will be the first pokemon in party and the enemy pokemon will be
-    // wild pokemon or the first pokemon of player2
-    // If it is not player1's turn. The active pokemon will be the wild pokemon or the first pokemon of player2
-    // the enemy pokemon will be player1's first pokemon
+
+    // chooses activePokemon and enemyPokemon based on the turn
+    // if it is player1's turn the active pokemon is player1's active pokemon
+    // the enemy is either player2's active pokemon or wild pokemon
+    // if it is not player1's turn. The active pokemon is either player2's active pokemon or wild pokemon
+    // the enemy pokemon will be player1's active pokemon
     private boolean useSkill(int move){
             String activePokemonName;
             Pokemon activePokemon;
@@ -285,7 +297,7 @@ public class PokemonBattle {
     // if the player decide to cancel his decision. It returns a false value, which can later be used
     // to transfer to the option screen
     private boolean pokeBallBagDecisionMaking(){
-        // initialize an initial index and then use the while loop to get input from the user
+        // initialize an initial index and then use the while loop to get the right input from the user
         int indexOfPokeball = -1;
         while(!this.player1.getItembag().getPokeBallBag().usePokeBall(indexOfPokeball)){
             System.out.println("( ・・)つ-●●● Pick a Poke Ball to use (" + this.player1.getItembag().getPokeBallBag().getPokeBallList().size() + " to cancel) ( ・・)つ-●●●");
@@ -353,6 +365,7 @@ public class PokemonBattle {
             indexOfBerry = scan.nextInt();
             scan.nextLine();
 
+            // The player will cancel his decision when he pick a value 1 greater than the maximum item index
             if (indexOfBerry == this.player1.getItembag().getBerryBag().getBerryList().size()){
                 return false;
             }
@@ -365,6 +378,9 @@ public class PokemonBattle {
         return true;
     }
 
+    // this method executes which battle item the player chooses
+    // if the player decide to cancel his decision. It returns a false value, which can later be used
+    // to transfer to the option screen
     private boolean battleItemBagDecisionMaking(){
         int indexOfBattleItem = -1;
         //this.player1.getPokemonActive().setCurrentHp(10);
@@ -374,6 +390,7 @@ public class PokemonBattle {
             indexOfBattleItem = scan.nextInt();
             scan.nextLine();
 
+            // The player will cancel his decision when he pick a value 1 greater than the maximum item index
             if (indexOfBattleItem == this.player1.getItembag().getBattleItemBag().getBattleItemList().size()){
                 return false;
             }
@@ -386,6 +403,9 @@ public class PokemonBattle {
         return true;
     }
 
+    // shows the pokemon menu and also the battle menu
+    // pokemon menu consist of name and hp
+    // battle menu consist of fight, bag, pokemon, run
     private void showOptions(boolean playerBattle){
         Pokemon playerActivePokemon = player1.getPokemonActive();
         if (playerBattle){
@@ -415,6 +435,8 @@ public class PokemonBattle {
 
     }
 
+    // shows the option for the battle menu (1 - 4 )
+    // battle menu consist of fight, bag, pokemon, run
     private int showOptionsAndMakeDecision(){
         showOptions(playerBattle);
         // taking the decision of the player
@@ -428,18 +450,21 @@ public class PokemonBattle {
         return decision;
     }
 
+    // Method to allow the player choose a different pokemon
+    // also passing in a boolean value listPokemons to display the array of pokemons in the pokemon bag
     private boolean choosePokemon(int pokemonChosen, boolean listPokemons){
         if (listPokemons){
             this.player1.getPokemonBag().listPokemons();
             System.out.println("         " + "ฅ( ̳͒•ಲ• ̳͒)ฅ Choose a Pokemon ฅ( ̳͒•ಲ• ̳͒)ฅ");
         }
+        // A loop that continues until the play enter a correct value
         while(pokemonChosen < 0 || pokemonChosen > 5){
             System.out.println("ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ Choose a pokemon (0 - " + (player1.getPokemonBag().getPokemon().size() - 1) + ") ("
                     + player1.getPokemonBag().getPokemon().size() + " to cancel) ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ");
             pokemonChosen = scan.nextInt();
             scan.nextLine();
 
-            // go back to options
+            // if the player decide to cancel his decision. Go back to the option screen
             if (pokemonChosen == player1.getPokemonBag().getPokemon().size()){
                 return true;
             }
@@ -454,6 +479,8 @@ public class PokemonBattle {
         }
     }
 
+    // Method to check if the pokemon faints from an attack
+    // Passing in the attacker, receiver, and the skill
     private boolean checkIfPokemonFaints(Pokemon activePokemon, Pokemon enemyPokemon, Skill skill){
         // if this is current players turn
         if (this.playerTurn){
@@ -461,6 +488,7 @@ public class PokemonBattle {
             if (playerBattle){
                 // if the enemy pokemon faints. checks if the player2 blacks out
                 // if player2 does not black out. picks the next pokemon of player2
+                // if player2 blacks out. The battle is over and player1 wins
                 if (activePokemon.attack(enemyPokemon, skill)) {
                     System.out.println();
                     System.out.println("               (☞◣д◢)☞ Enemy " + enemyPokemon.getName() + " fainted");
