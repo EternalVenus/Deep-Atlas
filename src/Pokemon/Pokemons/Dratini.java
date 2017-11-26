@@ -34,6 +34,14 @@ public class Dratini extends Pokemon{
         this.ability = "Shed Skin";
     }
 
+    public Dratini(int level) {
+        super("Dratini", null, "147", 41, 64,
+                45, 50, 50, 50, new Type("Dragon"), null, level);
+
+        // moving the 4 skills into an array list
+        this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
+        this.ability = "Shed Skin";
+    }
     // Listing the skill set for Pokemon Battle
     @Override
     public void showSkills(){

@@ -33,6 +33,15 @@ public class Dragonite extends Pokemon{
         this.ability = "Inner Focus";
     }
 
+    public Dragonite(int level) {
+        super("Dragonite", null, "149", 91, 134,
+                95, 100, 100, 80, new Type("Dragon"), new Type("Flying"), level);
+
+        // moving the 4 skills into an array list
+        this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
+        this.ability = "Inner Focus";
+    }
+
     // Listing the skill set for Pokemon Battle
     @Override
     public void showSkills(){

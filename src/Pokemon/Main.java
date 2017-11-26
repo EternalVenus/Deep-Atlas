@@ -32,19 +32,19 @@ public class Main {
 
         Bag itemBag = new Bag();
 
-        pokemonBag.addToBag(new Pikachu(2));
-//        pokemonBag.addToBag(new Pikachu(2));
-//        pokemonBag.addToBag(new Pikachu(2));
-//        pokemonBag.addToBag(new Pikachu(2));
-//        pokemonBag.addToBag(new Pikachu(2));
-//        pokemonBag.addToBag(new Pikachu(2));
+        pokemonBag.addToBag(new Pikachu(50));
+        pokemonBag.addToBag(new Pikachu(50));
+        pokemonBag.addToBag(new Pikachu(50));
+        pokemonBag.addToBag(new Pikachu(50));
+        pokemonBag.addToBag(new Pikachu(50));
+        pokemonBag.addToBag(new Pikachu(50));
 
-        pokemonBag2.addToBag(new Pichu(99));
-        pokemonBag2.addToBag(new Pichu(99));
-        pokemonBag2.addToBag(new Pichu(99));
-//        pokemonBag2.addToBag(new Dragonite());
-//        pokemonBag2.addToBag(new Dragonair());
-//        pokemonBag2.addToBag(new Pikachu());
+        pokemonBag2.addToBag(new Pichu(50));
+        pokemonBag2.addToBag(new Pichu(50));
+        pokemonBag2.addToBag(new Pichu(50));
+//        pokemonBag2.addToBag(new Dragonite(50));
+//        pokemonBag2.addToBag(new Dragonair(50));
+        pokemonBag2.addToBag(new Pikachu(50));
 
         // TEST POKEBALLS HERE
         MoonBall moonBall = new MoonBall();
@@ -109,7 +109,7 @@ public class Main {
 
         // Testing player class and pokemon battle class
         PokemonPlayer david = new PokemonPlayer("David", "Male", pokemonBag, itemBag);
-        PokemonPlayer hen = new PokemonPlayer("Hen", "Female", pokemonBag2, itemBag);
+        PokemonPlayer hen = new PokemonPlayer("Jerry", "Female", pokemonBag2, itemBag);
 
         // TEST POKEMON BATTLE HERE
         PokemonBattle pokemonBattle = new PokemonBattle(david, hen);

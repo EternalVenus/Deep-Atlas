@@ -33,6 +33,14 @@ public class Dragonair extends Pokemon {
         this.ability = "Shed Skin";
     }
 
+    public Dragonair(int level) {
+        super("Dragonair", null, "148", 61, 84,
+                65, 70, 70, 70, new Type("Dragon"), null, level);
+
+        // moving the 4 skills into an array list
+        this.skillSet.addAll(Arrays.asList(skill1, skill2, skill3, skill4));
+        this.ability = "Shed Skin";
+    }
     // Listing the skill set for Pokemon Battle
     @Override
     public void showSkills(){
