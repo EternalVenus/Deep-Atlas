@@ -30,6 +30,7 @@ public class PokemonPlayer {
             return false;
         }else if(num == 0){
             // Telling the player the first pokemon in the bag is already in battle
+            // if the pokemon has 0 hp. Returns a false
             if (this.pokemonBag.getPokemon().get(0).getCurrentHp() == 0){
                 System.out.println(this.pokemonBag.getPokemon().get(0).getName() + " fainted (」ﾟﾛﾟ)｣NOOOooooo━ʔ Choose another pokemon!   ?(ο´･д･)??");
                 return false;
@@ -74,12 +75,15 @@ public class PokemonPlayer {
     public boolean isBlackOut(){
         int pokemonFainted = 0;
 
-        for (int i = 0; i < this.pokemonBag.getPokemon().size(); i++){
-            if (this.pokemonBag.getPokemon().get(i).getCurrentHp() == 0){
+        for (Pokemon pokemon : this.pokemonBag.getPokemon()){
+            if (pokemon.getCurrentHp() == 0){
                 ++pokemonFainted;
             }
         }
 
+        // if the number of fainted pokemon is equal to the total
+        // returns true. The player blacks out
+        // returns false. The player does not black out
         if (pokemonFainted == this.pokemonBag.getPokemon().size()){
             return true;
         }else{
@@ -112,6 +116,7 @@ public class PokemonPlayer {
         return pokemonActive;
     }
 
+    // Setters for the active pokemon or the first pokemon in the party
     public void setPokemonActive(Pokemon pokemonActive) {
         this.pokemonActive = pokemonActive;
     }
