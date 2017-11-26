@@ -7,15 +7,21 @@ import java.util.Scanner;
 public class PokemonBag {
     private Scanner scanner = new Scanner(System.in);
 
-    ArrayList<Pokemon> pokemon;
+    //ArrayList with only 6 slots
+    private ArrayList<Pokemon> pokemon;
     final static int MAX_SLOTS = 6;
-    PokemonPC pc;
+    private PokemonPC pc;
 
+    // constructor
     public PokemonBag(PokemonPC pc) {
         this.pc = pc;
         this.pokemon = new ArrayList<>();
     }
 
+    // Method to add new pokemons into the bag
+    // first if statement checks bag is full. If the bag is full. Sent the pokemon to an eligible PC box
+    // the else if checks if the bag is not full. Then the pokemon adds straight into the bag
+    // Should not get into the last else statement
     public boolean addToBag(Pokemon pokemon){
         if (this.pokemon.size() == MAX_SLOTS){
             System.out.println("ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ Bag too full! Select a PC Box to sent to ʕ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ•̫͡•ʕ•̫͡•ʔ•̫͡•ʔ" );
@@ -34,6 +40,10 @@ public class PokemonBag {
         }
     }
 
+    // Removes a pokemon from the pokemon bag
+    // The pokemon will not be removed if there is only 1 pokemon in the bag
+    // Else the pokemon is removed from the pokemon bag and stored into the PC
+    // The last else statement returns false because there is no such pokemon in the bag
     public boolean removePokemon(Pokemon pokemon, PokemonPC pc, int boxNum){
         if (this.pokemon.contains(pokemon)){
             if (this.pokemon.size() == 1){
@@ -51,6 +61,8 @@ public class PokemonBag {
         }
     }
 
+    // List all the pokemons in the bag
+    // contains different emoji depending if the pokemon is active or fainted
     public void listPokemons(){
         System.out.println("---------------------------------------------------------------");
         System.out.println("        " + "ฅ^•ﻌ•^ฅ Listing Pokemons in the Bag ฅ^•ﻌ•^ฅ");
@@ -66,6 +78,7 @@ public class PokemonBag {
         System.out.println("---------------------------------------------------------------");
     }
 
+    // getters
     public int bagSize(){
         return pokemon.size();
     }
