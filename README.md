@@ -14,7 +14,11 @@ Composition, Encapsulation, Abstraction, Polymorphism and also Interfaces.
     <li>Critical Hit Calculation: Determine the probability of whether a move will be critical hit, which will be determine by the speed of         Pokemon and effect of a skill or item. </li>
     <li>Damage Calculation: Determine the total damage of a skill, by taking in consideration of effectiveness, type , weather, etc.
         Total Damage Calculation Formula: <br>
-                ( ( ( ( ( (2 * Level) / 2) + 2) * Power * A / D) / 50 )  + 2 )  * Modifier <br>
+        ( ( ( ( ( (2 * <i>Level</i>) / 2) + 2) * <i>Power</i> * <i>A / D</i>) / 50 )  + 2 )  * <i>Modifier</i><br><br>
+        <i>Level</i> is the level of the attacking Pokémon <br>
+        <i>A</i>  is the effective Attack stat of the attacking Pokémon if the used move is a physical move, or the effective Special           Attack stat of the attacking Pokémon if the used move is a special move <br>
+        <i>D</i> is the effective Defense stat of the target if the used move is a physical move or a special move that uses the                    target's Defense stat, or the effective Special Defense of the target if the used move is an other special move <br>
+        <i>Power</i> is the effective power of the used move. <br>
         Modifier = Targets  * Weather * Badge * Critical * random * STAB * Type * Burn * Other
     </li>
     <li>Secondary Effect: Deciding whether secondary effects of moves should be activated.</li>
