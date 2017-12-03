@@ -27,7 +27,6 @@ Composition, Encapsulation, Abstraction, Polymorphism and also Interfaces.
         </ul>
     </li>
     <li>Modifier = Targets  * Weather * Badge * Critical * random * STAB * Type * Burn * Other</li>
-    <li>
         <ul>
             <li>Targets is 0.75 if the move has more than one target, and 1 otherwise.</li>
             <li>Weather is 1.5 if a Water-type move is being used during rain or a Fire-type move during harsh sunlight, and 0.5 if a Water-type move is used during harsh sunlight or a Fire-type move during rain, and 1 otherwise.</li>
@@ -37,9 +36,8 @@ Composition, Encapsulation, Abstraction, Polymorphism and also Interfaces.
             <li>STAB is the same-type attack bonus. This is equal to 1.5 if the move's type matches any of the user's types, 2 if the user of the move additionally has Adaptability, and 1 if otherwise.</li>
             <li>Type is the type effectiveness. This can be 0 (ineffective); 0.25, 0.5 (not very effective); 1 (normally effective); 2 or 4 (super effective) depending on both the move's and target's types.</li>
             <li>Burn is 0.5 (from Generation III onward) if the attacker is burned, its Ability is not Guts, and the used move is a physical move (other than Facade from Generation VI onward), and 1 otherwise.</li>
-            <li>other is 1 in most cases, and a different multiplier when specific interactions of moves, Abilities or items.<li>
+            <li>other is 1 in most cases, and a different multiplier when specific interactions of moves, Abilities or items.</li>
         </ul>
-    </li>
 
 </ul>
 
